@@ -1,0 +1,18 @@
+ErrorDocument 404 /404.php
+ErrorDocument 403 /404.php
+
+Options +FollowSymlinks
+RewriteEngine on
+
+# Article sans numéro de page :
+RewriteRule ^article-([0-9]+)\.php$   article.php?page=$1 [L]
+
+# Pour les smileys :
+RewriteRule ^admin/admin/images/smileys/(.*)   admin/images/smileys/$1 [L]
+
+<files .htaccess>
+order allow,deny
+deny from all
+ </files>
+
+ Options -Indexes

@@ -1,0 +1,25 @@
+body{margin:0;auto:0;background:#EEEEEE;font: 13px "helvetica", "arial", sans-serif;}
+
+#page{margin:auto;}
+
+#header{background:#323232;color:white;text-align:center;padding-top:5px;padding-bottom:5px;margin:auto;font-size: 12px;}
+
+#menu, #menu a{background:#DDDDDD;color:black;text-align:center;text-decoration:none;padding-top:5px;padding-bottom:5px;margin:auto;font-size: 12px;}
+
+#menu img{padding-left:5px;}
+
+#contenu2 {background:#EEEEEE;padding-left:10px;padding-right:15px;padding-top:10px;padding-bottom:10px;width:800px;margin:auto;}
+
+#pieddepage {background:#EEEEEE;height:10px;margin:auto;}
+
+#erreur {color:black;text-align:center;border: 1px solid #F44242;border-radius:4px;background: url("images/erreur.png") 10px 7px no-repeat #F46F6F;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
+
+#valide {color:black;text-align:center;border: 1px solid #189F0E;border-radius:4px;background: url("images/valide.png") 10px 7px no-repeat #62B956;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
+
+#info {color:black;text-align:center;border: 1px solid #1981FF;border-radius:4px;background: url("images/info.png") 10px 7px no-repeat #80B9FF;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
+
+#pays {color:black;text-align:center;border: 1px solid orange;border-radius:4px;background: url("images/pays.png") 10px 7px no-repeat #FDEBAE;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
+
+table {margin:auto;}
+
+.profil {padding-left:20px;padding-right:2px;}
