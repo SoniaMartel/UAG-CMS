@@ -15,7 +15,7 @@ a:hover, a:active{outline:0;}
 
 b, strong{font-weight:bold;}
 
-p{margin:auto;}
+p{margin:auto;margin-bottom:4px;}
 
 ul, ol{margin:1em 0;padding:0 0px 0 0px;}
 

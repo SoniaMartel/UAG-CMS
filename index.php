@@ -16,6 +16,7 @@
 # *** LICENCE ***
 
 ******************************************************/
+require 'admin/fonctions.php';
 
 function lire_array($fichier)
 {
@@ -75,9 +76,15 @@ include('lang/'.base64_decode($tableau[1]).'-lang.php');
 
 echo'<!DOCTYPE html><!-- Systeme de Pagination Par Qwerty : http://etudiant-libre.fr.nf/ --> <html lang="'.base64_decode($tableau[1]).'"><head>';
 
-if ((base64_decode($tableau[11])=='') && (base64_decode($tableau[12])=='')) {echo'<title>'.base64_decode($tableau[0]).' - Non-renseigné</title>';}
+switch ($_GET['module'])
+{
 
-else {echo'<title>'.base64_decode($tableau[0]).' - '.base64_decode($tableau[11]).' '.base64_decode($tableau[12]).'</title>';};	
+case 'articles': tarticles(); break;
+
+case 'erreurs': terreurs(); break;
+
+default : tprofil();
+}
 
 echo'<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -99,57 +106,15 @@ echo'</head>
 
 echo'<body class="home blog"><div id="wrapper"><header id="header"><h1 id="site-title">'.base64_decode($tableau[0]).'</h1></header><div id="content"><article>';
 
-echo'<h2>'.Profil.'</h2><div id="article" style="padding-left:10px">
+switch ($_GET['module'])
+{
 
-<h1>';
-if ((base64_decode($tableau[11])=='') && (base64_decode($tableau[12])=='')) {echo 'Non-renseigné';}
+case 'articles': articles(); break;
 
-else {echo''.base64_decode($tableau[11]).' '.base64_decode($tableau[12]).'';};
+case 'erreurs': erreurs(); break;
 
-if ((base64_decode($tableau[13])=='') && (base64_decode($tableau[14])=='')) {echo '</h1>';}
-
-else {echo' ('.base64_decode($tableau[13]).' ans '.base64_decode($tableau[14]).')</h1>';};
-
-echo'<table>
-<tr>
-<td><img src="';
-
-if (base64_decode($tableau[15])=='') {echo 'photo.jpg';}
-
-else {echo''.base64_decode($tableau[15]).'';};
-
-echo'" alt="" style="border: 1px solid #DDDDDD;
-border-radius: 4px;
-display: block;
-line-height: 1;
-padding: 4px; height:200px;width:200px;
-margin-right:10px;"/></td>
-
-<td style="padding:30px;">
-<h2 style="color:
-font-family: "Helvetica", sans-serif;
-font-size: 22px;
-font-weight: 700;
-line-height: 24px;
-margin-bottom: 20px;
-">';
-
-if (base64_decode($tableau[19])=='') {echo 'Defaut';}
-else {echo''.base64_decode($tableau[19]).'';};
-
-echo'</h2>';
-
-if ((base64_decode($tableau[20])=='') && (base64_decode($tableau[21])=='')) {echo '<p>Loisirs : Cette zone est à remplir </td>';}
-
-else {echo'<p>'.base64_decode($tableau[20]).'</p><p>Loisirs : '.base64_decode($tableau[21]).' </td>';};
-
-
-echo'<td>
-<p><a href="'.base64_decode($tableau[17]).'" style="text-decoration:none;">Facebook</a><br/></p>
-<p><a href="'.base64_decode($tableau[18]).'" style="text-decoration:none;">Google+</a><br/></p>
-<p><a href="'.base64_decode($tableau[16]).'" style="text-decoration:none;">Twitter</a></p>
-</td>
-</tr></table>'; 
+default : profil();
+}
 
 echo'</article><div id="piedpage">Articles : ';
 
@@ -163,7 +128,7 @@ echo '&nbsp;<span class="older-posts2">'.$i.'</span>';
 
 else {
 
-if (base64_decode($tableau[8])=='off') {echo '<span class="older-posts">&nbsp;<a href="article.php?page=' . $i . '">' . $i . '</a></span>';}
+if (base64_decode($tableau[8])=='off') {echo '<span class="older-posts">&nbsp;<a href="index.php?module=articles&page=' . $i . '">' . $i . '</a></span>';}
 
 elseif  (base64_decode($tableau[8])=='on') {echo '<span class="older-posts">&nbsp;<a href="article-' . $i . '.php">' . $i . '</a></span>';}
 

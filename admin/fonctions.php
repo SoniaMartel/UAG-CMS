@@ -16,6 +16,216 @@
 
 ******************************************************/
 
+/* BLOG */
+
+/* erreurs */
+
+function terreurs()   {
+
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+echo'<title>'.base64_decode($tableau[0]).' - 404</title>';
+
+}
+
+function erreurs()   {
+
+echo'<h2>404</h2><center><img src="404.gif" alt="404" width="180px"></center><div id="article" style="padding-left:10px"><br/><h1>La réponse à la page disparue, détruite, déplacée ou autre.</h1>';
+
+}
+
+/* Articles */
+
+function tarticles()  {
+
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+ob_start('ob_gzhandler'); register_shutdown_function('ob_end_flush');
+
+$allnews = unserialize(base64_decode(file_get_contents('news.php')));
+
+$nb_messagetotal = count($allnews);
+
+$nbPages = ceil($nb_messagetotal / 1);
+
+if(isset($_GET['page']) && (intval($_GET['page']) <= $nbPages)) {
+
+$page = intval($_GET['page']) - 1; }
+
+$liste_news = array_slice($allnews, $page, 1); 
+
+if(!empty($liste_news)) { foreach($liste_news as $id => $news) {
+
+echo'<title>'.base64_decode($tableau[0]).' - '.$news['titre'].'</title><meta name="Description" content="'.$news['chapo'].'">';	} }
+
+else { echo'<title>'.base64_decode($tableau[0]).' - '.Informations.'</title><meta name="Description" content="'.PasdeNews.'">'; };
+
+}
+
+function articles()  {
+
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+ob_start('ob_gzhandler'); register_shutdown_function('ob_end_flush');
+
+$allnews = unserialize(base64_decode(file_get_contents('news.php')));
+
+$nb_messagetotal = count($allnews);
+
+$nbPages = ceil($nb_messagetotal / 1);
+
+if(isset($_GET['page']) && (intval($_GET['page']) <= $nbPages)) {
+
+$page = intval($_GET['page']) - 1; }
+
+$liste_news = array_slice($allnews, $page, 1); 
+
+
+if(!empty($liste_news)) { foreach($liste_news as $id => $news) {
+
+echo'<h2><strong>'.$news['titre'].' '.Par.' '.base64_decode($tableau[2]).' - ';
+
+if (base64_decode($tableau[1])=='fr') { 
+
+if (base64_decode($tableau[10])=='on') { 
+
+echo ''.$news['jour'].' ';
+
+if     ($news['mois']=='01') {echo Janvier ;}
+elseif ($news['mois']=='02') {echo Fevrier ;}
+elseif ($news['mois']=='03') {echo Mars ;}
+elseif ($news['mois']=='04') {echo Avril ;}
+elseif ($news['mois']=='05') {echo Mai ;}
+elseif ($news['mois']=='06') {echo Juin ;}
+elseif ($news['mois']=='07') {echo Juillet ;}
+elseif ($news['mois']=='08') {echo Aout ;}
+elseif ($news['mois']=='09') {echo Septembre ;}
+elseif ($news['mois']=='10') {echo Octobre ;}
+elseif ($news['mois']=='11') {echo Novembre ;}
+elseif ($news['mois']=='12') {echo Decembre ;}
+
+echo ' '.$news['annee'].' ';
+
+ }
+
+elseif (base64_decode($tableau[10])=='off') { echo' '.$news['jour'].'-'.$news['mois'].'-'.$news['annee'].' '; } }
+
+else { 
+
+if (base64_decode($tableau[10])=='on') { 
+
+echo ''.$news['annee'].' ';
+
+if     ($news['mois']=='01') {echo Janvier ;}
+elseif ($news['mois']=='02') {echo Fevrier ;}
+elseif ($news['mois']=='03') {echo Mars ;}
+elseif ($news['mois']=='04') {echo Avril ;}
+elseif ($news['mois']=='05') {echo Mai ;}
+elseif ($news['mois']=='06') {echo Juin ;}
+elseif ($news['mois']=='07') {echo Juillet ;}
+elseif ($news['mois']=='08') {echo Aout ;}
+elseif ($news['mois']=='09') {echo Septembre ;}
+elseif ($news['mois']=='10') {echo Octobre ;}
+elseif ($news['mois']=='11') {echo Novembre ;}
+elseif ($news['mois']=='12') {echo Decembre ;}
+
+echo ' '.$news['jour'].' ';
+
+ }
+
+elseif (base64_decode($tableau[10])=='off') { echo' '.$news['annee'].'-'.$news['mois'].'-'.$news['jour'].' '; } }
+
+echo'</strong></h2><div id="article" style="padding-left:10px">'.$news['contenu'].'</div>';		
+
+}
+}
+
+else { echo'<h2>'.Informations.'</h2><div id="article" style="padding-left:10px">'.PasdeNews.'</div>'; }
+
+}
+
+/* Profil */
+
+function tprofil()  {
+
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+if ((base64_decode($tableau[11])=='') && (base64_decode($tableau[12])=='')) {echo'<title>'.base64_decode($tableau[0]).' - Non-renseigné</title>';}
+
+else {echo'<title>'.base64_decode($tableau[0]).' - '.base64_decode($tableau[11]).' '.base64_decode($tableau[12]).'</title>';};	
+
+}
+
+function profil()  {
+
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+echo'<h2>'.Profil.'</h2><div id="article" style="padding-left:10px">
+
+<h1>';
+if ((base64_decode($tableau[11])=='') && (base64_decode($tableau[12])=='')) {echo 'Non-renseigné';}
+
+else {echo''.base64_decode($tableau[11]).' '.base64_decode($tableau[12]).'';};
+
+if ((base64_decode($tableau[13])=='') && (base64_decode($tableau[14])=='')) {echo '</h1>';}
+
+else {echo' ('.base64_decode($tableau[13]).' ans '.base64_decode($tableau[14]).')</h1>';};
+
+echo'<table>
+<tr>
+<td><img src="';
+
+if (base64_decode($tableau[15])=='') {echo 'photo.jpg';}
+
+else {echo''.base64_decode($tableau[15]).'';};
+
+echo'" alt="" style="border: 1px solid #DDDDDD;
+border-radius: 4px;
+display: block;
+line-height: 1;
+padding: 4px; height:200px;width:200px;
+margin-right:10px;"/></td>
+
+<td style="padding:30px;">
+<h2 style="color:
+font-family: "Helvetica", sans-serif;
+font-size: 22px;
+font-weight: 700;
+line-height: 24px;
+margin-bottom: 20px;
+">';
+
+if (base64_decode($tableau[19])=='') {echo 'Defaut';}
+else {echo''.base64_decode($tableau[19]).'';};
+
+echo'</h2>';
+
+if ((base64_decode($tableau[20])=='') && (base64_decode($tableau[21])=='')) {echo '<p>Loisirs : Cette zone est à remplir </td>';}
+
+else {echo'<p>'.base64_decode($tableau[20]).'</p><p><b>Loisirs  :</b> '.base64_decode($tableau[21]).'</p></td>';};
+
+
+echo'<td>
+<p><a href="'.base64_decode($tableau[17]).'" style="text-decoration:none;">Facebook</a><br/></p>
+<p><a href="'.base64_decode($tableau[18]).'" style="text-decoration:none;">Google+</a><br/></p>
+<p><a href="'.base64_decode($tableau[16]).'" style="text-decoration:none;">Twitter</a></p>
+</td>
+</tr></table>'; 
+
+}
+
+/* ADMINISTRATION */
+
 /* Index de l'administration */
 
 function accueil() {
@@ -47,7 +257,7 @@ echo'</p></div>';
 
 echo'<div id="pays"><p>'.Pays.'</p></div>';
 
-$file = 'http://julien-et-nel.be/UAG/1-92.txt';
+$file = 'http://julien-et-nel.be/UAG/1-93.txt';
  $file_headers = @get_headers($file);
  if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
 
