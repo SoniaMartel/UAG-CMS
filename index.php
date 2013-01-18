@@ -141,6 +141,18 @@ if (base64_decode($tableau[9])=='off') {}
 
 elseif  (base64_decode($tableau[9])=='on') {echo'<li><a href="admin/connexion.php">'.Administration.'</a></li>';}
 
+if (base64_decode($tableau[22])=='') {}
+
+else if (base64_decode($tableau[23])=='') {}
+
+else {echo'<li><a href="'.base64_decode($tableau[23]).'">'.base64_decode($tableau[22]).'</a></li>'; }
+
+if (base64_decode($tableau[24])=='') {}
+
+else if (base64_decode($tableau[25])=='') {}
+
+else {echo'<li><a href="'.base64_decode($tableau[25]).'">'.base64_decode($tableau[24]).'</a></li>'; }
+
 echo'</ul></div></nav><footer id="footer"><div style="text-align: center"><p><strong><a rel="license" href="http://julien-et-nel.be/LLDGP1/">LLDGP1</a></strong> | <strong>'.base64_decode($tableau[0]).'</strong> | <strong><a href="http://julien-et-nel.be/UAG/">UAG CMS</a> | Design : ';
 
 include 'themes/'.base64_decode($tableau[5]).'/auteur.php';

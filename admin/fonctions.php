@@ -216,9 +216,9 @@ else {echo'<p>'.base64_decode($tableau[20]).'</p><p><b>Loisirs  :</b> '.base64_d
 
 
 echo'<td>
-<p><a href="'.base64_decode($tableau[17]).'" style="text-decoration:none;">Facebook</a><br/></p>
-<p><a href="'.base64_decode($tableau[18]).'" style="text-decoration:none;">Google+</a><br/></p>
-<p><a href="'.base64_decode($tableau[16]).'" style="text-decoration:none;">Twitter</a></p>
+<p><a href="https://fr-fr.facebook.com/'.base64_decode($tableau[17]).'" style="text-decoration:none;">Facebook</a><br/></p>
+<p><a href="https://plus.google.com/'.base64_decode($tableau[18]).'" style="text-decoration:none;">Google+</a><br/></p>
+<p><a href="https://twitter.com/'.base64_decode($tableau[16]).'" style="text-decoration:none;">Twitter</a></p>
 </td>
 </tr></table>'; 
 
@@ -335,7 +335,14 @@ $_POST[20] = str_replace(array('-','php'),array(':)',''), $_POST[20]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[20],null,'UTF-8')))))); 
 $_POST[21] = str_replace(array('-','php'),array(':)',''), $_POST[21]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[21],null,'UTF-8')))))); 
-
+$_POST[22] = str_replace(array('-','php'),array(':)',''), $_POST[22]);
+ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[22],null,'UTF-8')))))); 
+$_POST[23] = str_replace(array('-','php'),array(':)',''), $_POST[23]);
+ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[23],null,'UTF-8')))))); 
+$_POST[24] = str_replace(array('-','php'),array(':)',''), $_POST[24]);
+ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[24],null,'UTF-8')))))); 
+$_POST[25] = str_replace(array('-','php'),array(':)',''), $_POST[25]);
+ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[25],null,'UTF-8')))))); 
 }
 
 else {
@@ -439,7 +446,7 @@ echo'<tr><td class="titre"></br>URL Rewriting  &nbsp;</td><td></br><SELECT value
 <OPTION VALUE="off" '.$selected2.'>off</OPTION>
 </SELECT></td>
 
-<td class="profil"></br>Activité</td><td></br><input type="text" name="19" value="'.base64_decode($tableau[19]).'" placeholder="Votre Compte Youtube" STYLE="width:170px;" /></td>
+<td class="profil"></br>Activité</td><td></br><input type="text" name="19" value="'.base64_decode($tableau[19]).'" placeholder="Codeur, Vendeur, etc" STYLE="width:170px;" /></td>
 </tr>
 ';echo "\n";
 
@@ -467,8 +474,22 @@ echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.b
 </SELECT></td>
 
 <td class="profil"></br>Loisirs</td><td></br><input type="text" name="21" value="'.base64_decode($tableau[21]).'" placeholder="Jeux vidéos, Mangas, etc" STYLE="width:170px;" /></td>
-
 </tr>
+
+<tr>
+<td COLSPAN=4><center><br/><b>Menu</b></center></td>
+</tr>
+
+<tr>
+<td class="titre"></br>Titre A  &nbsp;</td><td></br><input type="text" name="22" value="'.base64_decode($tableau[22]).'" placeholder="Titre du menu A" STYLE="width:170px;" /></td>
+<td class="profil"></br>Lien A  &nbsp;</td><td></br><input type="text" name="23" value="'.base64_decode($tableau[23]).'" placeholder="Lien du menu A" STYLE="width:170px;" /></td>
+</tr>
+
+<tr>
+<td class="titre"></br>Titre B  &nbsp;</td><td></br><input type="text" name="24" value="'.base64_decode($tableau[24]).'" placeholder="Titre du menu B" STYLE="width:170px;" /></td>
+<td class="profil"></br>Lien B  &nbsp;</td><td></br><input type="text" name="25" value="'.base64_decode($tableau[25]).'" placeholder="Lien du menu B" STYLE="width:170px;" /></td>
+</tr>
+
 ';echo "\n";
 
 echo '</table><br/>';echo "\n";
