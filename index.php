@@ -104,7 +104,13 @@ else {echo'<link rel="apple-touch-icon" href="'.base64_decode($tableau[4]).'" />
 echo'</head>
 ';
 
-echo'<body class="home blog"><div id="wrapper"><header id="header"><h1 id="site-title">'.base64_decode($tableau[0]).'</h1></header><div id="content"><article>';
+echo'<body class="home blog"><div id="wrapper"><header id="header">';
+
+if (base64_decode($tableau[26])=='') {echo '<h1 id="site-title">'.base64_decode($tableau[0]).'</h1>';}
+else if (base64_decode($tableau[27])=='') {echo '<h1 id="site-title"><img src="'.base64_decode($tableau[26]).'" alt="'.base64_decode($tableau[0]).'"></h1>';}
+else {echo '<h1 id="site-title"><img src="'.base64_decode($tableau[26]).'" alt="'.base64_decode($tableau[27]).'"></h1>';}
+
+echo'</header><div id="content"><article>';
 
 switch ($_GET['module'])
 {

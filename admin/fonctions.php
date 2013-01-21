@@ -342,7 +342,11 @@ ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[23],null,'UT
 $_POST[24] = str_replace(array('-','php'),array(':)',''), $_POST[24]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[24],null,'UTF-8')))))); 
 $_POST[25] = str_replace(array('-','php'),array(':)',''), $_POST[25]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[25],null,'UTF-8')))))); 
+ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[25],null,'UTF-8'))))));
+$_POST[26] = str_replace(array('-','php'),array(':)',''), $_POST[26]);
+ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[26],null,'UTF-8')))))); 
+$_POST[27] = str_replace(array('-','php'),array(':)',''), $_POST[27]);
+ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[27],null,'UTF-8'))))));
 }
 
 else {
@@ -488,6 +492,15 @@ echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.b
 <tr>
 <td class="titre"></br>Titre B  &nbsp;</td><td></br><input type="text" name="24" value="'.base64_decode($tableau[24]).'" placeholder="Titre du menu B" STYLE="width:170px;" /></td>
 <td class="profil"></br>Lien B  &nbsp;</td><td></br><input type="text" name="25" value="'.base64_decode($tableau[25]).'" placeholder="Lien du menu B" STYLE="width:170px;" /></td>
+</tr>
+
+<tr>
+<td COLSPAN=4><center><br/><b>Banniere</b></center></td>
+</tr>
+
+<tr>
+<td class="titre"></br>Lien  &nbsp;</td><td></br><input type="text" name="26" value="'.base64_decode($tableau[26]).'" placeholder="Lien Banniere" STYLE="width:170px;" /></td>
+<td class="profil"></br>Titre  &nbsp;</td><td></br><input type="text" name="27" value="'.base64_decode($tableau[27]).'" placeholder="Titre Banniere" STYLE="width:170px;" /></td>
 </tr>
 
 ';echo "\n";
