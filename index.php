@@ -124,23 +124,9 @@ default : profil();
 
 echo'</article><div id="piedpage">Articles : ';
 
-for ($i = $nbPages; $i > 0; $i--) {
+foreach($allnews as $i => $news) { 
 
-if (isset($_GET['page']) && $i == $_GET['page']){
-
-echo '&nbsp;<span class="older-posts2">'.$i.'</span>';
-
-}
-
-else {
-
-if (base64_decode($tableau[8])=='off') {echo '<span class="older-posts">&nbsp;<a href="index.php?module=articles&page=' . $i . '">' . $i . '</a></span>';}
-
-elseif  (base64_decode($tableau[8])=='on') {echo '<span class="older-posts">&nbsp;<a href="article-' . $i . '.php">' . $i . '</a></span>';}
-
-elseif  (base64_decode($tableau[8])=='on2') {echo '<span class="older-posts">&nbsp;<a href="' . $i . '-';
-
-foreach($liste_news as $id => $news) { 
+$i2 = $i + 1 ;
 
 $news['titre'] = preg_replace( "`&([a-z])(acute|uml|circ|grave|ring|cedil|slash|tilde|caron|lig);`i","\\1", $news['titre'] );
 $news['titre'] = preg_replace("`\[.*\]`U","",$news['titre']);
@@ -149,13 +135,16 @@ $news['titre'] = preg_replace( array("`[^a-z0-9]`i","`[-]+`") , "-", $news['titr
 $news['titre'] = ( $news['titre'] == "" ) ? $type : strtolower(trim($news['titre'], '-'));
 $news['titre'] = htmlentities($news['titre'], ENT_COMPAT, 'utf8');
 
-echo''.$news['titre'].'';
+if (base64_decode($tableau[8])=='off') {echo '<span class="older-posts">&nbsp;<a href="index.php?module=articles&page=' . $i2 . '">' . $i2 . '</a></span>';}
 
-}
+elseif  (base64_decode($tableau[8])=='on') {echo '<span class="older-posts">&nbsp;<a href="article-' . $i2 . '.php">' . $i2 . '</a></span>';}
 
-echo'.php">' . $i . '</a></span>';}
+elseif  (base64_decode($tableau[8])=='on2') {
 
-}
+echo'<span class="older-posts">&nbsp;<a href="' . $i2 . '-'.$news['titre'].'.php">' . $i2 . '</a></span>';}
+
+else {echo '<span class="older-posts">&nbsp;<a href="index.php?module=articles&page=' . $i2 . '">' . $i2 . '</a></span>';}
+
 }
 
 echo'</div></div></div><nav id="menu"><div class="menu-footer"><ul id="menu-main" class="menu"><li><a href="index.php">'.Accueil.'</a></li>';
