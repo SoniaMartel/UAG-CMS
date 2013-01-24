@@ -4,8 +4,12 @@ ErrorDocument 403 /index.php?module=erreurs
 Options +FollowSymlinks
 RewriteEngine on
 
-# Article sans numéro de page :
+# Article sans numéro de page (Exemple : Article-1.php):
 RewriteRule ^article-([0-9]+)\.php$   index.php?module=articles&page=$1 [L]
+
+# Article sans numéro de page (Exemple : Article-1.php):
+
+RewriteRule ^([0-9]+)-([a-z0-9\-]+)\.php$   index.php?module=articles&page=$1 [L]
 
 # Pour les smileys :
 RewriteRule ^admin/admin/images/smileys/(.*)   admin/images/smileys/$1 [L]

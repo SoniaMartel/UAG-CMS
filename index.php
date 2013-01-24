@@ -138,6 +138,23 @@ if (base64_decode($tableau[8])=='off') {echo '<span class="older-posts">&nbsp;<a
 
 elseif  (base64_decode($tableau[8])=='on') {echo '<span class="older-posts">&nbsp;<a href="article-' . $i . '.php">' . $i . '</a></span>';}
 
+elseif  (base64_decode($tableau[8])=='on2') {echo '<span class="older-posts">&nbsp;<a href="' . $i . '-';
+
+foreach($liste_news as $id => $news) { 
+
+$news['titre'] = preg_replace( "`&([a-z])(acute|uml|circ|grave|ring|cedil|slash|tilde|caron|lig);`i","\\1", $news['titre'] );
+$news['titre'] = preg_replace("`\[.*\]`U","",$news['titre']);
+$news['titre'] = preg_replace('`&(amp;)?#?[a-z0-9]+;`i','-',$news['titre']);
+$news['titre'] = preg_replace( array("`[^a-z0-9]`i","`[-]+`") , "-", $news['titre']);
+$news['titre'] = ( $news['titre'] == "" ) ? $type : strtolower(trim($news['titre'], '-'));
+$news['titre'] = htmlentities($news['titre'], ENT_COMPAT, 'utf8');
+
+echo''.$news['titre'].'';
+
+}
+
+echo'.php">' . $i . '</a></span>';}
+
 }
 }
 

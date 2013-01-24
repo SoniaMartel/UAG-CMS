@@ -441,13 +441,16 @@ echo '
 
 </tr>';
 
-if (base64_decode($tableau[8])==on) {$selected1 = 'selected="selected"';}
+if (base64_decode($tableau[8])==on) {$selectedon = 'selected="selected"';}
 
-elseif (base64_decode($tableau[8])==off) {$selected2 = 'selected="selected"';}
+elseif (base64_decode($tableau[8])==on2) {$selectedoff2 = 'selected="selected"';}
+
+elseif (base64_decode($tableau[8])==off) {$selectedoff = 'selected="selected"';}
 
 echo'<tr><td class="titre"></br>URL Rewriting  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[8]).'" name="8" STYLE="width:180px;">
-<OPTION VALUE="on" '.$selected1.'>on</OPTION>
-<OPTION VALUE="off" '.$selected2.'>off</OPTION>
+<OPTION VALUE="on" '.$selectedon.'>Url Sans titre</OPTION>
+<OPTION VALUE="on2" '.$selectedon2.'>Url avec Titre</OPTION>
+<OPTION VALUE="off" '.$selectedoff.'>Pas de réecriture</OPTION>
 </SELECT></td>
 
 <td class="profil"></br>Activité</td><td></br><input type="text" name="19" value="'.base64_decode($tableau[19]).'" placeholder="Codeur, Vendeur, etc" STYLE="width:170px;" /></td>
