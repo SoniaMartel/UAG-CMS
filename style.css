@@ -13,6 +13,8 @@ a:visited{color:#FF7700;}
 a:focus{outline:thin dotted;}
 a:hover, a:active{outline:0;}
 
+table img {background: #FF7700;}
+
 b, strong{font-weight:bold;}
 
 p{margin:auto;margin-bottom:4px;}
