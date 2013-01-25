@@ -32,7 +32,11 @@ echo'<title>'.base64_decode($tableau[0]).' - 404</title>';
 
 function erreurs()   {
 
-echo'<h2>404</h2><center><img src="404.gif" alt="404" width="180px"></center><div id="article" style="padding-left:10px"><br/><h1>La réponse à la page disparue, détruite, déplacée ou autre.</h1>';
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+echo'<h2 style="color:'.base64_decode($tableau[5]).' !important">404</h2><center><img src="404.gif" alt="404" width="180px"></center><div id="article" style="padding-left:10px"><br/><h1 style="color:'.base64_decode($tableau[5]).' !important">La réponse à la page disparue, détruite, déplacée ou autre.</h1>';
 
 }
 
@@ -89,7 +93,7 @@ $liste_news = array_slice($allnews, $page, 1);
 
 if(!empty($liste_news)) { foreach($liste_news as $id => $news) {
 
-echo'<h2><strong>'.$news['titre'].' '.Par.' '.base64_decode($tableau[2]).' - ';
+echo'<h2 style="color:'.base64_decode($tableau[5]).' !important""><strong>'.$news['titre'].' '.Par.' '.base64_decode($tableau[2]).' - ';
 
 if (base64_decode($tableau[1])=='fr') { 
 
@@ -146,7 +150,7 @@ echo'</strong></h2><div id="article" style="padding-left:10px">'.$news['contenu'
 }
 }
 
-else { echo'<h2>'.Informations.'</h2><div id="article" style="padding-left:10px">'.PasdeNews.'</div>'; }
+else { echo'<h2 style="color:'.base64_decode($tableau[5]).' !important"">'.Informations.'</h2><div id="article" style="padding-left:10px">'.PasdeNews.'</div>'; }
 
 }
 
@@ -170,9 +174,9 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<h2>'.Profil.'</h2><div id="article" style="padding-left:10px">
+echo'<h2 style="color:'.base64_decode($tableau[5]).' !important">'.Profil.'</h2><div id="article" style="padding-left:10px">
 
-<h1>';
+<h1 style="color:'.base64_decode($tableau[5]).' !important">';
 if ((base64_decode($tableau[11])=='') && (base64_decode($tableau[12])=='')) {echo 'Non-renseigné';}
 
 else {echo''.base64_decode($tableau[11]).' '.base64_decode($tableau[12]).'';};
@@ -185,11 +189,11 @@ echo'<table>
 <tr>
 <td><img src="';
 
-if (base64_decode($tableau[15])=='') {echo 'photo.jpg';}
+if (base64_decode($tableau[15])=='') {echo 'photo.png';}
 
 else {echo''.base64_decode($tableau[15]).'';};
 
-echo'" alt="" style="border: 1px solid #DDDDDD;
+echo'" alt="" style="border: solid #DDDDDD; background:'.base64_decode($tableau[5]).' !important;
 border-radius: 4px;
 display: block;
 line-height: 1;
@@ -197,7 +201,7 @@ padding: 4px; height:200px;width:200px;
 margin-right:10px;"/></td>
 
 <td style="padding:30px;">
-<h2 style="color:
+<h2 style="color:'.base64_decode($tableau[5]).' !important;
 font-family: "Helvetica", sans-serif;
 font-size: 22px;
 font-weight: 700;
@@ -216,9 +220,9 @@ else {echo'<p>'.base64_decode($tableau[20]).'</p><p><b>Loisirs  :</b> '.base64_d
 
 
 echo'<td>
-<p><a href="https://fr-fr.facebook.com/'.base64_decode($tableau[17]).'" style="text-decoration:none;">Facebook</a><br/></p>
-<p><a href="https://plus.google.com/'.base64_decode($tableau[18]).'" style="text-decoration:none;">Google+</a><br/></p>
-<p><a href="https://twitter.com/'.base64_decode($tableau[16]).'" style="text-decoration:none;">Twitter</a></p>
+<p><a href="https://fr-fr.facebook.com/'.base64_decode($tableau[17]).'" style="text-decoration:none; color:'.base64_decode($tableau[5]).' !important;">Facebook</a><br/></p>
+<p><a href="https://plus.google.com/'.base64_decode($tableau[18]).'" style="text-decoration:none; color:'.base64_decode($tableau[5]).' !important;">Google+</a><br/></p>
+<p><a href="https://twitter.com/'.base64_decode($tableau[16]).'" style="text-decoration:none; color:'.base64_decode($tableau[5]).' !important;">Twitter</a></p>
 </td>
 </tr></table>'; 
 
@@ -257,7 +261,7 @@ echo'</p></div>';
 
 echo'<div id="pays"><p>'.Pays.'</p></div>';
 
-$file = 'http://julien-et-nel.be/UAG/1-93.txt';
+$file = 'http://julien-et-nel.be/UAG/1-94.txt';
  $file_headers = @get_headers($file);
  if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
 
@@ -392,36 +396,13 @@ echo '<td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.ba
 <td class="profil"></br>'.Photo.'  &nbsp;</td><td></br><input type="text" name="15" value="'.base64_decode($tableau[15]).'" placeholder="Une photo de vous" STYLE="width:170px;" /></td>
 
 </tr><tr>
-<td class="titre"></br>CSS  &nbsp;</td><td></br>'; 
+<td class="titre"></br>COULEUR CSS  &nbsp;</td><td></br>'; 
 
-echo '<SELECT value="'.base64_decode($tableau[5]).'" name="5" STYLE="width:180px;">';
+echo '
 
-$valide_extensions = array('');
+<input type="color" name="5" value="'.base64_decode($tableau[5]).'" placeholder="Couleur pour le css" STYLE="width:170px;"/>
 
-if($dossier = opendir('../themes'))
-{
-while(false !== ($fichier = readdir($dossier)))
-{
-if($fichier != '.' && $fichier != '..' && $fichier != 'index.php')
-{
-$ext = strtolower(pathinfo($fichier, PATHINFO_EXTENSION));
-
-if(in_array($ext, $valide_extensions))
-{
-$nb_fichier++; 
-
-if (base64_decode($tableau[5])==$fichier) {$selected7 = 'selected="selected"';}
-
-else {$selected7 = '';}
-
-echo '<OPTION VALUE="'.$fichier.'" '.$selected7.'>' . $fichier . '</a></OPTION>';
-}
-} 
-}  
-closedir($dossier); 
-}
-
-echo '</SELECT>'; 
+</td>'; 
 
 echo '
 

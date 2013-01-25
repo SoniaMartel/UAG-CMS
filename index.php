@@ -92,7 +92,7 @@ echo'<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="Generator" content="UAG CMS" />
 <meta property="og:image" content="'.base64_decode($tableau[4]).'" />
 <link rel="alternate" type="application/rss+xml" title="flux rss" href="rss.php" />
-<link rel="stylesheet" type="text/css" href="themes/'.base64_decode($tableau[5]).'/style.css" />';
+<link rel="stylesheet" type="text/css" href="style.css" />';
 
 if (base64_decode($tableau[3])=='') {echo '';}
 else {echo'<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[3]).'" sizes="16x16" /><link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[3]).'" sizes="16x16" />';};
@@ -106,7 +106,7 @@ echo'</head>
 
 echo'<body class="home blog"><div id="wrapper"><header id="header">';
 
-if (base64_decode($tableau[26])=='') {echo '<h1 id="site-title">'.base64_decode($tableau[0]).'</h1>';}
+if (base64_decode($tableau[26])=='') {echo '<h1 id="site-title" style="color:'.base64_decode($tableau[5]).' !important"">'.base64_decode($tableau[0]).'</h1>';}
 else if (base64_decode($tableau[27])=='') {echo '<h1 id="site-title"><img src="'.base64_decode($tableau[26]).'" alt="'.base64_decode($tableau[0]).'"></h1>';}
 else {echo '<h1 id="site-title"><img src="'.base64_decode($tableau[26]).'" alt="'.base64_decode($tableau[27]).'"></h1>';}
 
@@ -147,7 +147,7 @@ else {echo '<span class="older-posts">&nbsp;<a href="index.php?module=articles&p
 
 }
 
-echo'</div></div></div><nav id="menu"><div class="menu-footer"><ul id="menu-main" class="menu"><li><a href="index.php">'.Accueil.'</a></li>';
+echo'</div></div></div><nav id="menu" ><div class="menu-footer" ><ul id="menu-main" class="menu" style="background:'.base64_decode($tableau[5]).' !important""><li><a href="index.php">'.Accueil.'</a></li>';
 
 if (base64_decode($tableau[9])=='off') {}
 
@@ -165,10 +165,8 @@ else if (base64_decode($tableau[25])=='') {}
 
 else {echo'<li><a href="'.base64_decode($tableau[25]).'">'.base64_decode($tableau[24]).'</a></li>'; }
 
-echo'</ul></div></nav><footer id="footer"><div style="text-align: center"><p><strong><a rel="license" href="http://julien-et-nel.be/LLDGP1/">LLDGP1</a></strong> | <strong>'.base64_decode($tableau[0]).'</strong> | <strong><a href="http://julien-et-nel.be/UAG/">UAG CMS</a> | Design : ';
+echo'</ul></div></nav><footer id="footer"><div style="text-align: center"><p><strong><a rel="license" href="http://julien-et-nel.be/LLDGP1/" style="color:'.base64_decode($tableau[5]).' !important""">LLDGP1</a></strong> | <strong>'.base64_decode($tableau[0]).'</strong> | <strong><a href="http://julien-et-nel.be/UAG/" style="color:'.base64_decode($tableau[5]).' !important""">UAG CMS</a> | Design : ';
 
-include 'themes/'.base64_decode($tableau[5]).'/auteur.php';
-
-echo'</strong></p></div></footer></body></html>';
+echo'<a href="http://aldarone.fr/" style="color:'.base64_decode($tableau[5]).' !important"">Alda</a></strong></p></div></footer></body></html>';
  
 ?>

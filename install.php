@@ -97,24 +97,13 @@ echo '
 
 <td class="titre"></br>Logo  &nbsp;</td><td></br><input type="text" name="4" value="'.$tableau[4].'" STYLE="width:180px;"/></td></tr><tr>
 
-<td class="titre"></br>CSS  &nbsp;</td><td></br>'; 
+<td class="titre"></br>COULEUR CSS  &nbsp;</td><td></br>'; 
 
-echo '<SELECT value="'.$tableau[5].'" name="5" STYLE="width:180px;">';
+echo '
 
-if($dossier = opendir('themes'))
-{
-while(false !== ($fichier = readdir($dossier)))
-{
-if($fichier != '.' && $fichier != '..' && $fichier != 'index.php')
-{
-$nb_fichier++; 
-echo '<OPTION>' . $fichier . '</a></OPTION>';
-} 
-}  
-closedir($dossier); 
-}
+<input type="color" name="5" value="'.base64_decode($tableau[5]).'" placeholder="Couleur pour le css" STYLE="width:170px;"/>
 
-echo '</SELECT>'; 
+</td>'; 
 
 echo '</tr><tr>
 
