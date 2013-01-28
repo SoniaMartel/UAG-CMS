@@ -16,11 +16,9 @@
 
 ******************************************************/
 
-if (filesize($filename) > 0) {
+$filename = 'configuration.txt';
 
- unlink('../install.php'); 
-
-} 
+if (filesize($filename) > 0) {} 
 
 else { header('Location: ../install.php'); } 
 
