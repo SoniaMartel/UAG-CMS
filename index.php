@@ -97,10 +97,6 @@ echo'<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 if (base64_decode($tableau[3])=='') {echo '';}
 else {echo'<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[3]).'" sizes="16x16" /><link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[3]).'" sizes="16x16" />';};
 
-if (base64_decode($tableau[4])=='') {echo '';}
-else {echo'<link rel="apple-touch-icon" href="'.base64_decode($tableau[4]).'" />
-<link rel="apple-touch-icon-precomposed" href="'.base64_decode($tableau[4]).'" />';};
-
 echo'</head>
 ';
 
@@ -123,6 +119,9 @@ default : profil();
 }
 
 echo'</article><div id="piedpage">Articles : ';
+
+if (base64_decode($tableau[4])=='on') {krsort($allnews);}
+else if (base64_decode($tableau[4])=='off') {};
 
 foreach($allnews as $i => $news) { 
 

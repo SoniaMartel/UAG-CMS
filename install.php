@@ -95,13 +95,16 @@ echo '
 
 <td class="titre"></br>Favicon  &nbsp;</td><td></br><input type="text" name="3" value="'.$tableau[3].'" STYLE="width:180px;"/></td></tr><tr>
 
-<td class="titre"></br>Logo  &nbsp;</td><td></br><input type="text" name="4" value="'.$tableau[4].'" STYLE="width:180px;"/></td></tr><tr>
+<td class="titre"></br>Pagination  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[4]).'" name="4" STYLE="width:180px;">
+<option value="on" '.$paginationOn.'>Nouveau vers Ancien</option>
+<option value="off" '.$paginationOff.'>Ancien vers nouveau</option>
+</select></td></tr><tr>
 
 <td class="titre"></br>COULEUR CSS  &nbsp;</td><td></br>'; 
 
 echo '
 
-<input type="color" name="5" value="'.base64_decode($tableau[5]).'" placeholder="Couleur pour le css" STYLE="width:170px;"/>
+<input type="color" name="5" value="'.base64_decode($tableau[5]).'" placeholder="Couleur pour le css" STYLE="width:180px;"/>
 
 </td>'; 
 

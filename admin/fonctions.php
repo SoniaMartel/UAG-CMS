@@ -326,6 +326,10 @@ echo '<tr>
 <td class="profil"></br>'.Nom.'  &nbsp;</td><td></br><input type="text" name="11" value="'.base64_decode($tableau[11]).'" placeholder="Votre nom" STYLE="width:170px;" /></td>
 </tr><tr>';
 
+if (base64_decode($tableau[4])==on) {$paginationOn = 'selected="selected"';}
+elseif (base64_decode($tableau[4])==off) {$paginationOff = 'selected="selected"';}
+else {$paginationOn = 'selected="selected"';}
+
 if (base64_decode($tableau[1])==en) {$selected3 = 'selected="selected"';}
 elseif (base64_decode($tableau[1])==es) {$selected4 = 'selected="selected"';}
 elseif (base64_decode($tableau[1])==fr) {$selected5 = 'selected="selected"';}
@@ -956,7 +960,10 @@ echo '<td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.ba
 
 </tr><tr>
 
-<td class="titre"></br>Logo  &nbsp;</td><td></br><input type="text" name="4" value="'.base64_decode($tableau[4]).'" placeholder="Lien pour Opera & Facebook" STYLE="width:170px;"/></td>
+<td class="titre"></br>Pagination  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[4]).'" name="4" STYLE="width:180px;">
+<option value="on" '.$paginationOn.'>Nouveau à Ancien</option>
+<option value="off" '.$paginationOff.'>Ancien à nouveau</option>
+</select></td>
 <td class="profil"></br>'.Photo.'  &nbsp;</td><td></br><input type="text" name="15" value="'.base64_decode($tableau[15]).'" placeholder="Une photo de vous" STYLE="width:170px;" /></td>
 
 </tr><tr>
