@@ -16,6 +16,15 @@
 
 ******************************************************/
 
+if (filesize($filename) > 0) {
+
+ unlink('../install.php'); 
+
+} 
+
+else { header('Location: ../install.php'); } 
+
+
 include('./verif.php');
 error_reporting(0); 
 include 'langues.php';

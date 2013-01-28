@@ -183,7 +183,7 @@ else {echo''.base64_decode($tableau[11]).' '.base64_decode($tableau[12]).'';};
 
 if ((base64_decode($tableau[13])=='') && (base64_decode($tableau[14])=='')) {echo '</h1>';}
 
-else {echo' ('.base64_decode($tableau[13]).' ans '.base64_decode($tableau[14]).')</h1>';};
+else {echo' ( '.base64_decode($tableau[13]).' ans '.base64_decode($tableau[14]).' <img src="admin/images/pays/'.base64_decode($tableau[14]).'.png" alt-"'.base64_decode($tableau[14]).'" style="border: black 1px solid;"> )</h1>';};
 
 echo'<table>
 <tr>
@@ -233,45 +233,7 @@ echo'<td>
 
 function accueil() {
 
-$file2 = 'http://julien-et-nel.be/UAG/mots.txt';
-$file_headers2 = @get_headers($file2);
-
-if($file_headers2[0] == 'HTTP/1.1 503 Service Unavailable') { 
-
-echo'<div id="erreur"><p>Le site du développeur est temporairement indisponible ou en maintenance.</p></div>';
-
-}
-
-elseif($file_headers2[0] == 'HTTP/1.1 502 Not Implemented') { 
-
-echo'<div id="erreur"><p>Le site du développeur est temporairement indisponible ou en maintenance.</p></div>';
-
-}
-
-else {
-
-echo'<div id="info"><p>'.Mots.' : ';
-
-echo htmlspecialchars(file_get_contents($file2));
-
-echo'</p></div>';
-
-}
-
-echo'<div id="pays"><p>'.Pays.'</p></div>';
-
-$file = 'http://julien-et-nel.be/UAG/1-94.txt';
- $file_headers = @get_headers($file);
- if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
-
-echo'<div id="erreur"><a href="http://julien-et-nel.be/UAG/" style="color:black;"><p>'.MauvaiseVersion.'</p></a></div>';
- }
- else {
-
-if($file_headers[0] == 'HTTP/1.1 503 Service Unavailable') { }
-elseif($file_headers[0] == 'HTTP/1.1 502 Not Implemented') { } 
-else {echo'<div id="valide"><p>'.BonneVersion.'</p></div>';}
- }
+echo'<br/><div id="info"><p>Votre version est UAG 1.95 : Verifiez de temps en temps, si il y a des mises à jours.</p></div><br/><div id="pays"><p>'.Pays.'</p></div>';
 
 }
 
@@ -368,6 +330,309 @@ if (base64_decode($tableau[1])==en) {$selected3 = 'selected="selected"';}
 elseif (base64_decode($tableau[1])==es) {$selected4 = 'selected="selected"';}
 elseif (base64_decode($tableau[1])==fr) {$selected5 = 'selected="selected"';}
 elseif (base64_decode($tableau[1])==nl) {$selected6 = 'selected="selected"';}
+else {$selected5 = 'selected="selected"';}
+
+if (base64_decode($tableau[13])==0) {$age0 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==1) {$age1 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==2) {$age2 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==3) {$age3 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==4) {$age4 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==5) {$age5 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==6) {$age6 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==7) {$age7 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==8) {$age8 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==9) {$age9 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==10) {$age10 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==11) {$age11 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==12) {$age12 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==13) {$age13 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==14) {$age14 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==15) {$age15 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==16) {$age16 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==17) {$age17 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==18) {$age18 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==19) {$age19 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==20) {$age20 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==21) {$age21 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==22) {$age22 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==23) {$age23 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==24) {$age24 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==25) {$age25 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==26) {$age26 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==27) {$age27 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==28) {$age28 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==29) {$age29 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==30) {$age30 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==31) {$age31 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==32) {$age32 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==33) {$age33 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==34) {$age34 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==35) {$age35 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==36) {$age36 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==37) {$age37 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==38) {$age38 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==39) {$age39 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==40) {$age40 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==41) {$age41 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==42) {$age42 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==43) {$age43 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==44) {$age44 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==45) {$age45 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==46) {$age46 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==47) {$age47 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==48) {$age48 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==49) {$age49 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==50) {$age50 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==51) {$age51 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==52) {$age52 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==53) {$age53 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==54) {$age54 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==55) {$age55 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==56) {$age56 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==57) {$age57 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==58) {$age58 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==59) {$age59 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==60) {$age60 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==61) {$age61 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==62) {$age62 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==63) {$age63 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==64) {$age64 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==65) {$age65 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==66) {$age66 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==67) {$age67 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==68) {$age68 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==69) {$age69 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==70) {$age70 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==71) {$age71 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==72) {$age72 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==73) {$age73 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==74) {$age74 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==75) {$age75 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==76) {$age76 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==77) {$age77 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==78) {$age78 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==79) {$age79 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==80) {$age80 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==81) {$age81 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==82) {$age82 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==83) {$age83 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==84) {$age84 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==85) {$age85 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==86) {$age86 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==87) {$age87 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==88) {$age88 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==89) {$age89 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==90) {$age90 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==91) {$age91 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==92) {$age92 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==93) {$age93 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==94) {$age94 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==95) {$age95 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==96) {$age96 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==97) {$age97 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==98) {$age98 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==99) {$age99 = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==100) {$age100 = 'selected="selected"';}
+else {$age0 = 'selected="selected"';}
+
+if (base64_decode($tableau[14])=='Monde') {$pays1 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Internet') {$pays2 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Afghanistan') {$pays3 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Afrique du Sud') {$pays4 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Albanie') {$pays5 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Algérie') {$pays6 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Allemagne') {$pays7 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Andorre') {$pays8 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Angola') {$pays9 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Antigua-et-Barbuda') {$pays10 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Arabie Saoudite') {$pays11 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Argentine') {$pays12 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Arménie') {$pays13 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Australie') {$pays14 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Autriche') {$pays15 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Azerbaïdjan') {$pays16 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Bahamas') {$pays17 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Bahreïn') {$pays18 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Bangladesh') {$pays19 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Barbade') {$pays20 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Belgique') {$pays21 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Bélize') {$pays22 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Bénin') {$pays23 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Bhoutan') {$pays24 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Biélorussie') {$pays25 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Birmanie') {$pays26 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Bolivie') {$pays27 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Bosnie-Herzégovine') {$pays28 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Botswana') {$pays29 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Brésil') {$pays30 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Brunei') {$pays31 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Bulgarie') {$pays32 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Burkina Faso') {$pays33 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Burundi') {$pays34 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Cambodge') {$pays35 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Cameroun') {$pays36 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Canada') {$pays37 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Cap-Vert') {$pays38 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Centrafrique') {$pays39 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Chili') {$pays40 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Chine') {$pays41 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Chypre') {$pays42 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Colombie') {$pays43 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Comores') {$pays44 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Congo-Kinshasa') {$pays45 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Congo-Brazzaville') {$pays46 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Corée du Nord') {$pays47 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Corée du Sud') {$pays48 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Costa Rica') {$pays49 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Côte d\'Ivoire') {$pays50 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Croatie') {$pays51 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Cuba') {$pays52 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Danemark') {$pays53 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Djibouti') {$pays54 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='République dominicaine') {$pays55 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Dominique') {$pays56 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Égypte') {$pays57 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Émirats arabes unis') {$pays58 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Équateur') {$pays59 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Érythrée') {$pays60 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Espagne') {$pays61 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Estonie') {$pays62 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='États-Unis') {$pays63 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Éthiopie') {$pays64 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Fidji') {$pays65 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Finlande') {$pays66 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='France') {$pays67 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Gabon') {$pays68 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Gambie') {$pays69 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Géorgie') {$pays70 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Ghana') {$pays71 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Grèce') {$pays72 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Grenade') {$pays73 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Guatemala') {$pays74 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Guinée') {$pays75 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Guinée-Bissau') {$pays76 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Guinée-Équatoriale') {$pays77 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Guyana') {$pays78 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Haïti') {$pays79 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Honduras') {$pays80 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Hongrie') {$pays81 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Inde') {$pays82 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Indonésie') {$pays83 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Irak') {$pays84 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Iran') {$pays85 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Irlande') {$pays86 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Islande') {$pays87 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Israël') {$pays88 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Italie') {$pays89 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Jamaïque') {$pays90 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Japon') {$pays91 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Jordanie') {$pays92 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Kazakhstan') {$pays93 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Kenya') {$pays94 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Kirghizistan') {$pays95 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Kiribati') {$pays96 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Koweït') {$pays97 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Laos') {$pays98 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Lesotho') {$pays99 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Lettonie') {$age100 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Liban') {$pays101 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Liberia') {$pays102 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Libye') {$pays103 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Liechtenstein') {$pays104 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Lituanie') {$pays105 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Luxembourg') {$pays106 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Macédoine') {$pays107 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Madagascar') {$pays108 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Malaisie') {$pays109 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Malawi') {$pays110 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Maldives') {$pays111 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Mali') {$pays112 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Malte') {$pays113 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Maroc') {$pays114 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Marshall') {$pays115 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Maurice') {$pays116 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Mauritanie') {$pays117 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Mexique') {$pays118 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Micronésie') {$pays119 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Moldavie') {$pays120 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Monaco') {$pays121 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Mongolie') {$pays122 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Monténégro') {$pays123 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Mozambique') {$pays124 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Namibie') {$pays125 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Nauru') {$pays126 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Népal') {$pays127 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Nicaragua') {$pays128 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Niger') {$pays129 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Nigeria') {$pays130 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Norvège') {$pays131 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Nouvelle-Zélande') {$pays132 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Oman') {$pays133 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Ouganda') {$pays134 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Ouzbékistan') {$pays135 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Pakistan') {$pays136 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Palau') {$pays137 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Palestine') {$pays138 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Panama') {$pays139 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Papouasie-Nouvelle-Guinée') {$pays140 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Paraguay') {$pays141 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Pays-Bas') {$pays142 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Pérou') {$pays143 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Philippines') {$pays144 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Pologne') {$pays145 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Portugal') {$pays146 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Qatar') {$pays147 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Roumanie') {$pays148 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Royaume-Uni') {$pays149 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Russie') {$pays150 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Rwanda') {$pays151 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Saint-Kitts-et-Nevis') {$pays152 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Sainte-Lucie') {$pays153 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Saint-Marin') {$pays154 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Saint-Vincent-et-les-Grenadines') {$pays155 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Salomon') {$pays156 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Salvador') {$pays157 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Samoa') {$pays158 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Sao Tomé-et-Principe') {$pays159 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Sénégal') {$pays160 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Serbie') {$pays161 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Seychelles') {$pays162 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Sierra Leone') {$pays163 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Singapour') {$pays164 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Slovaquie') {$pays165 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Slovénie') {$pays166 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Somalie') {$pays167 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Soudan') {$pays168 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Soudan du Sud') {$pays169 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Sri Lanka') {$pays170 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Suède') {$pays171 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Suisse') {$pays172 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Suriname') {$pays173 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Swaziland') {$pays174 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Syrie') {$pays175 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Tadjikistan') {$pays176 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Tanzanie') {$pays177 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Tchad') {$pays178 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='République tchèque') {$pays179 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Thaïlande') {$pays180 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Timor-Leste') {$pays181 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Togo') {$pays182 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Tonga') {$pays183 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Trinité-et-Tobago') {$pays184 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Tunisie') {$pays185 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Turkménistan') {$pays186 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Turquie') {$pays187 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Tuvalu') {$pays188 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Ukraine') {$pays189 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Uruguay') {$pays190 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Vanuatu') {$pays191 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Vatican') {$pays192 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Venezuela') {$pays193 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Vietnam') {$pays194 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Yémen') {$pays195 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Zambie') {$pays196 = 'selected="selected"';}
+elseif (base64_decode($tableau[14])=='Zimbabwe') {$pays197 = 'selected="selected"';}
+else {$pays1 = 'selected="selected"';}
 
 echo '<td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[1]).'" name="1" STYLE="width:180px;">
 <OPTION VALUE="en" '.$selected3.'>English</OPTION>
@@ -381,13 +646,313 @@ echo '<td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.ba
 </tr><tr>
 
 <td class="titre"></br>'.Gerant.'  &nbsp;</td><td></br><input type="text" required name="2" value="'.base64_decode($tableau[2]).'" placeholder="Nom affiché sur le blog" STYLE="width:170px;"/></td>
-<td class="profil"></br>'.Age.'  &nbsp;</td><td></br><input type="text" name="13" value="'.base64_decode($tableau[13]).'" placeholder="Votre age" STYLE="width:170px;" /></td>
-
+<td class="profil"></br>'.Age.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[13]).'" name="13" STYLE="width:180px;">
+<option value="0" '.$age0.'>0</option>
+<option value="1" '.$age1.'>1</option>
+<option value="2" '.$age2.'>2</option>
+<option value="3" '.$age3.'>3</option>
+<option value="4" '.$age4.'>4</option>
+<option value="5" '.$age5.'>5</option>
+<option value="6" '.$age6.'>6</option>
+<option value="7" '.$age7.'>7</option>
+<option value="8" '.$age8.'>8</option>
+<option value="9" '.$age9.'>9</option>
+<option value="10" '.$age10.'>10</option>
+<option value="11" '.$age11.'>11</option>
+<option value="12" '.$age12.'>12</option>
+<option value="13" '.$age13.'>13</option>
+<option value="14" '.$age14.'>14</option>
+<option value="15" '.$age15.'>15</option>
+<option value="16" '.$age16.'>16</option>
+<option value="17" '.$age17.'>17</option>
+<option value="18" '.$age18.'>18</option>
+<option value="19" '.$age19.'>19</option>
+<option value="20" '.$age20.'>20</option>
+<option value="21" '.$age21.'>21</option>
+<option value="22" '.$age22.'>22</option>
+<option value="23" '.$age23.'>23</option>
+<option value="24" '.$age24.'>24</option>
+<option value="25" '.$age25.'>25</option>
+<option value="26" '.$age26.'>26</option>
+<option value="27" '.$age27.'>27</option>
+<option value="28" '.$age28.'>28</option>
+<option value="29" '.$age29.'>29</option>
+<option value="30" '.$age30.'>30</option>
+<option value="31" '.$age31.'>31</option>
+<option value="32" '.$age32.'>32</option>
+<option value="33" '.$age33.'>33</option>
+<option value="34" '.$age34.'>34</option>
+<option value="35" '.$age35.'>35</option>
+<option value="36" '.$age36.'>36</option>
+<option value="37" '.$age37.'>37</option>
+<option value="38" '.$age38.'>38</option>
+<option value="39" '.$age39.'>39</option>
+<option value="40" '.$age40.'>40</option>
+<option value="41" '.$age41.'>41</option>
+<option value="42" '.$age42.'>42</option>
+<option value="43" '.$age43.'>43</option>
+<option value="44" '.$age44.'>44</option>
+<option value="45" '.$age45.'>45</option>
+<option value="46" '.$age46.'>46</option>
+<option value="47" '.$age47.'>47</option>
+<option value="48" '.$age48.'>48</option>
+<option value="49" '.$age49.'>49</option>
+<option value="50" '.$age50.'>50</option>
+<option value="51" '.$age51.'>51</option>
+<option value="52" '.$age52.'>52</option>
+<option value="53" '.$age53.'>53</option>
+<option value="54" '.$age54.'>54</option>
+<option value="55" '.$age55.'>55</option>
+<option value="56" '.$age56.'>56</option>
+<option value="57" '.$age57.'>57</option>
+<option value="58" '.$age58.'>58</option>
+<option value="59" '.$age59.'>59</option>
+<option value="60" '.$age60.'>60</option>
+<option value="61" '.$age61.'>61</option>
+<option value="62" '.$age62.'>62</option>
+<option value="63" '.$age63.'>63</option>
+<option value="64" '.$age64.'>64</option>
+<option value="65" '.$age65.'>65</option>
+<option value="66" '.$age66.'>66</option>
+<option value="67" '.$age67.'>67</option>
+<option value="68" '.$age68.'>68</option>
+<option value="69" '.$age69.'>69</option>
+<option value="70" '.$age70.'>70</option>
+<option value="71" '.$age71.'>71</option>
+<option value="72" '.$age72.'>72</option>
+<option value="73" '.$age73.'>73</option>
+<option value="74" '.$age74.'>74</option>
+<option value="75" '.$age75.'>75</option>
+<option value="76" '.$age76.'>76</option>
+<option value="77" '.$age77.'>77</option>
+<option value="78" '.$age78.'>78</option>
+<option value="79" '.$age79.'>79</option>
+<option value="80" '.$age80.'>80</option>
+<option value="81" '.$age81.'>81</option>
+<option value="82" '.$age82.'>82</option>
+<option value="83" '.$age83.'>83</option>
+<option value="84" '.$age84.'>84</option>
+<option value="85" '.$age85.'>85</option>
+<option value="86" '.$age86.'>86</option>
+<option value="87" '.$age87.'>87</option>
+<option value="88" '.$age88.'>88</option>
+<option value="89" '.$age89.'>89</option>
+<option value="90" '.$age90.'>90</option>
+<option value="91" '.$age91.'>91</option>
+<option value="92" '.$age92.'>92</option>
+<option value="93" '.$age93.'>93</option>
+<option value="94" '.$age94.'>94</option>
+<option value="95" '.$age95.'>95</option>
+<option value="96" '.$age96.'>96</option>
+<option value="97" '.$age97.'>97</option>
+<option value="98" '.$age98.'>98</option>
+<option value="99" '.$age99.'>99</option>
+<option value="100" '.$age100.'>100</option>
+</td>
 </tr><tr>
-
 <td class="titre"></br>Favicon  &nbsp;</td><td></br><input type="text" name="3" value="'.base64_decode($tableau[3]).'" placeholder="Lien de votre Favicon" STYLE="width:170px;"/></td>
-<td class="profil"></br>'.Localisation.'  &nbsp;</td><td></br><input type="text" name="14" value="'.base64_decode($tableau[14]).'" placeholder="Pays, region ou autre " STYLE="width:170px;" /></td>
+<td class="profil"></br>Pays  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[14]).'" name="14" STYLE="width:180px;">
 
+<option value="Monde" '.$pays1.'>Monde</option>
+<option value="Internet" '.$pays2.'>Internet</option>
+<option value="Afghanistan" '.$pays3.'>Afghanistan</option>
+<option value="Afrique du Sud" '.$pays4.'>Afrique du Sud</option>
+<option value="Albanie" '.$pays5.'>Albanie</option>
+<option value="Algérie" '.$pays6.'>Algérie</option>
+<option value="Allemagne" '.$pays7.'>Allemagne</option>
+<option value="Andorre" '.$pays8.'>Andorre</option>
+<option value="Angola" '.$pays9.'>Angola</option>
+<option value="Antigua-et-Barbuda" '.$pays10.'>Antigua-et-Barbuda</option>
+<option value="Arabie Saoudite" '.$pays11.'>Arabie Saoudite</option>
+<option value="Argentine" '.$pays12.'>Argentine</option>
+<option value="Arménie" '.$pays13.'>Arménie</option>
+<option value="Australie" '.$pays14.'>Australie</option>
+<option value="Autriche" '.$pays15.'>Autriche</option>
+<option value="Azerbaïdjan" '.$pays16.'>Azerbaïdjan</option>
+<option value="Bahamas" '.$pays17.'>Bahamas</option>
+<option value="Bahreïn" '.$pays18.'>Bahreïn</option>
+<option value="Bangladesh" '.$pays19.'>Bangladesh</option>
+<option value="Barbade" '.$pays20.'>Barbade</option>
+<option value="Belgique" '.$pays21.'>Belgique</option>
+<option value="Bélize" '.$pays22.'>Bélize</option>
+<option value="Bénin" '.$pays23.'>Bénin</option>
+<option value="Bhoutan" '.$pays24.'>Bhoutan</option>
+<option value="Biélorussie" '.$pays25.'>Biélorussie</option>
+<option value="Birmanie" '.$pays26.'>Birmanie</option>
+<option value="Bolivie" '.$pays27.'>Bolivie</option>
+<option value="Bosnie-Herzégovine" '.$pays28.'>Bosnie-Herzégovine</option>
+<option value="Botswana" '.$pays29.'>Botswana</option>
+<option value="Brésil" '.$pays30.'>Brésil</option>
+<option value="Brunei" '.$pays31.'>Brunei</option>
+<option value="Bulgarie" '.$pays32.'>Bulgarie</option>
+<option value="Burkina Faso" '.$pays33.'>Burkina Faso</option>
+<option value="Burundi" '.$pays34.'>Burundi</option>
+<option value="Cambodge" '.$pays35.'>Cambodge</option>
+<option value="Cameroun" '.$pays36.'>Cameroun</option>
+<option value="Canada" '.$pays37.'>Canada</option>
+<option value="Cap-Vert" '.$pays38.'>Cap-Vert</option>
+<option value="Centrafrique" '.$pays39.'>Centrafrique</option>
+<option value="Chili" '.$pays40.'>Chili</option>
+<option value="Chine" '.$pays41.'>Chine</option>
+<option value="Chypre" '.$pays42.'>Chypre</option>
+<option value="Colombie" '.$pays43.'>Colombie</option>
+<option value="Comores" '.$pays44.'>Comores</option>
+<option value="Congo-Kinshasa" '.$pays45.'>Congo-Kinshasa</option>
+<option value="Congo-Brazzaville" '.$pays46.'>Congo-Brazzaville</option>
+<option value="Corée du Nord" '.$pays47.'>Corée du Nord</option>
+<option value="Corée du Sud" '.$pays48.'>Corée du Sud</option>
+<option value="Costa Rica" '.$pays49.'>Costa Rica</option>
+<option value="Côte d\'Ivoire" '.$pays50.'>Côte d\'Ivoire</option>
+<option value="Croatie" '.$pays51.'>Croatie</option>
+<option value="Cuba" '.$pays52.'>Cuba</option>
+<option value="Danemark" '.$pays53.'>Danemark</option>
+<option value="Djibouti" '.$pays54.'>Djibouti</option>
+<option value="République dominicaine" '.$pays55.'>République dominicaine</option>
+<option value="Dominique" '.$pays56.'>Dominique</option>
+<option value="Égypte" '.$pays57.'>Égypte</option>
+<option value="Émirats arabes unis" '.$pays58.'>Émirats arabes unis</option>
+<option value="Équateur" '.$pays59.'>Équateur</option>
+<option value="Érythrée" '.$pays60.'>Érythrée</option>
+<option value="Espagne" '.$pays61.'>Espagne</option>
+<option value="Estonie" '.$pays62.'>Estonie</option>
+<option value="États-Unis" '.$pays63.'>États-Unis</option>
+<option value="Éthiopie" '.$pays64.'>Éthiopie</option>
+<option value="Fidji" '.$pays65.'>Fidji</option>
+<option value="Finlande" '.$pays66.'>Finlande</option>
+<option value="France" '.$pays67.'>France</option>
+<option value="Gabon" '.$pays68.'>Gabon</option>
+<option value="Gambie" '.$pays69.'>Gambie</option>
+<option value="Géorgie" '.$pays70.'>Géorgie</option>
+<option value="Ghana" '.$pays71.'>Ghana</option>
+<option value="Grèce" '.$pays72.'>Grèce</option>
+<option value="Grenade" '.$pays73.'>Grenade</option>
+<option value="Guatemala" '.$pays74.'>Guatemala</option>
+<option value="Guinée" '.$pays75.'>Guinée</option>
+<option value="Guinée-Bissau" '.$pays76.'>Guinée-Bissau</option>
+<option value="Guinée-Équatoriale" '.$pays77.'>Guinée-Équatoriale</option>
+<option value="Guyana" '.$pays78.'>Guyana</option>
+<option value="Haïti" '.$pays79.'>Haïti</option>
+<option value="Honduras" '.$pays80.'>Honduras</option>
+<option value="Hongrie" '.$pays81.'>Hongrie</option>
+<option value="Inde" '.$pays82.'>Inde</option>
+<option value="Indonésie" '.$pays83.'>Indonésie</option>
+<option value="Irak" '.$pays84.'>Irak</option>
+<option value="Iran" '.$pays85.'>Iran</option>
+<option value="Irlande" '.$pays86.'>Irlande</option>
+<option value="Islande" '.$pays87.'>Islande</option>
+<option value="Israël" '.$pays88.'>Israël</option>
+<option value="Italie" '.$pays89.'>Italie</option>
+<option value="Jamaïque" '.$pays90.'>Jamaïque</option>
+<option value="Japon" '.$pays91.'>Japon</option>
+<option value="Jordanie" '.$pays92.'>Jordanie</option>
+<option value="Kazakhstan" '.$pays93.'>Kazakhstan</option>
+<option value="Kenya" '.$pays94.'>Kenya</option>
+<option value="Kirghizistan" '.$pays95.'>Kirghizistan</option>
+<option value="Kiribati" '.$pays96.'>Kiribati</option>
+<option value="Koweït" '.$pays97.'>Koweït</option>
+<option value="Laos" '.$pays98.'>Laos</option>
+<option value="Lesotho" '.$pays99.'>Lesotho</option>
+<option value="Lettonie" '.$pays100.'>Lettonie</option>
+<option value="Liban" '.$pays101.'>Liban</option>
+<option value="Liberia" '.$pays102.'>Liberia</option>
+<option value="Libye" '.$pays103.'>Libye</option>
+<option value="Liechtenstein" '.$pays104.'>Liechtenstein</option>
+<option value="Lituanie" '.$pays105.'>Lituanie</option>
+<option value="Luxembourg" '.$pays106.'>Luxembourg</option>
+<option value="Macédoine" '.$pays107.'>Macédoine</option>
+<option value="Madagascar" '.$pays108.'>Madagascar</option>
+<option value="Malaisie" '.$pays109.'>Malaisie</option>
+<option value="Malawi" '.$pays110.'>Malawi</option>
+<option value="Maldives" '.$pays111.'>Maldives</option>
+<option value="Mali" '.$pays112.'>Mali</option>
+<option value="Malte" '.$pays113.'>Malte</option>
+<option value="Maroc" '.$pays114.'>Maroc</option>
+<option value="Marshall" '.$pays115.'>Marshall</option>
+<option value="Maurice" '.$pays116.'>Maurice</option>
+<option value="Mauritanie" '.$pays117.'>Mauritanie</option>
+<option value="Mexique" '.$pays118.'>Mexique</option>
+<option value="Micronésie" '.$pays119.'>Micronésie</option>
+<option value="Moldavie" '.$pays120.'>Moldavie</option>
+<option value="Monaco" '.$pays121.'>Monaco</option>
+<option value="Mongolie" '.$pays122.'>Mongolie</option>
+<option value="Monténégro" '.$pays123.'>Monténégro</option>
+<option value="Mozambique" '.$pays124.'>Mozambique</option>
+<option value="Namibie" '.$pays125.'>Namibie</option>
+<option value="Nauru" '.$pays126.'>Nauru</option>
+<option value="Népal" '.$pays127.'>Népal</option>
+<option value="Nicaragua" '.$pays128.'>Nicaragua</option>
+<option value="Niger" '.$pays129.'>Niger</option>
+<option value="Nigeria" '.$pays130.'>Nigeria</option>
+<option value="Norvège" '.$pays131.'>Norvège</option>
+<option value="Nouvelle-Zélande" '.$pays132.'>Nouvelle-Zélande</option>
+<option value="Oman" '.$pays133.'>Oman</option>
+<option value="Ouganda" '.$pays134.'>Ouganda</option>
+<option value="Ouzbékistan" '.$pays135.'>Ouzbékistan</option>
+<option value="Pakistan" '.$pays136.'>Pakistan</option>
+<option value="Palau" '.$pays137.'>Palau</option>
+<option value="Palestine" '.$pays138.'>Palestine</option>
+<option value="Panama" '.$pays139.'>Panama</option>
+<option value="Papouasie-Nouvelle-Guinée" '.$pays140.'>Papouasie-Nouvelle-Guinée</option>
+<option value="Paraguay" '.$pays141.'>Paraguay</option>
+<option value="Pays-Bas" '.$pays142.'>Pays-Bas</option>
+<option value="Pérou" '.$pays143.'>Pérou</option>
+<option value="Philippines" '.$pays144.'>Philippines</option>
+<option value="Pologne" '.$pays145.'>Pologne</option>
+<option value="Portugal" '.$pays146.'>Portugal</option>
+<option value="Qatar" '.$pays147.'>Qatar</option>
+<option value="Roumanie" '.$pays148.'>Roumanie</option>
+<option value="Royaume-Uni" '.$pays149.'>Royaume-Uni</option>
+<option value="Russie" '.$pays150.'>Russie</option>
+<option value="Rwanda" '.$pays151.'>Rwanda</option>
+<option value="Saint-Kitts-et-Nevis" '.$pays152.'>Saint-Kitts-et-Nevis</option>
+<option value="Sainte-Lucie" '.$pays153.'>Sainte-Lucie</option>
+<option value="Saint-Marin" '.$pays154.'>Saint-Marin</option>
+<option value="Saint-Vincent-et-les-Grenadines" '.$pays155.'>Saint-Vincent-et-les-Grenadines</option>
+<option value="Salomon" '.$pays156.'>Salomon</option>
+<option value="Salvador" '.$pays157.'>Salvador</option>
+<option value="Samoa" '.$pays158.'>Samoa</option>
+<option value="Sao Tomé-et-Principe" '.$pays159.'>Sao Tomé-et-Principe</option>
+<option value="Sénégal" '.$pays160.'>Sénégal</option>
+<option value="Serbie" '.$pays161.'>Serbie</option>
+<option value="Seychelles" '.$pays162.'>Seychelles</option>
+<option value="Sierra Leone" '.$pays163.'>Sierra Leone</option>
+<option value="Singapour" '.$pays164.'>Singapour</option>
+<option value="Slovaquie" '.$pays165.'>Slovaquie</option>
+<option value="Slovénie" '.$pays166.'>Slovénie</option>
+<option value="Somalie" '.$pays167.'>Somalie</option>
+<option value="Soudan" '.$pays168.'>Soudan</option>
+<option value="Soudan du Sud" '.$pays169.'>Soudan du Sud</option>
+<option value="Sri Lanka" '.$pays170.'>Sri Lanka</option>
+<option value="Suède" '.$pays171.'>Suède</option>
+<option value="Suisse" '.$pays172.'>Suisse</option>
+<option value="Suriname" '.$pays173.'>Suriname</option>
+<option value="Swaziland" '.$pays174.'>Swaziland</option>
+<option value="Syrie" '.$pays175.'>Syrie</option>
+<option value="Tadjikistan" '.$pays176.'>Tadjikistan</option>
+<option value="Tanzanie" '.$pays177.'>Tanzanie</option>
+<option value="Tchad" '.$pays178.'>Tchad</option>
+<option value="République tchèque" '.$pays179.'>République tchèque</option>
+<option value="Thaïlande" '.$pays180.'>Thaïlande</option>
+<option value="Timor-Leste" '.$pays181.'>Timor-Leste</option>
+<option value="Togo" '.$pays182.'>Togo</option>
+<option value="Tonga" '.$pays183.'>Tonga</option>
+<option value="Trinité-et-Tobago" '.$pays184.'>Trinité-et-Tobago</option>
+<option value="Tunisie" '.$pays185.'>Tunisie</option>
+<option value="Turkménistan" '.$pays186.'>Turkménistan</option>
+<option value="Turquie" '.$pays187.'>Turquie</option>
+<option value="Tuvalu" '.$pays188.'>Tuvalu</option>
+<option value="Ukraine" '.$pays189.'>Ukraine</option>
+<option value="Uruguay" '.$pays190.'>Uruguay</option>
+<option value="Vanuatu" '.$pays191.'>Vanuatu</option>
+<option value="Vatican" '.$pays192.'>Vatican</option>
+<option value="Venezuela" '.$pays193.'>Venezuela</option>
+<option value="Vietnam" '.$pays194.'>Vietnam</option>
+<option value="Yémen" '.$pays195.'>Yémen</option>
+<option value="Zambie" '.$pays196.'>Zambie</option>
+<option value="Zimbabwe" '.$pays197.'>Zimbabwe</option>
+
+</select>
+</td>
 
 </tr><tr>
 
@@ -399,9 +964,13 @@ echo '<td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.ba
 
 echo '
 
-<input type="color" name="5" value="'.base64_decode($tableau[5]).'" placeholder="Couleur pour le css" STYLE="width:170px;"/>
+<input type="color" name="5" value="'.base64_decode($tableau[5]).'" STYLE="width:170px;font-style: bold;color:white;background:';
 
-</td>'; 
+if (base64_decode($tableau[5])=='') {echo'orange';}
+
+else {echo''.base64_decode($tableau[5]).'';}
+
+echo';"/></td>'; 
 
 echo '
 
@@ -423,7 +992,7 @@ echo '
 
 if (base64_decode($tableau[8])==on) {$selectedon = 'selected="selected"';}
 
-elseif (base64_decode($tableau[8])==on2) {$selectedoff2 = 'selected="selected"';}
+elseif (base64_decode($tableau[8])==on2) {$selectedon2 = 'selected="selected"';}
 
 elseif (base64_decode($tableau[8])==off) {$selectedoff = 'selected="selected"';}
 
