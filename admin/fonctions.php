@@ -336,7 +336,8 @@ elseif (base64_decode($tableau[1])==fr) {$selected5 = 'selected="selected"';}
 elseif (base64_decode($tableau[1])==nl) {$selected6 = 'selected="selected"';}
 else {$selected5 = 'selected="selected"';}
 
-if (base64_decode($tableau[13])==0) {$age0 = 'selected="selected"';}
+if (base64_decode($tableau[13])=='*') {$age0b = 'selected="selected"';}
+elseif (base64_decode($tableau[13])==0) {$age0 = 'selected="selected"';}
 elseif (base64_decode($tableau[13])==1) {$age1 = 'selected="selected"';}
 elseif (base64_decode($tableau[13])==2) {$age2 = 'selected="selected"';}
 elseif (base64_decode($tableau[13])==3) {$age3 = 'selected="selected"';}
@@ -437,7 +438,7 @@ elseif (base64_decode($tableau[13])==97) {$age97 = 'selected="selected"';}
 elseif (base64_decode($tableau[13])==98) {$age98 = 'selected="selected"';}
 elseif (base64_decode($tableau[13])==99) {$age99 = 'selected="selected"';}
 elseif (base64_decode($tableau[13])==100) {$age100 = 'selected="selected"';}
-else {$age0 = 'selected="selected"';}
+else {$age0b = 'selected="selected"';}
 
 if (base64_decode($tableau[14])=='Monde') {$pays1 = 'selected="selected"';}
 elseif (base64_decode($tableau[14])=='Internet') {$pays2 = 'selected="selected"';}
@@ -651,6 +652,7 @@ echo '<td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.ba
 
 <td class="titre"></br>'.Gerant.'  &nbsp;</td><td></br><input type="text" required name="2" value="'.base64_decode($tableau[2]).'" placeholder="Nom affiché sur le blog" STYLE="width:170px;"/></td>
 <td class="profil"></br>'.Age.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[13]).'" name="13" STYLE="width:180px;">
+<option value="*" '.$age0b.'>Ne pas Indiquer</option>
 <option value="0" '.$age0.'>0</option>
 <option value="1" '.$age1.'>1</option>
 <option value="2" '.$age2.'>2</option>
