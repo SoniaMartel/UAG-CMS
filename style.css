@@ -46,7 +46,8 @@ nav{width:80%;margin:0 5%;padding:0 5%;background:white;}
 nav ul{width:95%;height:27px;margin:auto;text-align:center;padding-top:5px;}
 nav li{width:100px;text-align:center;padding-bottom:20px;display:inline !important;padding-left:10px;}
 nav a{display:inline !important;margin-bottom:10px;color:white;text-align:center;text-decoration:none;}
-nav a:hover, nav a:visited{color:white;}
+nav a:visited{color:white !important;}
+nav a:hover{color:#b1b1b1 !important;}
 nav a:hover{text-decoration:underline;}
 
 h2{color:#FF7700;text-decoration:underline;margin:5px;}
