@@ -150,7 +150,7 @@ echo'</strong></a></h2><div id="article" style="padding-left:10px">'.$news['cont
 }
 }
 
-else { echo'<h2 style="color:'.base64_decode($tableau[5]).' !important"">'.Informations.'</h2><div id="article" style="padding-left:10px">'.PasdeNews.'</div>'; }
+else { header('Location: erreur.php'); }
 
 }
 
