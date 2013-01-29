@@ -118,7 +118,7 @@ case 'erreurs': erreurs(); break;
 default : profil();
 }
 
-echo'</article><div id="piedpage">Articles : ';
+echo'</article><div id="piedpage">';
 
 if (base64_decode($tableau[4])=='on') {krsort($allnews);}
 else if (base64_decode($tableau[4])=='off') {};
