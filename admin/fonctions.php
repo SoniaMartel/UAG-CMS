@@ -93,7 +93,7 @@ $liste_news = array_slice($allnews, $page, 1);
 
 if(!empty($liste_news)) { foreach($liste_news as $id => $news) {
 
-echo'<h2 style="color:'.base64_decode($tableau[5]).' !important"><strong>'.$news['titre'].' '.Par.' '.base64_decode($tableau[2]).' - ';
+echo'<h2 style="color:'.base64_decode($tableau[5]).' !important"><a href="" style="color:'.base64_decode($tableau[5]).' !important"><strong>'.$news['titre'].' '.Par.' '.base64_decode($tableau[2]).' - ';
 
 if (base64_decode($tableau[1])=='fr') { 
 
@@ -145,7 +145,7 @@ echo ' '.$news['jour'].' ';
 
 elseif (base64_decode($tableau[10])=='off') { echo' '.$news['annee'].'-'.$news['mois'].'-'.$news['jour'].' '; } }
 
-echo'</strong></h2><div id="article" style="padding-left:10px">'.$news['contenu'].'</div>';		
+echo'</strong></a></h2><div id="article" style="padding-left:10px">'.$news['contenu'].'</div>';		
 
 }
 }
