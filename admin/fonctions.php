@@ -152,7 +152,7 @@ echo'</strong></a></h2><div id="article" style="padding-left:10px">'.$news['cont
 
 else { header('Location: erreur.php'); }
 
-if (base64_decode($tableau[3])=='') {echo'';}
+if (base64_decode($tableau[3])=='') {echo'</article><article style="min-height:0px;font-weight:bold;text-align:center;">Les commentaires ne sont pas activés.';}
 
 else {
 

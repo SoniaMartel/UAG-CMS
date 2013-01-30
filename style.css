@@ -34,7 +34,7 @@ text-decoration: none;
 
 body{font:14px/1.4 Ubuntu, sans-serif;background:black url('../images/woven.png');}
 #wrapper{width:80%;margin:0 5%;padding:0 5%;background:white;}
-footer{padding:10px 5%;width:80%;margin:0 5%;background:white;}
+footer{padding:10px 5%;width:80%;margin:0 5%;background:white;margin-bottom:20px;}
 h1{color:#FF9900;}
 
 ::selection{background:#FF9900;color:#fff;text-shadow:none;}
