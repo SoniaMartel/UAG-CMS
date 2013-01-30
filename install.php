@@ -93,7 +93,7 @@ echo'<td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><input type="text" n
 echo '
 <td class="titre"></br>'.Gerant.'  &nbsp;</td><td></br><input type="text" required name="2" value="'.$tableau[2].'" STYLE="width:180px;"/></td></tr><tr>
 
-<td class="titre"></br>Favicon  &nbsp;</td><td></br><input type="text" name="3" value="'.$tableau[3].'" STYLE="width:180px;"/></td></tr><tr>
+<td class="titre"></br>DISQUS  &nbsp;</td><td></br><input type="text" name="3" value="'.$tableau[3].'" STYLE="width:180px;"/></td></tr><tr>
 
 <td class="titre"></br>Pagination  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[4]).'" name="4" STYLE="width:180px;">
 <option value="on" '.$paginationOn.'>Nouveau vers Ancien</option>
