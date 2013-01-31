@@ -256,7 +256,53 @@ echo'</td></tr></table>';
 
 function accueil() {
 
-echo'<br/><div id="info"><p>Votre version est UAG 1.95 : Verifiez de temps en temps, si il y a des mises à jours.</p></div><br/><div id="pays"><p>'.Pays.'</p></div>';
+$connect = TRUE;                              
+$ip_internet = 'www.julien-et-nel.be';          
+$port_internet = 80; 
+
+if (! $sock = @fsockopen($ip_internet, $port_internet, $num, $error, 5)) { echo ' <div id="erreur"><p>LE SITE DU DEVELLOPEUR EST HORS LIGNE</p></div>'; }
+
+else { 
+
+$file2 = 'http://julien-et-nel.be/UAG/mots.txt';
+$file_headers2 = @get_headers($file2);
+
+if($file_headers2[0] == 'HTTP/1.1 503 Service Unavailable') { 
+
+echo'<div id="erreur"><p>Le site du développeur est temporairement indisponible ou en maintenance.</p></div>';
+
+}
+
+elseif($file_headers2[0] == 'HTTP/1.1 502 Not Implemented') { 
+
+echo'<div id="erreur"><p>Le site du développeur est temporairement indisponible ou en maintenance.</p></div>';
+
+}
+
+else {
+
+echo'<div id="info"><p>'.Mots.' : ';
+
+echo htmlspecialchars(file_get_contents($file2));
+
+echo'</p></div>';
+
+}
+
+$file = 'http://julien-et-nel.be/UAG/UAG-1-96.txt';
+$file_headers = @get_headers($file);
+if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
+
+echo'<div id="erreur"><a href="http://julien-et-nel.be/UAG/" style="color:black;"><p>'.MauvaiseVersion.'</p></a></div>';
+ }
+else {
+
+if($file_headers[0] == 'HTTP/1.1 503 Service Unavailable') { }
+elseif($file_headers[0] == 'HTTP/1.1 502 Not Implemented') { } 
+else {echo'<div id="valide"><p>'.BonneVersion.'</p></div>';}
+} fclose($sock); }
+
+echo'<div id="pays"><p>'.Pays.'</p></div>';
 
 }
 
