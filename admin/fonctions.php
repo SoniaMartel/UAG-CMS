@@ -152,6 +152,88 @@ echo'</strong></a></h2><div id="article" style="padding-left:10px">'.$news['cont
 
 else { header('Location: erreur.php'); }
 
+echo'</article><article style="min-height:0px;font-weight:bold;text-align:center;">Note :';
+
+if ($news['note']=='0') {
+
+echo'
+<img src="/admin/images/etoile0.png" alt="0">
+<img src="/admin/images/etoile0.png" alt="0">
+<img src="/admin/images/etoile0.png" alt="0">
+<img src="/admin/images/etoile0.png" alt="0">
+<img src="/admin/images/etoile0.png" alt="0">
+';
+}
+
+elseif ($news['note']=='1') {
+
+echo'
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile0.png" alt="0">
+<img src="/admin/images/etoile0.png" alt="0">
+<img src="/admin/images/etoile0.png" alt="0">
+<img src="/admin/images/etoile0.png" alt="0">
+';
+}
+
+elseif ($news['note']=='2') {
+
+echo'
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile0.png" alt="0">
+<img src="/admin/images/etoile0.png" alt="0">
+<img src="/admin/images/etoile0.png" alt="0">
+';
+}
+
+elseif ($news['note']=='3') {
+
+echo'
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile0.png" alt="0">
+<img src="/admin/images/etoile0.png" alt="0">
+';
+}
+
+elseif ($news['note']=='4') {
+
+echo'
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile0.png" alt="0">
+';
+}
+
+elseif ($news['note']=='5') {
+
+echo'
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile1.png" alt="1">
+<img src="/admin/images/etoile1.png" alt="1">
+';
+}
+
+elseif ($news['note']=='Off') {
+
+echo'
+Désactivée
+';
+}
+
+else {
+
+echo'
+Désactivée
+';
+}
+
 if (base64_decode($tableau[3])=='') {echo'</article><article style="min-height:0px;font-weight:bold;text-align:center;">Les commentaires ne sont pas activés.';}
 
 else {
@@ -1319,9 +1401,10 @@ array(
      $jour = htmlentities($_POST['jour'],null,'UTF-8');
      $mois = htmlentities($_POST['mois'],null,'UTF-8');
      $annee = htmlentities($_POST['annee'],null,'UTF-8');
+	 $note = htmlentities($_POST['note'],null,'UTF-8');
 	//On r&eacute;cup&egrave;re les donn&eacute;es d&eacute;jà existantes
 	$news = unserialize(base64_decode(file_get_contents('../news.php')));
-	$news[] = array('titre' => $titre, 'jour' => $jour, 'mois' => $mois, 'annee' => $annee,'contenu' => $contenu, 'chapo' => $chapo);
+	$news[] = array('titre' => $titre, 'jour' => $jour, 'mois' => $mois, 'annee' => $annee,'contenu' => $contenu, 'chapo' => $chapo, 'note' => $note);
 	file_put_contents('../news.php', base64_encode(serialize($news)));
 	
       echo '<div id="valide"><p>La news a bien &eacute;t&eacute; ajout&eacute;e !</p></div>';
@@ -1357,9 +1440,24 @@ echo'</SELECT>
 </SELECT>
 
 <br /><br /><label for="chapo"> '.Chapo.' : </label><input type="text" required name="chapo" id="chapo" rows="" cols="" placeholder="R&eacute;sum&eacute; de l\'article pour les moteurs de recherches. " style="width: 82%;"/><br /><br />
-<textarea name="contenu" id="contenu" rows="" cols="" style="width: 100%;height: 400px;"></textarea><br/>
-		<center><input type="submit" value="'.Ok.'" /></center>
-	</form>';
+
+<script>
+_.control[\':)\']=_.btn(\':)\',\'InsertHTML\',\'<img src="./images/smileys/Content.png">\',\':)\'); 
+_.control[\':(\']=_.btn(\':(\',\'InsertHTML\',\'<img src="./images/smileys/Embarrassed.png">\',\':(\'); 
+_.control[\'XD\']=_.btn(\'XD\',\'InsertHTML\',\'<img src="./images/smileys/Grin.png">\',\'XD\'); 
+_.control[\':D\']=_.btn(\':D\',\'InsertHTML\',\'<img src="./images/smileys/Laughing.png">\',\':D\'); 
+_.control[\':p\']=_.btn(\':p\',\'InsertHTML\',\'<img src="./images/smileys/Yuck.png">\',\':p\'); 
+_.control[\':o\']=_.btn(\':o\',\'InsertHTML\',\'<img src="./images/smileys/Gasp.png">\',\':o\'); 
+</script> 
+
+<textarea name="contenu" id="contenu" rows="" cols="" style="width: 100%;height: 400px;"></textarea>
+<br/><label for="note">Note</label> : <SELECT name="note" id="note" STYLE="width:70px;">';
+
+$notes = array( 'Off','1','2','3','4','5');
+
+foreach ($notes as $notesA) { echo'<option>'.$notesA.'</option>'; };
+
+echo'</SELECT>&nbsp; &nbsp;<b>( Si vous voulez ajouter une note avec votre article sur des jeux vidéos, mangas, films ou autre ... )</b> .<br/><br/><center><input type="submit" value="'.Ok.'" /></center></form>';
 }
 }
 
@@ -1419,6 +1517,7 @@ array(
 ), $news[$newsAmodifier]['contenu']);
 
 	$news[$newsAmodifier]['chapo'] = htmlentities($_POST['chapo'],null,'UTF-8');
+	$news[$newsAmodifier]['note'] = htmlentities($_POST['note'],null,'UTF-8');
 	file_put_contents('../news.php', base64_encode(serialize($news)));
 	echo '<div id="valide"><p>La news a bien &eacute;t&eacute; edit&eacute;e.</p></div>';
 	echo '<br />';
@@ -1431,7 +1530,44 @@ array(
 - <label for="mois">Mois : </label> <input type="text" name="mois" id="mois" value="'.$news[$newsAmodifier]['mois'].'" STYLE="width:70px;" readonly="readonly" /> 
 - <label for="annee">Ann&eacute;e : </label> <input type="text" name="annee" id="annee" value="'.$news[$newsAmodifier]['annee'].'" STYLE="width:70px;" readonly="readonly" /> 
 <br /><br /><label for="chapo">'.Chapo.' : </label><input type="text" required placeholder="R&eacute;sum&eacute; de l\'article pour les moteurs de recherches. " name="chapo" id="chapo" rows="" cols="" value="'.$news[$newsAmodifier]['chapo'].'" style="width: 82%;"/><br /><br />
-	<textarea name="contenu" id="contenu" rows="" cols="" style="width: 100%;height: 400px;">'.$news[$newsAmodifier]['contenu'].'</textarea>
+	
+<script>
+_.control[\':)\']=_.btn(\':)\',\'InsertHTML\',\'<img src="./images/smileys/Content.png">\',\':)\'); 
+_.control[\':(\']=_.btn(\':(\',\'InsertHTML\',\'<img src="./images/smileys/Embarrassed.png">\',\':(\'); 
+_.control[\'XD\']=_.btn(\'XD\',\'InsertHTML\',\'<img src="./images/smileys/Grin.png">\',\'XD\'); 
+_.control[\':D\']=_.btn(\':D\',\'InsertHTML\',\'<img src="./images/smileys/Laughing.png">\',\':D\'); 
+_.control[\':p\']=_.btn(\':p\',\'InsertHTML\',\'<img src="./images/smileys/Yuck.png">\',\':p\'); 
+_.control[\':o\']=_.btn(\':o\',\'InsertHTML\',\'<img src="./images/smileys/Gasp.png">\',\':o\'); 
+</script> 	
+
+<textarea name="contenu" id="contenu" rows="" cols="" style="width: 100%;height: 400px;">'.$news[$newsAmodifier]['contenu'].'</textarea>
+	
+<br/><label for="note">Note</label> : <SELECT name="note" id="note" STYLE="width:70px;">';
+
+if ($news[$newsAmodifier]['note']=='Off') {$notesoff = 'selected="selected"';}
+elseif ($news[$newsAmodifier]['note']==1) {$notes1 = 'selected="selected"';}
+elseif ($news[$newsAmodifier]['note']==2) {$notes2 = 'selected="selected"';}
+elseif ($news[$newsAmodifier]['note']==3) {$notes3 = 'selected="selected"';}
+elseif ($news[$newsAmodifier]['note']==4) {$notes4 = 'selected="selected"';}
+elseif ($news[$newsAmodifier]['note']==5) {$notes5 = 'selected="selected"';}
+else {$notesoff = 'selected="selected"';}
+
+$notes = array(
+
+'Off' => $notesoff, 
+'1' => $notes1,
+'2' => $notes2,
+'3' => $notes3,
+'4' => $notes4,
+'5' => $notes5
+
+);
+
+foreach ($notes as $notesA => $notesB) { 
+echo'<option '.$notesB.'>'.$notesA.'</option>';
+ };
+
+echo'</SELECT>&nbsp; &nbsp;<b>( Si vous voulez ajouter une note avec votre article sur des jeux vidéos, mangas, films ou autre ... )</b> .<br/>
 		<br/>
 <center><input type="submit" value="'.Ok.'" /></center>
 	</form>';
