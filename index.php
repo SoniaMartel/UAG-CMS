@@ -86,7 +86,7 @@ case 'erreurs': terreurs(); break;
 default : tprofil();
 }
 
-echo'<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+echo'<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <meta name="Generator" content="UAG CMS" />
@@ -100,9 +100,9 @@ echo'</head>
 
 echo'<body class="home blog"><div id="wrapper"><header id="header">';
 
-if (base64_decode($tableau[26])=='') {echo '<h1 id="site-title" style="color:'.base64_decode($tableau[5]).' !important"">'.base64_decode($tableau[0]).'</h1>';}
-else if (base64_decode($tableau[27])=='') {echo '<h1 id="site-title" style="color:'.base64_decode($tableau[5]).' !important""><img src="'.base64_decode($tableau[26]).'" alt="'.base64_decode($tableau[0]).'"></h1>';}
-else {echo '<h1 id="site-title" style="color:'.base64_decode($tableau[5]).' !important""><img src="'.base64_decode($tableau[26]).'" alt="'.base64_decode($tableau[27]).'"></h1>';}
+if (base64_decode($tableau[26])=='') {echo '<h1 id="site-title" style="color:'.base64_decode($tableau[5]).' !important">'.base64_decode($tableau[0]).'</h1>';}
+else if (base64_decode($tableau[27])=='') {echo '<h1 id="site-title" style="color:'.base64_decode($tableau[5]).' !important"><img src="'.base64_decode($tableau[26]).'" alt="'.base64_decode($tableau[0]).'"></h1>';}
+else {echo '<h1 id="site-title" style="color:'.base64_decode($tableau[5]).' !important"><img src="'.base64_decode($tableau[26]).'" alt="'.base64_decode($tableau[27]).'"></h1>';}
 
 echo'</header><div id="content"><article>';
 
@@ -132,19 +132,19 @@ $news['titre'] = preg_replace( array("`[^a-z0-9]`i","`[-]+`") , "-", $news['titr
 $news['titre'] = ( $news['titre'] == "" ) ? $type : strtolower(trim($news['titre'], '-'));
 $news['titre'] = htmlentities($news['titre'], ENT_COMPAT, 'utf8');
 
-if (base64_decode($tableau[8])=='off') {echo '<div class="older-posts"><a href="index.php?module=articles&page=' . $i2 . '" style="color:'.base64_decode($tableau[5]).' !important"">' . $i2 . '</a></div>';}
+if (base64_decode($tableau[8])=='off') {echo '<div class="older-posts"><a href="index.php?module=articles&page=' . $i2 . '" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
 
-elseif  (base64_decode($tableau[8])=='on') {echo '<div class="older-posts"><a href="article-' . $i2 . '.php" style="color:'.base64_decode($tableau[5]).' !important"">' . $i2 . '</a></div>';}
+elseif  (base64_decode($tableau[8])=='on') {echo '<div class="older-posts"><a href="article-' . $i2 . '.php" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
 
 elseif  (base64_decode($tableau[8])=='on2') {
 
-echo'<div class="older-posts"><a href="' . $i2 . '-'.$news['titre'].'.php" style="color:'.base64_decode($tableau[5]).' !important"">' . $i2 . '</a></div>';}
+echo'<div class="older-posts"><a href="' . $i2 . '-'.$news['titre'].'.php" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
 
-else {echo '<div class="older-posts"><a href="index.php?module=articles&page=' . $i2 . '" style="color:'.base64_decode($tableau[5]).' !important"">' . $i2 . '</a></div>';}
+else {echo '<div class="older-posts"><a href="index.php?module=articles&page=' . $i2 . '" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
 
 }
 
-echo'</div></div></div><nav id="menu" ><div class="menu-footer" ><ul id="menu-main" class="menu" style="background:'.base64_decode($tableau[5]).' !important""><li><a href="index.php">'.Accueil.'</a></li>';
+echo'</div></div></div><nav id="menu" ><div class="menu-footer" ><ul id="menu-main" class="menu" style="background:'.base64_decode($tableau[5]).' !important"><li><a href="index.php">'.ACCUEIL.'</a></li>';
 
 if (base64_decode($tableau[9])=='off') {}
 
@@ -162,8 +162,8 @@ else if (base64_decode($tableau[25])=='') {}
 
 else {echo'<li><a href="'.base64_decode($tableau[25]).'">'.base64_decode($tableau[24]).'</a></li>'; }
 
-echo'</ul></div></nav><footer id="footer"><div style="text-align: center"><p><strong><a rel="license" href="http://julien-et-nel.be/LLDGP1/" style="color:'.base64_decode($tableau[5]).' !important""">LLDGP1</a></strong> | <strong>'.base64_decode($tableau[0]).'</strong> | <strong><a href="http://julien-et-nel.be/UAG/" style="color:'.base64_decode($tableau[5]).' !important""">UAG CMS</a> | Design : ';
+echo'</ul></div></nav><br/><footer id="footer"><div style="text-align: center"><p><strong><a rel="license" href="http://julien-et-nel.be/LLDGP1/" style="color:'.base64_decode($tableau[5]).' !important">LLDGP1</a></strong> | <strong>'.base64_decode($tableau[0]).'</strong> | <strong><a href="http://julien-et-nel.be/UAG/" style="color:'.base64_decode($tableau[5]).' !important">UAG CMS</a> | Design : ';
 
-echo'<a href="http://aldarone.fr/" style="color:'.base64_decode($tableau[5]).' !important"">Alda</a></strong></p></div></footer></body></html>';
+echo'<a href="http://aldarone.fr/" style="color:'.base64_decode($tableau[5]).' !important">Alda</a></strong></p></div></footer></body></html>';
  
 ?>

@@ -282,7 +282,7 @@ else {echo''.base64_decode($tableau[11]).' '.base64_decode($tableau[12]).'';};
 
 if ((base64_decode($tableau[13])=='') && (base64_decode($tableau[14])=='')) {echo '</h1>';}
 
-else {echo' ( '.base64_decode($tableau[13]).' ans '.base64_decode($tableau[14]).' <img src="admin/images/pays/'.base64_decode($tableau[14]).'.png" alt-"'.base64_decode($tableau[14]).'" style="border: black 1px solid;"> )</h1>';};
+else {echo' ( '.base64_decode($tableau[13]).' ans '.base64_decode($tableau[14]).' <img src="admin/images/pays/'.base64_decode($tableau[14]).'.png" alt="'.base64_decode($tableau[14]).'" style="border: black 1px solid;"> )</h1>';};
 
 echo'<table>
 <tr>
@@ -300,7 +300,7 @@ margin-right:10px;"/></td>
 
 <td style="padding:30px;">
 <h2 style="color:'.base64_decode($tableau[5]).' !important;
-font-family: "Helvetica", sans-serif;
+font-family:sans-serif;
 font-size: 22px;
 font-weight: 700;
 line-height: 24px;
@@ -328,7 +328,7 @@ else { echo'<p><a href="https://plus.google.com/'.base64_decode($tableau[18]).'"
 if (base64_decode($tableau[16])=='') {echo '';}
 else { echo'<p><a href="https://twitter.com/'.base64_decode($tableau[16]).'" style="text-decoration:none; color:'.base64_decode($tableau[5]).' !important;">Twitter</a></p>'; };
 
-echo'</td></tr></table>'; 
+echo'</td></tr></table></div>'; 
 
 }
 
@@ -474,7 +474,7 @@ echo '<tr>
 <td COLSPAN=2><center><b>Profil</b></center></td>
 </tr><tr>
 <td class="titre"></br>'.Titre.'  &nbsp;</td><td></br><input type="text" name="0" value="'.base64_decode($tableau[0]).'" placeholder="Titre de votre blog" STYLE="width:170px;" /></td>
-<td class="profil"></br>'.Nom.'  &nbsp;</td><td></br><input type="text" name="11" value="'.base64_decode($tableau[11]).'" placeholder="Votre nom" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Prénom.'  &nbsp;</td><td></br><input type="text" name="11" value="'.base64_decode($tableau[11]).'" placeholder="Votre Prénom" STYLE="width:170px;" /></td>
 </tr><tr>';
 
 if (base64_decode($tableau[4])==on) {$paginationOn = 'selected="selected"';}
@@ -807,7 +807,7 @@ echo'<option '.$languages2.'>'.$languages1.'</option>';
 
 echo'</SELECT></td>
 
-<td class="profil"></br>'.Prenom.'  &nbsp;</td><td></br><input type="text" name="12" value="'.base64_decode($tableau[12]).'" placeholder="Votre prenom" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Nom.'  &nbsp;</td><td></br><input type="text" name="12" value="'.base64_decode($tableau[12]).'" placeholder="Votre nom" STYLE="width:170px;" /></td>
 
 </tr><tr>
 
@@ -1437,6 +1437,10 @@ echo'</SELECT>
 -
 <label for="annee">Ann&eacute;e</label> : <SELECT name="annee" id="annee" STYLE="width:70px;">
 <OPTION>'.(date('Y')+0).'</OPTION>
+<OPTION>'.(date('Y')-1).'</OPTION>
+<OPTION>'.(date('Y')-2).'</OPTION>
+<OPTION>'.(date('Y')-3).'</OPTION>
+<OPTION>'.(date('Y')-4).'</OPTION>
 </SELECT>
 
 <br /><br /><label for="chapo"> '.Chapo.' : </label><input type="text" required name="chapo" id="chapo" rows="" cols="" placeholder="R&eacute;sum&eacute; de l\'article pour les moteurs de recherches. " style="width: 82%;"/><br /><br />
