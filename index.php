@@ -132,15 +132,15 @@ $news['titre'] = preg_replace( array("`[^a-z0-9]`i","`[-]+`") , "-", $news['titr
 $news['titre'] = ( $news['titre'] == "" ) ? $type : strtolower(trim($news['titre'], '-'));
 $news['titre'] = htmlentities($news['titre'], ENT_COMPAT, 'utf8');
 
-if (base64_decode($tableau[8])=='off') {echo '<div class="older-posts"><a href="index.php?module=articles&page=' . $i2 . '" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
+if (base64_decode($tableau[8])=='off') {echo '<div class="older-posts"><a href="http://'.$_SERVER['SERVER_NAME'].'/index.php?module=articles&page=' . $i2 . '" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
 
-elseif  (base64_decode($tableau[8])=='on') {echo '<div class="older-posts"><a href="article-' . $i2 . '.php" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
+elseif  (base64_decode($tableau[8])=='on') {echo '<div class="older-posts"><a href="http://'.$_SERVER['SERVER_NAME'].'/article-' . $i2 . '.php" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
 
 elseif  (base64_decode($tableau[8])=='on2') {
 
-echo'<div class="older-posts"><a href="' . $i2 . '-'.$news['titre'].'.php" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
+echo'<div class="older-posts"><a href="http://'.$_SERVER['SERVER_NAME'].'/' . $i2 . '-'.$news['titre'].'.php" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
 
-else {echo '<div class="older-posts"><a href="index.php?module=articles&page=' . $i2 . '" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
+else {echo '<div class="older-posts"><a href="http://'.$_SERVER['SERVER_NAME'].'/index.php?module=articles&page=' . $i2 . '" style="color:'.base64_decode($tableau[5]).' !important">' . $i2 . '</a></div>';}
 
 }
 
