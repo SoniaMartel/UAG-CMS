@@ -91,9 +91,9 @@ echo'<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <meta name="Generator" content="UAG CMS" />
 <link rel="alternate" type="application/rss+xml" title="flux rss" href="rss.php" />
-<link rel="stylesheet" type="text/css" href="style.css" />
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" sizes="16x16" />
-<link rel="icon" type="image/x-icon" href="favicon.ico" sizes="16x16" />';
+<link rel="stylesheet" type="text/css" href="http://'.$_SERVER['SERVER_NAME'].'/style.css" />
+<link rel="shortcut icon" type="image/x-icon" href="http://'.$_SERVER['SERVER_NAME'].'/favicon.ico" sizes="16x16" />
+<link rel="icon" type="image/x-icon" href="http://'.$_SERVER['SERVER_NAME'].'/favicon.ico" sizes="16x16" />';
 
 echo'</head>
 ';
@@ -144,11 +144,11 @@ else {echo '<div class="older-posts"><a href="index.php?module=articles&page=' .
 
 }
 
-echo'</div></div></div><nav id="menu" ><div class="menu-footer" ><ul id="menu-main" class="menu" style="background:'.base64_decode($tableau[5]).' !important"><li><a href="index.php">'.ACCUEIL.'</a></li>';
+echo'</div></div></div><nav id="menu" ><div class="menu-footer" ><ul id="menu-main" class="menu" style="background:'.base64_decode($tableau[5]).' !important"><li><a href="http://'.$_SERVER['SERVER_NAME'].'/index.php">'.ACCUEIL.'</a></li>';
 
 if (base64_decode($tableau[9])=='off') {}
 
-elseif  (base64_decode($tableau[9])=='on') {echo'<li><a href="admin/connexion.php">'.Administration.'</a></li>';}
+elseif  (base64_decode($tableau[9])=='on') {echo'<li><a href="http://'.$_SERVER['SERVER_NAME'].'/admin/connexion.php">'.Administration.'</a></li>';}
 
 if (base64_decode($tableau[22])=='') {}
 

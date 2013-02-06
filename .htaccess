@@ -6,7 +6,6 @@ RewriteEngine on
 
 RewriteRule ^article-([0-9]+)\.php$   index.php?module=articles&page=$1 [L]
 RewriteRule ^([0-9]+)-([a-z0-9\-]+)\.php$   index.php?module=articles&page=$1 [L]
-RewriteRule ^admin/admin/images/smileys/(.*)   admin/images/smileys/$1 [L]
 
 <files .htaccess>
 order allow,deny

@@ -36,7 +36,7 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<h2 style="color:'.base64_decode($tableau[5]).' !important">404</h2><center><img src="404.gif" alt="404" width="180px"></center><div id="article" style="padding-left:10px"><br/><h1 style="color:'.base64_decode($tableau[5]).' !important">La r&eacute;ponse à la page disparue, d&eacute;truite, d&eacute;plac&eacute;e ou autre.</h1>';
+echo'<h2 style="color:'.base64_decode($tableau[5]).' !important">404</h2><center><img src="http://'.$_SERVER['SERVER_NAME'].'/404.gif" alt="404" width="180px"></center><div id="article" style="padding-left:10px"><br/><h1 style="color:'.base64_decode($tableau[5]).' !important">La r&eacute;ponse à la page disparue, d&eacute;truite, d&eacute;plac&eacute;e ou autre.</h1>';
 
 }
 
@@ -1384,16 +1384,16 @@ $contenu = str_replace(array(
 
 array(
 
-'<img src="admin/images/smileys/Content.png" alt=":)" class="" />'
-,'<img src="admin/images/smileys/Embarrassed.png" alt=":(" class="" />'
-,'<img src="admin/images/smileys/Grin.png" alt="XD" class="" />'
-,'<img src="admin/images/smileys/Laughing.png" alt=":D" class="" />'
-,'<img src="admin/images/smileys/Yuck.png" alt=":p" class="" />'
-,'<img src="admin/images/smileys/Gasp.png" alt=":o" class="" />'
+'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Content.png" alt=":)" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Embarrassed.png" alt=":(" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Grin.png" alt="XD" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Laughing.png" alt=":D" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Yuck.png" alt=":p" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Gasp.png" alt=":o" class="" />'
 ,'<br />'
 ,'<br />'
 ,' '
-,'<img src="admin/images/smileys/HeartEyes.png" alt="<3" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/HeartEyes.png" alt="<3" class="" />'
 
 ), $contenu);
 
@@ -1507,16 +1507,16 @@ $news[$newsAmodifier]['contenu'] = str_replace(array(
 
 array(
 
-'<img src="admin/images/smileys/Content.png" alt=":)" class="" />'
-,'<img src="admin/images/smileys/Embarrassed.png" alt=":(" class="" />'
-,'<img src="admin/images/smileys/Grin.png" alt="XD" class="" />'
-,'<img src="admin/images/smileys/Laughing.png" alt=":D" class="" />'
-,'<img src="admin/images/smileys/Yuck.png" alt=":p" class="" />'
-,'<img src="admin/images/smileys/Gasp.png" alt=":o" class="" />'
+'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Content.png" alt=":)" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Embarrassed.png" alt=":(" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Grin.png" alt="XD" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Laughing.png" alt=":D" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Yuck.png" alt=":p" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Gasp.png" alt=":o" class="" />'
 ,'<br />'
 ,'<br />'
 ,' '
-,'<img src="admin/images/smileys/HeartEyes.png" alt="<3" class="" />'
+,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/HeartEyes.png" alt="<3" class="" />'
 
 ), $news[$newsAmodifier]['contenu']);
 
