@@ -17,7 +17,7 @@
 
 ******************************************************/
 
-header('Content-Type: text/html; charset=UTF-8');
+header("Content-type: application/rss+xml; charset=UTF-8");
 echo "<?".'xml version="1.0" encoding="UTF-8"'."?>"."\n";
 
 function lire_array($fichier)
@@ -49,23 +49,34 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo '<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">'."\n";
+echo '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">'."\n";
 echo '<channel>'."\n";
 
 $xml = '<title>'.base64_decode($tableau[0]).'</title>'."\n";
-$xml .= '<link></link>'."\n"; 
+$xml .= '<link>http://'.$_SERVER['SERVER_NAME'].'</link>'."\n"; 
+$xml .= '<atom:link href="http://'.$_SERVER['SERVER_NAME'].'/rss.php" rel="self" type="application/rss+xml" />'."\n"; 
 $xml .= '<description></description>'."\n"; 
 $xml .= '<language>fr</language>'."\n"; 
 $xml .= '<copyright></copyright>'."\n";
 
 $liste = unserialize(base64_decode(file_get_contents('news.php')));
+
 foreach ($liste as $file => $article) {
+
+$timestamp = mktime (0, 0, 0, $article['mois'], $article['jour'], $article['annee']);
+$date822 = date("r", $timestamp);
+
+$article['titre'] = preg_replace( "`&([a-z])(acute|uml|circ|grave|ring|cedil|slash|tilde|caron|lig);`i","\\1", $article['titre'] );
+$article['titre'] = preg_replace("`\[.*\]`U","",$article['titre']);
+$article['titre'] = preg_replace('`&(amp;)?#?[a-z0-9]+;`i','-',$article['titre']);
+$article['titre'] = preg_replace( array("`[^a-z0-9]`i","`[-]+`") , "-", $article['titre']);
+$article['titre'] = ( $article['titre'] == "" ) ? $type : strtolower(trim($article['titre'], '-'));
 
 $item = '<item>'."\n";
 $item .= '<title>'.$article['titre'].'</title>'."\n";
-$item .= '<guid></guid>'."\n";
-$item .= '<link></link>'."\n";
-$item .= '<pubDate>'.$article['annee'].'/'.$article['mois'].'/'.$article['jour'].'</pubDate>'."\n";
+$item .= '<guid isPermaLink="false">'.$article['titre'].'</guid>'."\n";
+$item .= '<link>http://'.$_SERVER['SERVER_NAME'].'</link>'."\n";
+$item .= '<pubDate>'.$date822.'</pubDate>'."\n";
 $item .= '<description><![CDATA['.$article['contenu'].']]></description>'."\n";
 $xml .= $item.'</item>'."\n";
 			
