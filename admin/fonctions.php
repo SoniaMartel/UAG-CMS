@@ -299,7 +299,7 @@ height:200px;width:200px;
 margin-right:10px;"/></td>
 
 <td style="padding:30px;">
-<h2
+<h2 style="
 font-family:sans-serif;
 font-size: 22px;
 font-weight: 700;
