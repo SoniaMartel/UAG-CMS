@@ -60,6 +60,7 @@ $xml .= '<language>fr</language>'."\n";
 $xml .= '<copyright></copyright>'."\n";
 
 $liste = unserialize(base64_decode(file_get_contents('news.php')));
+krsort($liste);
 
 foreach ($liste as $file => $article) {
 
