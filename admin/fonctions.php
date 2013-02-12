@@ -36,7 +36,7 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<h2 style="color:'.base64_decode($tableau[5]).' !important">404</h2><center><img src="http://'.$_SERVER['SERVER_NAME'].'/404.gif" alt="404" width="180px"></center><div id="article" style="padding-left:10px"><br/><h1 style="color:'.base64_decode($tableau[5]).' !important">La r&eacute;ponse à la page disparue, d&eacute;truite, d&eacute;plac&eacute;e ou autre.</h1>';
+echo'<h2>404</h2><center><img src="'.base64_decode($tableau[5]).'/404.gif" alt="404" width="180px"></center><div id="article" style="padding-left:10px"><br/><h1>La r&eacute;ponse à la page disparue, d&eacute;truite, d&eacute;plac&eacute;e ou autre.</h1>';
 
 }
 
@@ -93,7 +93,7 @@ $liste_news = array_slice($allnews, $page, 1);
 
 if(!empty($liste_news)) { foreach($liste_news as $id => $news) {
 
-echo'<h2 style="color:'.base64_decode($tableau[5]).' !important"><a href="" style="color:'.base64_decode($tableau[5]).' !important"><strong>'.$news['titre'].' '.Par.' '.base64_decode($tableau[2]).' - ';
+echo'<h2><a href=""><strong>'.$news['titre'].' '.Par.' '.base64_decode($tableau[2]).' - ';
 
 if (base64_decode($tableau[1])=='fr') { 
 
@@ -273,9 +273,9 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<h2 style="color:'.base64_decode($tableau[5]).' !important">'.Profil.'</h2><div id="article" style="padding-left:10px">
+echo'<h2>'.Profil.'</h2><div id="article" style="padding-left:10px">
 
-<h1 style="color:'.base64_decode($tableau[5]).' !important">';
+<h1>';
 if ((base64_decode($tableau[11])=='') && (base64_decode($tableau[12])=='')) {echo 'Non-renseign&eacute;';}
 
 else {echo''.base64_decode($tableau[11]).' '.base64_decode($tableau[12]).'';};
@@ -292,14 +292,14 @@ if (base64_decode($tableau[15])=='') {echo 'photo.png';}
 
 else {echo''.base64_decode($tableau[15]).'';};
 
-echo'" alt="" style="border: solid #DDDDDD; background:'.base64_decode($tableau[5]).' !important;
+echo'" alt="" style="border: solid #DDDDDD;
 border-radius: 4px;
 display: block;
 height:200px;width:200px;
 margin-right:10px;"/></td>
 
 <td style="padding:30px;">
-<h2 style="color:'.base64_decode($tableau[5]).' !important;
+<h2
 font-family:sans-serif;
 font-size: 22px;
 font-weight: 700;
@@ -320,13 +320,13 @@ else {echo'<p>'.base64_decode($tableau[20]).'</p><p><b>Loisirs  :</b> '.base64_d
 echo'<td>';
 
 if (base64_decode($tableau[17])=='') {echo '';}
-else { echo'<p><a href="https://fr-fr.facebook.com/'.base64_decode($tableau[17]).'" style="text-decoration:none; color:'.base64_decode($tableau[5]).' !important;">Facebook</a><br/></p>'; };
+else { echo'<p><a href="https://fr-fr.facebook.com/'.base64_decode($tableau[17]).'" style="text-decoration:none;>Facebook</a><br/></p>'; };
 
 if (base64_decode($tableau[18])=='') {echo '';}
-else { echo'<p><a href="https://plus.google.com/'.base64_decode($tableau[18]).'" style="text-decoration:none; color:'.base64_decode($tableau[5]).' !important;">Google+</a><br/></p>'; };
+else { echo'<p><a href="https://plus.google.com/'.base64_decode($tableau[18]).'" style="text-decoration:none;>Google+</a><br/></p>'; };
 
 if (base64_decode($tableau[16])=='') {echo '';}
-else { echo'<p><a href="https://twitter.com/'.base64_decode($tableau[16]).'" style="text-decoration:none; color:'.base64_decode($tableau[5]).' !important;">Twitter</a></p>'; };
+else { echo'<p><a href="https://twitter.com/'.base64_decode($tableau[16]).'" style="text-decoration:none;>Twitter</a></p>'; };
 
 echo'</td></tr></table></div>'; 
 
@@ -1150,17 +1150,11 @@ echo'
 <td class="profil"></br>'.Photo.'  &nbsp;</td><td></br><input type="text" name="15" value="'.base64_decode($tableau[15]).'" placeholder="Une photo de vous" STYLE="width:170px;" /></td>
 
 </tr><tr>
-<td class="titre"></br>COULEUR CSS  &nbsp;</td><td></br>'; 
+<td class="titre"></br>Adresse site  &nbsp;</td><td></br>'; 
 
 echo '
 
-<input type="color" name="5" value="'.base64_decode($tableau[5]).'" STYLE="width:170px;font-style: bold;color:white;background:';
-
-if (base64_decode($tableau[5])=='') {echo'orange';}
-
-else {echo''.base64_decode($tableau[5]).'';}
-
-echo';"/></td>'; 
+<input type="text" name="5" value="'.base64_decode($tableau[5]).'" placeholder="Adresse de votre site" STYLE="width:170px;"/></td>'; 
 
 echo '
 
@@ -1384,16 +1378,16 @@ $contenu = str_replace(array(
 
 array(
 
-'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Content.png" alt=":)" class="" />'
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Embarrassed.png" alt=":(" class="" />'
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Grin.png" alt="XD" class="" />'
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Laughing.png" alt=":D" class="" />'
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Yuck.png" alt=":p" class="" />'
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Gasp.png" alt=":o" class="" />'
+'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Content.png" alt=":)" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Embarrassed.png" alt=":(" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Grin.png" alt="XD" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Laughing.png" alt=":D" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Yuck.png" alt=":p" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Gasp.png" alt=":o" class="" />'
 ,'<br />'
 ,'<br />'
 ,' '
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/HeartEyes.png" alt="<3" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/HeartEyes.png" alt="<3" class="" />'
 
 ), $contenu);
 
@@ -1507,16 +1501,16 @@ $news[$newsAmodifier]['contenu'] = str_replace(array(
 
 array(
 
-'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Content.png" alt=":)" class="" />'
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Embarrassed.png" alt=":(" class="" />'
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Grin.png" alt="XD" class="" />'
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Laughing.png" alt=":D" class="" />'
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Yuck.png" alt=":p" class="" />'
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/Gasp.png" alt=":o" class="" />'
+'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Content.png" alt=":)" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Embarrassed.png" alt=":(" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Grin.png" alt="XD" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Laughing.png" alt=":D" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Yuck.png" alt=":p" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/Gasp.png" alt=":o" class="" />'
 ,'<br />'
 ,'<br />'
 ,' '
-,'<img src="http://'.$_SERVER['SERVER_NAME'].'/admin/images/smileys/HeartEyes.png" alt="<3" class="" />'
+,'<img src="'.base64_decode($tableau[5]).'/admin/images/smileys/HeartEyes.png" alt="<3" class="" />'
 
 ), $news[$newsAmodifier]['contenu']);
 

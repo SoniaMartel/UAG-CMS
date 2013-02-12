@@ -53,8 +53,8 @@ echo '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">'."\n";
 echo '<channel>'."\n";
 
 $xml = '<title>'.base64_decode($tableau[0]).'</title>'."\n";
-$xml .= '<link>http://'.$_SERVER['SERVER_NAME'].'</link>'."\n"; 
-$xml .= '<atom:link href="http://'.$_SERVER['SERVER_NAME'].'/rss.php" rel="self" type="application/rss+xml" />'."\n"; 
+$xml .= '<link>'.base64_decode($tableau[5]).'</link>'."\n"; 
+$xml .= '<atom:link href="'.base64_decode($tableau[5]).'/rss.php" rel="self" type="application/rss+xml" />'."\n"; 
 $xml .= '<description></description>'."\n"; 
 $xml .= '<language>fr</language>'."\n"; 
 $xml .= '<copyright></copyright>'."\n";
@@ -76,7 +76,7 @@ $article['titre'] = ( $article['titre'] == "" ) ? $type : strtolower(trim($artic
 $item = '<item>'."\n";
 $item .= '<title>'.$article['titre'].'</title>'."\n";
 $item .= '<guid isPermaLink="false">'.$article['titre'].'</guid>'."\n";
-$item .= '<link>http://'.$_SERVER['SERVER_NAME'].'</link>'."\n";
+$item .= '<link>'.base64_decode($tableau[5]).'</link>'."\n";
 $item .= '<pubDate>'.$date822.'</pubDate>'."\n";
 $item .= '<description><![CDATA['.$article['contenu'].']]></description>'."\n";
 $xml .= $item.'</item>'."\n";

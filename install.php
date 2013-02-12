@@ -100,11 +100,11 @@ echo '
 <option value="off" '.$paginationOff.'>Ancien vers nouveau</option>
 </select></td></tr><tr>
 
-<td class="titre"></br>COULEUR CSS  &nbsp;</td><td></br>'; 
+<td class="titre"></br>Adresse site  &nbsp;</td><td></br>'; 
 
 echo '
 
-<input type="color" name="5" value="'.base64_decode($tableau[5]).'" placeholder="Couleur pour le css" STYLE="width:180px;"/>
+<input type="text" name="5" value="'.base64_decode($tableau[5]).'" placeholder="Adresse de votre site" STYLE="width:180px;"/>
 
 </td>'; 
 
