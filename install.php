@@ -104,7 +104,7 @@ echo '
 
 echo '
 
-<input type="text" name="5" value="'.base64_decode($tableau[5]).'" placeholder="Adresse de votre site" STYLE="width:180px;"/>
+<input type="text" required name="5" value="'.base64_decode($tableau[5]).'" placeholder="Adresse de votre site" STYLE="width:180px;"/>
 
 </td>'; 
 
@@ -116,9 +116,10 @@ echo '</tr><tr>
 
 <tr>
 <td class="titre"></br>URL Rewriting  &nbsp;</td><td></br><SELECT value="'.$tableau[8].'" name="8" STYLE="width:180px;">
-		<OPTION VALUE="on">on</OPTION>
-		<OPTION VALUE="off">off</OPTION>
-	</SELECT></td></tr>';echo "\n";
+<OPTION VALUE="on">Url Sans titre</OPTION>
+<OPTION VALUE="on2">Url avec Titre</OPTION>
+<OPTION VALUE="off">Pas de r&eacute;ecriture</OPTION>
+</SELECT></td></tr>';echo "\n";
 
 echo '<tr>
 <td class="titre"></br>Lien Admin  &nbsp;</td><td></br><SELECT value="'.$tableau[9].'" name="9" STYLE="width:180px;">

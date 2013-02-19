@@ -12,6 +12,8 @@ echo'
 <script src="js/editeur.js"></script>
 <script type="text/javascript">addEvt(window,\'load\',whizzywig);</script>
 <link rel="stylesheet" href="defaut.css" />
+<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
+<link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
 </head>
 <body>
 <body onload="whizzywig()">

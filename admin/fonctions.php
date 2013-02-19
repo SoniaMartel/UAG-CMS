@@ -1154,7 +1154,7 @@ echo'
 
 echo '
 
-<input type="text" name="5" value="'.base64_decode($tableau[5]).'" placeholder="Adresse de votre site" STYLE="width:170px;"/></td>'; 
+<input type="text" name="5"  required value="'.base64_decode($tableau[5]).'" placeholder="Adresse de votre site" STYLE="width:170px;"/></td>'; 
 
 echo '
 
