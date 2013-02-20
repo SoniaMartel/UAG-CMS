@@ -302,7 +302,7 @@ function age($naiss)  {
     }
   echo $annees;
   }
-age(base64_decode($tableau[13]));  
+age(''.base64_decode($tableau[13]).'/'.base64_decode($tableau[28]).'/'.base64_decode($tableau[29]).'');  
 
 echo' ans '.base64_decode($tableau[14]).' <img src="admin/images/pays/'.base64_decode($tableau[14]).'.png" alt="'.base64_decode($tableau[14]).'" style="border: black 1px solid;"> )</h1>';};
 
@@ -485,6 +485,10 @@ $_POST[26] = str_replace(array('-','php'),array(':)',''), $_POST[26]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[26],null,'UTF-8')))))); 
 $_POST[27] = str_replace(array('-','php'),array(':)',''), $_POST[27]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[27],null,'UTF-8'))))));
+$_POST[28] = str_replace(array('-','php'),array(':)',''), $_POST[28]);
+ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[28],null,'UTF-8'))))));
+$_POST[29] = str_replace(array('-','php'),array(':)',''), $_POST[29]);
+ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[29],null,'UTF-8'))))));
 }
 
 else {
@@ -508,110 +512,6 @@ elseif (base64_decode($tableau[1])==es) {$selected4 = 'selected="selected"';}
 elseif (base64_decode($tableau[1])==fr) {$selected5 = 'selected="selected"';}
 elseif (base64_decode($tableau[1])==nl) {$selected6 = 'selected="selected"';}
 else {$selected5 = 'selected="selected"';}
-
-if (base64_decode($tableau[13])=='*') {$age0b = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==0) {$age0 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==1) {$age1 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==2) {$age2 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==3) {$age3 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==4) {$age4 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==5) {$age5 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==6) {$age6 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==7) {$age7 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==8) {$age8 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==9) {$age9 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==10) {$age10 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==11) {$age11 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==12) {$age12 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==13) {$age13 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==14) {$age14 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==15) {$age15 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==16) {$age16 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==17) {$age17 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==18) {$age18 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==19) {$age19 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==20) {$age20 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==21) {$age21 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==22) {$age22 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==23) {$age23 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==24) {$age24 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==25) {$age25 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==26) {$age26 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==27) {$age27 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==28) {$age28 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==29) {$age29 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==30) {$age30 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==31) {$age31 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==32) {$age32 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==33) {$age33 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==34) {$age34 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==35) {$age35 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==36) {$age36 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==37) {$age37 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==38) {$age38 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==39) {$age39 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==40) {$age40 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==41) {$age41 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==42) {$age42 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==43) {$age43 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==44) {$age44 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==45) {$age45 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==46) {$age46 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==47) {$age47 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==48) {$age48 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==49) {$age49 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==50) {$age50 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==51) {$age51 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==52) {$age52 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==53) {$age53 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==54) {$age54 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==55) {$age55 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==56) {$age56 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==57) {$age57 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==58) {$age58 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==59) {$age59 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==60) {$age60 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==61) {$age61 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==62) {$age62 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==63) {$age63 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==64) {$age64 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==65) {$age65 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==66) {$age66 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==67) {$age67 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==68) {$age68 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==69) {$age69 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==70) {$age70 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==71) {$age71 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==72) {$age72 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==73) {$age73 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==74) {$age74 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==75) {$age75 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==76) {$age76 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==77) {$age77 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==78) {$age78 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==79) {$age79 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==80) {$age80 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==81) {$age81 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==82) {$age82 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==83) {$age83 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==84) {$age84 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==85) {$age85 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==86) {$age86 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==87) {$age87 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==88) {$age88 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==89) {$age89 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==90) {$age90 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==91) {$age91 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==92) {$age92 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==93) {$age93 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==94) {$age94 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==95) {$age95 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==96) {$age96 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==97) {$age97 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==98) {$age98 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==99) {$age99 = 'selected="selected"';}
-elseif (base64_decode($tableau[13])==100) {$age100 = 'selected="selected"';}
-else {$age0b = 'selected="selected"';}
 
 if (base64_decode($tableau[14])=='Monde') {$pays1 = 'selected="selected"';}
 elseif (base64_decode($tableau[14])=='Internet') {$pays2 = 'selected="selected"';}
@@ -834,7 +734,7 @@ echo'</SELECT></td>
 </tr><tr>
 
 <td class="titre"></br>'.Gerant.'  &nbsp;</td><td></br><input type="text" required name="2" value="'.base64_decode($tableau[2]).'" placeholder="Nom affich&eacute; sur le blog" STYLE="width:170px;"/></td>
-<td class="profil"></br>Date de Naissance  &nbsp;</td><td></br><input type="text" required name="13" value="'.base64_decode($tableau[13]).'" placeholder="AAAA/MM/JJ" STYLE="width:170px;"/></td>';
+<td class="profil"></br>Date de Naissance  &nbsp;</td><td></br><input type="text" required name="13" value="'.base64_decode($tableau[13]).'" placeholder="Année" STYLE="width:50px;"/> <input type="text" required name="28" value="'.base64_decode($tableau[28]).'" placeholder="Mois" STYLE="width:50px;"/> <input type="text" required name="29" value="'.base64_decode($tableau[29]).'" placeholder="Jour" STYLE="width:50px;"/></td>';
 
 echo'
 </td>
