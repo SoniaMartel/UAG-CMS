@@ -282,7 +282,29 @@ else {echo''.base64_decode($tableau[11]).' '.base64_decode($tableau[12]).'';};
 
 if ((base64_decode($tableau[13])=='') && (base64_decode($tableau[14])=='')) {echo '</h1>';}
 
-else {echo' ( '.base64_decode($tableau[13]).' ans '.base64_decode($tableau[14]).' <img src="admin/images/pays/'.base64_decode($tableau[14]).'.png" alt="'.base64_decode($tableau[14]).'" style="border: black 1px solid;"> )</h1>';};
+else {
+
+echo' ( ';
+
+function age($naiss)  {
+  list($annee, $mois, $jour) = preg_split('[/.]', $naiss);
+  $today['mois'] = date('n');
+  $today['jour'] = date('j');
+  $today['annee'] = date('Y');
+  $annees = $today['annee'] - $annee;
+  if ($today['mois'] <= $mois) {
+    if ($mois == $today['mois']) {
+      if ($jour > $today['jour'])
+        $annees--;
+      }
+    else
+      $annees--;
+    }
+  echo $annees;
+  }
+age(base64_decode($tableau[13]));  
+
+echo' ans '.base64_decode($tableau[14]).' <img src="admin/images/pays/'.base64_decode($tableau[14]).'.png" alt="'.base64_decode($tableau[14]).'" style="border: black 1px solid;"> )</h1>';};
 
 echo'<table>
 <tr>
@@ -812,117 +834,7 @@ echo'</SELECT></td>
 </tr><tr>
 
 <td class="titre"></br>'.Gerant.'  &nbsp;</td><td></br><input type="text" required name="2" value="'.base64_decode($tableau[2]).'" placeholder="Nom affich&eacute; sur le blog" STYLE="width:170px;"/></td>
-<td class="profil"></br>'.Age.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[13]).'" name="13" STYLE="width:180px;">';
-
-$old = array(
-
-'*' => $age0b, 
-'0' => $age0,
-'1' => $age1,
-'2' => $age2,
-'3' => $age3,
-'4' => $age4,
-'5' => $age5,
-'6' => $age6,
-'7' => $age7,
-'8' => $age8,
-'9' => $age9,
-'10' => $age10,
-'11' => $age11,
-'12' => $age12,
-'13' => $age13,
-'14' => $age14,
-'15' => $age15,
-'16' => $age16,
-'17' => $age17,
-'18' => $age18,
-'19' => $age19,
-'20' => $age20,
-'21' => $age21,
-'22' => $age22,
-'23' => $age23,
-'24' => $age24,
-'25' => $age25,
-'26' => $age26,
-'27' => $age27,
-'28' => $age28,
-'29' => $age29,
-'30' => $age30,
-'31' => $age31,
-'32' => $age32,
-'33' => $age33,
-'34' => $age34,
-'35' => $age35,
-'36' => $age36,
-'37' => $age37,
-'38' => $age38,
-'39' => $age39,
-'40' => $age40,
-'41' => $age41,
-'42' => $age42,
-'43' => $age43,
-'44' => $age44,
-'45' => $age45,
-'46' => $age46,
-'47' => $age47,
-'48' => $age48,
-'49' => $age49,
-'50' => $age50,
-'51' => $age51,
-'52' => $age52,
-'53' => $age53,
-'54' => $age54,
-'55' => $age55,
-'56' => $age56,
-'57' => $age57,
-'58' => $age58,
-'59' => $age59,
-'60' => $age60,
-'61' => $age61,
-'62' => $age62,
-'63' => $age63,
-'64' => $age64,
-'65' => $age65,
-'66' => $age66,
-'67' => $age67,
-'68' => $age68,
-'69' => $age69,
-'70' => $age70,
-'71' => $age71,
-'72' => $age72,
-'73' => $age73,
-'74' => $age74,
-'75' => $age75,
-'76' => $age76,
-'77' => $age77,
-'78' => $age78,
-'79' => $age79,
-'80' => $age80,
-'81' => $age81,
-'82' => $age82,
-'83' => $age83,
-'84' => $age84,
-'85' => $age85,
-'86' => $age86,
-'87' => $age87,
-'88' => $age88,
-'89' => $age89,
-'90' => $age90,
-'91' => $age91,
-'92' => $age92,
-'93' => $age93,
-'94' => $age94,
-'95' => $age95,
-'96' => $age96,
-'97' => $age97,
-'98' => $age98,
-'99' => $age99,
-'100' => $age100
-);  
-
-foreach ($old as $old1 => $old2) { 
-echo'<option '.$old2.'>'.$old1.'</option>';
- } 
+<td class="profil"></br>Date de Naissance  &nbsp;</td><td></br><input type="text" required name="13" value="'.base64_decode($tableau[13]).'" placeholder="AAAA/MM/JJ" STYLE="width:170px;"/></td>';
 
 echo'
 </td>
