@@ -48,9 +48,7 @@ $tableau=array();
 $tableau=lire_array($fichier);
 error_reporting(0);
 
-$filename = 'admin/configuration.txt';
-
-if (filesize($filename) > 0) {
+if (filesize($fichier) > 0) {
 
  unlink('install.php'); 
 
@@ -86,7 +84,14 @@ case 'erreurs': terreurs(); break;
 default : tprofil();
 }
 
-echo'<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+echo'
+<style type="text/css">
+';
+if (base64_decode($tableau[30])=='') {echo 'html {background-image:url(\''.base64_decode($tableau[5]).'/fond.jpg\');}';}
+else {echo'html {background-image:url(\''.base64_decode($tableau[30]).'\');}';}
+
+echo'</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <meta name="Generator" content="UAG CMS" />
@@ -144,7 +149,9 @@ else {echo '<div class="older-posts"><a href="'.base64_decode($tableau[5]).'/ind
 
 }
 
-echo'</div></div></div><nav id="menu" ><div class="menu-footer" ><ul id="menu-main" class="menu"><li><a href="'.base64_decode($tableau[5]).'/index.php">'.ACCUEIL.'</a></li>';
+echo'</div></div></div>';
+
+echo'<nav id="menu" ><div class="menu-footer" ><ul id="menu-main" class="menu"><li><a href="'.base64_decode($tableau[5]).'/index.php">'.ACCUEIL.'</a></li>';
 
 if (base64_decode($tableau[9])=='off') {}
 
@@ -162,8 +169,10 @@ else if (base64_decode($tableau[25])=='') {}
 
 else {echo'<li><a href="'.base64_decode($tableau[25]).'">'.base64_decode($tableau[24]).'</a></li>'; }
 
-echo'</ul></div></nav><br/><footer id="footer"><div style="text-align: center"><p><strong><a rel="license" href="http://julien-et-nel.be/LLDGP1/">LLDGP1</a></strong> | <strong>'.base64_decode($tableau[0]).'</strong> | <strong><a href="http://julien-et-nel.be/UAG/">UAG CMS</a> | Design : ';
+echo'</ul></div></nav>';
 
-echo'<a href="http://aldarone.fr/">Alda</a></strong></p></div></footer></body></html>';
+echo'<br/><nav id="footer"><ul style="text-align: center"><li><strong><a rel="license" href="http://julien-et-nel.be/LLDGP1/">LLDGP1</a></strong> | <strong>'.base64_decode($tableau[0]).'</strong> | <strong><a href="http://julien-et-nel.be/UAG/">UAG CMS</a> | Design : ';
+
+echo'<a href="http://aldarone.fr/">Alda</a></strong></li></ul></nav></body></html>';
  
 ?>

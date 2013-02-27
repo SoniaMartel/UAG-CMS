@@ -2,7 +2,9 @@
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section{display:block;}
 
-html{font-size:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+html{font-size:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;
+background-repeat: no-repeat; background-attachment:fixed; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;
+background-size: cover;background-color:#1e1e1e;}
 body{margin:0;font-size:13px;line-height:1.231;}
 body, button, input, select, textarea{font-family:sans-serif;color:#222;}
 
@@ -24,17 +26,15 @@ ul, ol{margin:1em 0;padding:0 0px 0 0px;}
 nav ul, nav ol{list-style:none;margin:0;}
 
 nav ul { 
-background: black;
+background-color: rgba(0, 0, 0, 0.95);
 border: medium none currentColor;
-border-radius: 6px;
 color: #FFFFFF;
 list-style: none outside none;
 text-decoration: none;
 }
 
-body{font:14px/1.4 Ubuntu, sans-serif;background:white;}
-#wrapper{width:80%;margin:0 5%;padding:0 5%;background:white;}
-footer{padding:10px 5%;width:80%;margin:0 5%;background:white;margin-bottom:20px;}
+body{font:14px/1.4 Ubuntu, sans-serif;}
+#wrapper{width:80%;margin:0 5%;padding:0 5%;}
 h1{color:black;}
 
 ::selection{background:black;color:#fff;text-shadow:none;}
@@ -42,8 +42,8 @@ h1{color:black;}
 nav a:hover, nav a:active, nav a:focus, .paging a:hover, .paging a:active, .paging a:focus{color:black;text-decoration:none;}
 nav a:hover{border-radius:6px 0 0 6px;}
 #piedpage{padding-bottom:10px;padding-top:10px;margin:0;padding-left:30px;padding-right:30px;}
-nav{width:80%;margin:0 5%;padding:0 5%;background:white;}
-nav ul{width:95%;height:27px;margin:auto;text-align:center;padding-top:5px;}
+nav{margin:0 5%;padding:0 5%;}
+nav ul{width:97%;height:27px;margin:auto;text-align:center;padding-top:5px;}
 nav li{width:100px;text-align:center;padding-bottom:20px;display:inline !important;padding-left:10px;}
 nav a{display:inline !important;margin-bottom:10px;color:white;text-align:center;text-decoration:none;}
 nav a:visited{color:white !important;}
@@ -53,11 +53,12 @@ nav a:hover{text-decoration:underline;}
 h2{color:black;text-decoration:underline;margin:5px;}
 h1{padding-top:10px;text-align:center;}
 
-article{padding:5px 5px;margin:20px;background:#fff;box-shadow:5px 5px 5px 5px #b1b1b1;word-wrap:break-word;min-height:330px;}
+header{padding:1px 1px;margin:20px;word-wrap:break-word;background-color: rgba(0, 0, 0, 0.2);}
+article{padding:5px 5px;margin:20px;background-color: rgba(255, 255, 255, 0.5);word-wrap:break-word;min-height:330px;}
 
 article p{padding-bottom:10px;}
 
 #piedpage{word-wrap:break-word;}
-#piedpage a{text-decoration:none;font-weight:bold;background:white;padding:2px;box-shadow:2px 2px 2px 2px #b1b1b1;}
-#piedpage a:hover{text-decoration:none;font-weight:none;background:#b1b1b1;box-shadow:2px 2px 2px 2px #b1b1b1;}
+#piedpage a{text-decoration:none;font-weight:bold;background-color:rgba(255, 255, 255, 0.5);padding:2px;}
+#piedpage a:hover{text-decoration:none;font-weight:none;background:#b1b1b1;}
 .older-posts{padding-right:10px;margin-bottom:8px !important;  display:inline-block !important;)

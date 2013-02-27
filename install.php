@@ -221,6 +221,25 @@ $_POST[20] = str_replace(array('-','php'),array(':)',''), $_POST[20]);
 ajout('admin/configuration.txt',trim(base64_encode(stripslashes((htmlentities($_POST[20])))))); 
 $_POST[21] = str_replace(array('-','php'),array(':)',''), $_POST[21]);
 ajout('admin/configuration.txt',trim(base64_encode(stripslashes((htmlentities($_POST[21])))))); 
+$_POST[12] = str_replace(array('-','php'),array(':)',''), $_POST[22]);
+ajout('admin/configuration.txt',trim(base64_encode(stripslashes((htmlentities($_POST[22])))))); 
+$_POST[13] = str_replace(array('-','php'),array(':)',''), $_POST[23]);
+ajout('admin/configuration.txt',trim(base64_encode(stripslashes((htmlentities($_POST[23])))))); 
+$_POST[14] = str_replace(array('-','php'),array(':)',''), $_POST[24]);
+ajout('admin/configuration.txt',trim(base64_encode(stripslashes((htmlentities($_POST[24])))))); 
+$_POST[15] = str_replace(array('-','php'),array(':)',''), $_POST[25]);
+ajout('admin/configuration.txt',trim(base64_encode(stripslashes((htmlentities($_POST[25])))))); 
+$_POST[16] = str_replace(array('-','php'),array(':)',''), $_POST[26]);
+ajout('admin/configuration.txt',trim(base64_encode(stripslashes((htmlentities($_POST[26])))))); 
+$_POST[17] = str_replace(array('-','php'),array(':)',''), $_POST[27]);
+ajout('admin/configuration.txt',trim(base64_encode(stripslashes((htmlentities($_POST[27])))))); 
+$_POST[18] = str_replace(array('-','php'),array(':)',''), $_POST[28]);
+ajout('admin/configuration.txt',trim(base64_encode(stripslashes((htmlentities($_POST[28])))))); 
+$_POST[19] = str_replace(array('-','php'),array(':)',''), $_POST[29]);
+ajout('admin/configuration.txt',trim(base64_encode(stripslashes((htmlentities($_POST[29])))))); 
+$_POST[20] = str_replace(array('-','php'),array(':)',''), $_POST[30]);
+ajout('admin/configuration.txt',trim(base64_encode(stripslashes((htmlentities($_POST[30])))))); 
+
   	 } 
 
 
