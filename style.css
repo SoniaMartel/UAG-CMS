@@ -54,11 +54,15 @@ h2{color:black;text-decoration:underline;margin:5px;}
 h1{padding-top:10px;text-align:center;}
 
 header{padding:1px 1px;margin:20px;word-wrap:break-word;background-color: rgba(0, 0, 0, 0.2);}
-article{padding:5px 5px;margin:20px;background-color: rgba(255, 255, 255, 0.5);word-wrap:break-word;min-height:330px;}
+article{padding:5px 5px;margin:20px;background-color: rgba(255, 255, 255, 0.7);word-wrap:break-word;min-height:330px;}
 
 article p{padding-bottom:10px;}
 
 #piedpage{word-wrap:break-word;}
 #piedpage a{text-decoration:none;font-weight:bold;background-color:rgba(255, 255, 255, 0.5);padding:2px;}
 #piedpage a:hover{text-decoration:none;font-weight:none;background:#b1b1b1;}
-.older-posts{padding-right:10px;margin-bottom:8px !important;  display:inline-block !important;)
+.older-posts{padding-right:10px;margin-bottom:8px !important;  display:inline-block !important;}
+
+#disqus_thread {
+background-color: rgba(255, 255, 255, 0.7);
+}
