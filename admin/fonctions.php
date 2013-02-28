@@ -413,6 +413,48 @@ echo'<div id="pays"><p>'.Pays.'</p></div>';
 /* Configuration du blog */ 
 
 function configuration() {
+echo'
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+    
+    <!--script src="./js/jquery-1.7.2.min.js"></script>
+    <script src="./js/jquery-ui-1.8.20.custom.min.js"></script>-->
+    <script src="http://kevinbatdorf.github.com/codaslider/js/jquery.coda-slider-3.0.js"></script>
+	
+    <script>
+      $(function() {
+        $(\'#main-slider\').codaSlider({
+          autoHeight: false,
+          continuous:false,
+          dynamicArrows: false,
+          dynamicTabs: false
+        });
+        $(\'#showcase\').codaSlider();
+        $(\'#continuous\').codaSlider({
+          autoSlide: false,
+          continuous: false,
+          dynamicArrowsGraphical: false,
+          dynamicTabsAlign: "right",
+          dynamicTabsPosition: "bottom",
+          panelTitleSelector: "div.title"
+        });
+        $(\'#dynamic-tabs\').codaSlider({
+          autoSlideControls:false,
+          dynamicTabsAlign: "left",
+          dynamicTabsPosition: "top",
+          dynamicArrows: false
+        })
+        $(\'#information\').codaSlider({
+          dynamicArrows: false,
+          dynamicTabs: false,
+          slideEaseFunction: "easeOutCirc"
+        });
+      });
+      </script>
+  </head>
+  <body>';
 
 $fichier='configuration.txt';
 $tableau=array();
@@ -496,17 +538,15 @@ ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[31],null,'UT
 }
 
 else {
+  
+error_reporting(0);
 
-echo '<form action="index.php?page=configuration&id=2" method="post">';
-echo '<table>';
-echo '<tr>
-<td COLSPAN=2><center><b>Configuration</b></center></td>
-<td COLSPAN=2><center><b>Profil</b></center></td>
-</tr><tr>
-<td class="titre"></br>'.Titre.'  &nbsp;</td><td></br><input type="text" name="0" value="'.base64_decode($tableau[0]).'" placeholder="Titre de votre blog" STYLE="width:170px;" /></td>
-<td class="profil"></br>'.Prénom.'  &nbsp;</td><td></br><input type="text" name="11" value="'.base64_decode($tableau[11]).'" placeholder="Votre Prénom" STYLE="width:170px;" /></td>
-</tr><tr>';
-
+echo'<form action="index.php?page=configuration&id=2" method="post">
+	
+<div class="coda-slider"  id="main-slider">
+<div>
+<div class="coda-slider"  id="showcase">';
+ 
 if (base64_decode($tableau[4])==on) {$paginationOn = 'selected="selected"';}
 elseif (base64_decode($tableau[4])==off) {$paginationOff = 'selected="selected"';}
 else {$paginationOn = 'selected="selected"';}
@@ -888,7 +928,19 @@ elseif (base64_decode($tableau[14])=='Zambie') {$pays196 = 'selected="selected"'
 elseif (base64_decode($tableau[14])=='Zimbabwe') {$pays197 = 'selected="selected"';}
 else {$pays1 = 'selected="selected"';}
 
-echo '<td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[1]).'" name="1" STYLE="width:180px;">';
+echo'<div>
+<h2 class="title" style="display:none;">Général</h2>
+<table style="margin:auto;padding-right:60px;">
+<td class="titre"></br>'.Titre.'  &nbsp;</td><td></br><input type="text" name="0" value="'.base64_decode($tableau[0]).'" placeholder="Titre de votre blog" STYLE="width:170px;" /></td>
+';
+
+echo '<tr><td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[1]).'" name="1" STYLE="width:180px;">';
+
+if (base64_decode($tableau[1])==en) {$selected3 = 'selected="selected"';}
+elseif (base64_decode($tableau[1])==es) {$selected4 = 'selected="selected"';}
+elseif (base64_decode($tableau[1])==fr) {$selected5 = 'selected="selected"';}
+elseif (base64_decode($tableau[1])==nl) {$selected6 = 'selected="selected"';}
+else {$selected5 = 'selected="selected"';}
 
 $languages = array(
 
@@ -903,13 +955,65 @@ foreach ($languages as $languages1 => $languages2) {
 echo'<option '.$languages2.'>'.$languages1.'</option>';
  };
 
-echo'</SELECT></td>
+echo'</SELECT></td></tr>
 
-<td class="profil"></br>'.Nom.'  &nbsp;</td><td></br><input type="text" name="12" value="'.base64_decode($tableau[12]).'" placeholder="Votre nom" STYLE="width:170px;" /></td>
-
+<tr><td class="titre"></br>'.Gerant.'  &nbsp;</td><td></br><input type="text" required name="2" value="'.base64_decode($tableau[2]).'" placeholder="Nom affich&eacute; sur le blog" STYLE="width:170px;"/></td>
 </tr><tr>
+<td class="titre"></br>Disqus  &nbsp;</td><td></br><input type="text" name="3" value="'.base64_decode($tableau[3]).'" placeholder="ID DISQUS" STYLE="width:170px;"/></td></tr>
+<tr>
+<td class="titre"></br>Pagination  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[4]).'" name="4" STYLE="width:180px;">
+<option value="on" '.$paginationOn.'>Nouveau à Ancien</option>
+<option value="off" '.$paginationOff.'>Ancien à nouveau</option>
+</select></td>
+</tr><tr><td class="titre"></br>Adresse site  &nbsp;</td><td></br>
 
-<td class="titre"></br>'.Gerant.'  &nbsp;</td><td></br><input type="text" required name="2" value="'.base64_decode($tableau[2]).'" placeholder="Nom affich&eacute; sur le blog" STYLE="width:170px;"/></td>
+<input type="text" name="5"  required value="'.base64_decode($tableau[5]).'" placeholder="Adresse de votre site" STYLE="width:170px;"/></td></tr>
+
+<tr>
+<td class="titre"></br>'.Login.'  &nbsp;</td><td></br><input type="text" required name="6" value="'.base64_decode($tableau[6]).'" placeholder="Votre pseudo de connexion" STYLE="width:170px;" alt=""/></td>
+</tr>';
+
+if (base64_decode($tableau[8])==on) {$selectedon = 'selected="selected"';}
+
+elseif (base64_decode($tableau[8])==on2) {$selectedon2 = 'selected="selected"';}
+
+elseif (base64_decode($tableau[8])==off) {$selectedoff = 'selected="selected"';}
+
+echo'<tr><td class="titre"></br>URL Rewriting  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[8]).'" name="8" STYLE="width:180px;">
+<OPTION VALUE="on" '.$selectedon.'>Url Sans titre</OPTION>
+<OPTION VALUE="on2" '.$selectedon2.'>Url avec Titre</OPTION>
+<OPTION VALUE="off" '.$selectedoff.'>Pas de r&eacute;ecriture</OPTION>
+</SELECT></td></tr>';
+
+if (base64_decode($tableau[9])==on) {$selected1 = 'selected="selected"';}
+
+elseif (base64_decode($tableau[9])==off) {$selected2 = 'selected="selected"';}
+
+echo'<tr><td class="titre"></br>Lien Admin  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[9]).'" name="9" STYLE="width:180px;">
+<OPTION VALUE="on" '.$selected1.'>Afficher</OPTION>
+<OPTION VALUE="off" '.$selected2.'>Cacher</OPTION>
+</SELECT></td></tr>';
+
+if (base64_decode($tableau[10])==on) {$selecteddate1 = 'selected="selected"';}
+
+elseif (base64_decode($tableau[10])==off) {$selecteddate2 = 'selected="selected"';}
+
+echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[10]).'" name="10" STYLE="width:180px;">
+<OPTION VALUE="on" '.$selecteddate1.'>Lettre</OPTION>
+<OPTION VALUE="off" '.$selecteddate2.'>Chiffre</OPTION>
+</SELECT></td></tr>
+
+</table>
+</div>
+
+<div>
+<h2 class="title" style="display:none;">Profil</h2>
+<table style="margin:auto;padding-right:60px;">
+<td class="profil"></br>'.Prénom.'  &nbsp;</td><td></br><input type="text" name="11" value="'.base64_decode($tableau[11]).'" placeholder="Votre Prénom" STYLE="width:170px;" /></td>
+<tr>
+<td class="profil"></br>'.Nom.'  &nbsp;</td><td></br><input type="text" name="12" value="'.base64_decode($tableau[12]).'" placeholder="Votre nom" STYLE="width:170px;" /></td>
+</tr>
+<tr>
 <td class="profil"></br>Date de Naissance  &nbsp;</td><td></br>
 <SELECT value="'.base64_decode($tableau[13]).'" name="13" STYLE="width:62px;">';
 
@@ -1046,7 +1150,7 @@ foreach ($year as $year1 => $year2) {
 echo'<option '.$year2.'>'.$year1.'</option>';
  };
 
- echo'
+echo'
 
 </SELECT>
  
@@ -1118,12 +1222,7 @@ foreach ($day as $day1 => $day2) {
 echo'<option '.$day2.'>'.$day1.'</option>';
  };
 
-echo'</SELECT></td>';
-
-echo'
-</td>
-</tr><tr>
-<td class="titre"></br>Disqus  &nbsp;</td><td></br><input type="text" name="3" value="'.base64_decode($tableau[3]).'" placeholder="ID DISQUS" STYLE="width:170px;"/></td>
+echo'</SELECT></td></tr><tr>
 <td class="profil"></br>Pays  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[14]).'" name="14" STYLE="width:180px;">';
 
 $world = array(
@@ -1335,103 +1434,40 @@ echo'<option '.$world2.'>'.$world1.'</option>';
 
 echo'
 </select>
-</td>
-
-</tr><tr>
-
-<td class="titre"></br>Pagination  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[4]).'" name="4" STYLE="width:180px;">
-<option value="on" '.$paginationOn.'>Nouveau à Ancien</option>
-<option value="off" '.$paginationOff.'>Ancien à nouveau</option>
-</select></td>
+</td></tr><tr>
 <td class="profil"></br>'.Photo.'  &nbsp;</td><td></br><input type="text" name="15" value="'.base64_decode($tableau[15]).'" placeholder="Une photo de vous" STYLE="width:170px;" /></td>
-
-</tr><tr>
-<td class="titre"></br>Adresse site  &nbsp;</td><td></br>'; 
-
-echo '
-
-<input type="text" name="5"  required value="'.base64_decode($tableau[5]).'" placeholder="Adresse de votre site" STYLE="width:170px;"/></td>'; 
-
-echo '
-
+</tr>
+<tr>
 <td class="profil"></br>'.Twitter.'  &nbsp;</td><td></br><input type="text" name="16" value="'.base64_decode($tableau[16]).'" placeholder="Votre Compte Twitter" STYLE="width:170px;" /></td>
-
-</tr><tr>
-
-<td class="titre"></br>'.Login.'  &nbsp;</td><td></br><input type="text" required name="6" value="'.base64_decode($tableau[6]).'" placeholder="Votre pseudo de connexion" STYLE="width:170px;" alt=""/></td>
-
+</tr>
+<tr>
 <td class="profil"></br>'.Facebook.'  &nbsp;</td><td></br><input type="text" name="17" value="'.base64_decode($tableau[17]).'" placeholder="Votre Compte Facebook" STYLE="width:170px;" /></td>
-
-</tr><tr>
-
-<td class="titre"></br>'.Code.'  &nbsp;</td><td></br><input type="password" autocomplete="off" required name="7" value="" placeholder="Mot de passe de connexion" STYLE="width:170px;" alt=""/ ></td>
-
+</tr>
+<tr>
 <td class="profil"></br>Google +  &nbsp;</td><td></br><input type="text" name="18" value="'.base64_decode($tableau[18]).'" placeholder="Votre Compte Google +" STYLE="width:170px;" /></td>
-
-</tr>';
-
-if (base64_decode($tableau[8])==on) {$selectedon = 'selected="selected"';}
-
-elseif (base64_decode($tableau[8])==on2) {$selectedon2 = 'selected="selected"';}
-
-elseif (base64_decode($tableau[8])==off) {$selectedoff = 'selected="selected"';}
-
-echo'<tr><td class="titre"></br>URL Rewriting  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[8]).'" name="8" STYLE="width:180px;">
-<OPTION VALUE="on" '.$selectedon.'>Url Sans titre</OPTION>
-<OPTION VALUE="on2" '.$selectedon2.'>Url avec Titre</OPTION>
-<OPTION VALUE="off" '.$selectedoff.'>Pas de r&eacute;ecriture</OPTION>
-</SELECT></td>
-
+</tr>
+<tr>
 <td class="profil"></br>Activit&eacute;</td><td></br><input type="text" name="19" value="'.base64_decode($tableau[19]).'" placeholder="Codeur, Vendeur, etc" STYLE="width:170px;" /></td>
 </tr>
-';echo "\n";
-
-if (base64_decode($tableau[9])==on) {$selected1 = 'selected="selected"';}
-
-elseif (base64_decode($tableau[9])==off) {$selected2 = 'selected="selected"';}
-
-echo'<tr><td class="titre"></br>Lien Admin  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[9]).'" name="9" STYLE="width:180px;">
-<OPTION VALUE="on" '.$selected1.'>Afficher</OPTION>
-<OPTION VALUE="off" '.$selected2.'>Cacher</OPTION>
-</SELECT></td>
-
+<tr>
 <td class="profil"></br>Biographie</td><td></br><input type="text" name="20" value="'.base64_decode($tableau[20]).'" placeholder="Quelques mots sur vous" STYLE="width:170px;" /></td>
-
 </tr>
-';echo "\n";
-
-if (base64_decode($tableau[10])==on) {$selected1 = 'selected="selected"';}
-
-elseif (base64_decode($tableau[10])==off) {$selected2 = 'selected="selected"';}
-
-echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[10]).'" name="10" STYLE="width:180px;">
-<OPTION VALUE="on" '.$selected1.'>Lettre</OPTION>
-<OPTION VALUE="off" '.$selected2.'>Chiffre</OPTION>
-</SELECT></td>
-
+<tr>
 <td class="profil"></br>Loisirs</td><td></br><input type="text" name="21" value="'.base64_decode($tableau[21]).'" placeholder="Jeux vid&eacute;os, Mangas, etc" STYLE="width:170px;" /></td>
 </tr>
+</table>
+</div>
 
-<tr>
-<td COLSPAN=4><center><br/><b>Menu</b></center></td>
-</tr>
-
-<tr>
-<td class="titre"></br>Titre A  &nbsp;</td><td></br><input type="text" name="22" value="'.base64_decode($tableau[22]).'" placeholder="Titre du menu A" STYLE="width:170px;" /></td>
-<td class="profil"></br>Lien A  &nbsp;</td><td></br><input type="text" name="23" value="'.base64_decode($tableau[23]).'" placeholder="Lien du menu A" STYLE="width:170px;" /></td>
-</tr>
-
-<tr>
-<td class="titre"></br>Titre B  &nbsp;</td><td></br><input type="text" name="24" value="'.base64_decode($tableau[24]).'" placeholder="Titre du menu B" STYLE="width:170px;" /></td>
-<td class="profil"></br>Lien B  &nbsp;</td><td></br><input type="text" name="25" value="'.base64_decode($tableau[25]).'" placeholder="Lien du menu B" STYLE="width:170px;" /></td>
-</tr>
-
+<div>
+<h2 class="title" style="display:none;">Theme</h2>
+<table style="margin:auto;padding-right:60px;">
 <tr>
 <td COLSPAN=4><center><br/><b>Banniere</b></center></td>
 </tr>
 
 <tr>
 <td class="titre"></br>Lien &nbsp;</td><td></br><input type="text" name="26" value="'.base64_decode($tableau[26]).'" placeholder="Lien Banniere" STYLE="width:170px;" /></td>
+</tr><tr>
 <td class="profil"></br>Titre &nbsp;</td><td></br><input type="text" name="27" value="'.base64_decode($tableau[27]).'" placeholder="Titre Banniere" STYLE="width:170px;" /></td>
 </tr>
 
@@ -1441,18 +1477,55 @@ echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.b
 
 <tr>
 <td class="titre"></br>Background &nbsp;</td><td></br><input type="text" name="30" value="'.base64_decode($tableau[30]).'" placeholder="Lien du background-Image" STYLE="width:170px;" /></td>
+</tr><tr>
 <td class="profil"></br>Favicon &nbsp;</td><td></br><input type="text" name="31" value="'.base64_decode($tableau[31]).'" placeholder="Lien de Favicon (Icone)" STYLE="width:170px;" /></td>
-
+</tr>
+</table>
+</div>
+  
+<div>
+<h2 class="title" style="display:none;">Menu</h2>
+<table style="margin:auto;padding-right:60px;">
+<tr>
+<td COLSPAN=4><center><br/><b>Menu</b></center></td>
 </tr>
 
-';echo "\n";
+<tr>
+<td class="titre"></br>Titre A  &nbsp;</td><td></br><input type="text" name="22" value="'.base64_decode($tableau[22]).'" placeholder="Titre du menu A" STYLE="width:170px;" /></td>
+</tr><tr>
+<td class="profil"></br>Lien A  &nbsp;</td><td></br><input type="text" name="23" value="'.base64_decode($tableau[23]).'" placeholder="Lien du menu A" STYLE="width:170px;" /></td>
+</tr>
 
-echo '</table><br/>';echo "\n";
+<tr>
+<td class="titre"></br>Titre B  &nbsp;</td><td></br><input type="text" name="24" value="'.base64_decode($tableau[24]).'" placeholder="Titre du menu B" STYLE="width:170px;" /></td>
+</tr><tr>
+<td class="profil"></br>Lien B  &nbsp;</td><td></br><input type="text" name="25" value="'.base64_decode($tableau[25]).'" placeholder="Lien du menu B" STYLE="width:170px;" /></td>
+</tr>
+</table>
+</div>
+</div>
 
-echo '<center><input class="submit" type="submit" value="'.Ok.'" name="submit"/>
-</center></form>'; 
+<table style="margin:auto;padding-right:0px;">
+<tr>
+<td class="titre"></br>'.Code.'  &nbsp;</td><td></br><input type="password" autocomplete="off" required name="7" value="" placeholder="Mot de passe de connexion" STYLE="width:170px;" alt=""/ ></td>
+</tr>  
+</table>
+		
+<br/> 
 
-}
+<center>
+<input class="submit" type="submit" value="'.Ok.'" name="submit"/>
+</center>		
+</form>
+';
+
+};
+
+echo'
+</div>
+</div>
+';
+echo'</body>';
 }
 
 /* La liste des News dans l'administration */
@@ -1463,14 +1536,14 @@ $fichier='configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<table class="data" style="border-collapse: collapse;"><thead><tr>
+echo'<table class="data" style="border-collapse: collapse !important ;"><thead><tr>
 <th style="width:300px;border:1px solid #CCCCCC; text-transform: uppercase; background-color:#E2E2E2;"><center>'.Titre.'</center></th><th style="width:100px;border:1px solid #CCCCCC; text-transform: uppercase; background-color:#E2E2E2;"><center>'.Date.'</center></th><th style="width:100px;border:1px solid #CCCCCC; text-transform: uppercase; background-color:#E2E2E2;"><center>'.Auteur.'</center></th><th style="width:100px;border:1px solid #CCCCCC; text-transform: uppercase; background-color:#E2E2E2;"><center>'.Supprimer.'</center></th><th style="width:100px;border:1px solid #CCCCCC; text-transform: uppercase; background-color:#E2E2E2;"><center>'.Editer.'</center></th></tr></thead></table>';
  
 $liste_news = unserialize(base64_decode(file_get_contents('../news.php')));
 if(!empty($liste_news)) {
 	foreach($liste_news as $id => $news) {
 
-echo'<table class="data" style="border-collapse: collapse;">
+echo'<table class="data" style="border-collapse: collapse !important ;">
 <thead><tr >
 <td style="width:300px;border:1px solid #CCCCCC;background-color:#FFF9F4;">';
 echo $news['titre'];
@@ -1661,7 +1734,7 @@ $notes = array( 'Off','1','2','3','4','5');
 
 foreach ($notes as $notesA) { echo'<option>'.$notesA.'</option>'; };
 
-echo'</SELECT>&nbsp; &nbsp;<b>( Si vous voulez ajouter une note avec votre article sur des jeux vidéos, mangas, films ou autre ... )</b> .<br/><br/><center><input type="submit" value="'.Ok.'" /></center></form>';
+echo'</SELECT>&nbsp; &nbsp;<b>( Si vous voulez ajouter une note avec votre article sur des jeux vidéos, mangas, films, etc )</b> .<br/><br/><center><input type="submit" value="'.Ok.'" /></center></form>';
 }
 }
 
@@ -1771,7 +1844,7 @@ foreach ($notes as $notesA => $notesB) {
 echo'<option '.$notesB.'>'.$notesA.'</option>';
  };
 
-echo'</SELECT>&nbsp; &nbsp;<b>( Si vous voulez ajouter une note avec votre article sur des jeux vidéos, mangas, films ou autre ... )</b> .<br/>
+echo'</SELECT>&nbsp; &nbsp;<b>( Si vous voulez ajouter une note avec votre article sur des jeux vidéos, mangas, films, etc )</b> .<br/>
 		<br/>
 <center><input type="submit" value="'.Ok.'" /></center>
 	</form>';
