@@ -393,7 +393,7 @@ echo'</p></div>';
 
 }
 
-$file = 'http://julien-et-nel.be/UAG/UAG-1-96.txt';
+$file = 'http://julien-et-nel.be/UAG/UAG-1-97.txt';
 $file_headers = @get_headers($file);
 if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
 
@@ -429,67 +429,67 @@ echo'<meta http-equiv="refresh" content="1; URL=index.php?page=configuration">
 
 $salt = 'BwGk15l8WX'; 
 
-$_POST[0] = str_replace(array('-','php'),array(':)',''), $_POST[0]);	
+$_POST[0] = str_replace(array('-','php'),array('-',''), $_POST[0]);	
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[0],null,'UTF-8'))))));
-$_POST[1] = str_replace(array('-','php'),array(':)',''), $_POST[1]);
+$_POST[1] = str_replace(array('-','php'),array('-',''), $_POST[1]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[1],null,'UTF-8'))))));
-$_POST[2] = str_replace(array('-','php'),array(':)',''), $_POST[2]);
+$_POST[2] = str_replace(array('-','php'),array('-',''), $_POST[2]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[2],null,'UTF-8'))))));
-$_POST[3] = str_replace(array('-','php'),array(':)',''), $_POST[3]);
+$_POST[3] = str_replace(array('-','php'),array('-',''), $_POST[3]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[3],null,'UTF-8'))))));
-$_POST[4] = str_replace(array('-','php'),array(':)',''), $_POST[4]);		 
+$_POST[4] = str_replace(array('-','php'),array('-',''), $_POST[4]);		 
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[4],null,'UTF-8'))))));
-$_POST[5] = str_replace(array('-','php'),array(':)',''), $_POST[5]);		 
+$_POST[5] = str_replace(array('-','php'),array('-',''), $_POST[5]);		 
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[5],null,'UTF-8'))))));
-$_POST[6] = str_replace(array('-','php'),array(':)',''), $_POST[6]);			 
+$_POST[6] = str_replace(array('-','php'),array('-',''), $_POST[6]);			 
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[6],null,'UTF-8')))))); 
-$_POST[7] = str_replace(array('-','php'),array(':)',''), $_POST[7]);		 
+$_POST[7] = str_replace(array('-','php'),array('-',''), $_POST[7]);		 
 ajout($fichier,trim(base64_encode(stripslashes((sha1($_POST[7].$salt))))));
-$_POST[8] = str_replace(array('-','php'),array(':)',''), $_POST[8]);			 
+$_POST[8] = str_replace(array('-','php'),array('-',''), $_POST[8]);			 
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[8],null,'UTF-8')))))); 
-$_POST[9] = str_replace(array('-','php'),array(':)',''), $_POST[9]);
+$_POST[9] = str_replace(array('-','php'),array('-',''), $_POST[9]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[9],null,'UTF-8')))))); 
-$_POST[10] = str_replace(array('-','php'),array(':)',''), $_POST[10]);
+$_POST[10] = str_replace(array('-','php'),array('-',''), $_POST[10]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[10],null,'UTF-8')))))); 
-$_POST[11] = str_replace(array('-','php'),array(':)',''), $_POST[11]);
+$_POST[11] = str_replace(array('-','php'),array('-',''), $_POST[11]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[11],null,'UTF-8')))))); 
-$_POST[12] = str_replace(array('-','php'),array(':)',''), $_POST[12]);
+$_POST[12] = str_replace(array('-','php'),array('-',''), $_POST[12]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[12],null,'UTF-8')))))); 
-$_POST[13] = str_replace(array('-','php'),array(':)',''), $_POST[13]);
+$_POST[13] = str_replace(array('-','php'),array('-',''), $_POST[13]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[13],null,'UTF-8')))))); 
-$_POST[14] = str_replace(array('-','php'),array(':)',''), $_POST[14]);
+$_POST[14] = str_replace(array('-','php'),array('-',''), $_POST[14]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[14],null,'UTF-8')))))); 
-$_POST[15] = str_replace(array('-','php'),array(':)',''), $_POST[15]);
+$_POST[15] = str_replace(array('-','php'),array('-',''), $_POST[15]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[15],null,'UTF-8')))))); 
-$_POST[16] = str_replace(array('-','php'),array(':)',''), $_POST[16]);
+$_POST[16] = str_replace(array('-','php'),array('-',''), $_POST[16]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[16],null,'UTF-8')))))); 
-$_POST[17] = str_replace(array('-','php'),array(':)',''), $_POST[17]);
+$_POST[17] = str_replace(array('-','php'),array('-',''), $_POST[17]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[17],null,'UTF-8')))))); 
-$_POST[18] = str_replace(array('-','php'),array(':)',''), $_POST[18]);
+$_POST[18] = str_replace(array('-','php'),array('-',''), $_POST[18]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[18],null,'UTF-8')))))); 
-$_POST[19] = str_replace(array('-','php'),array(':)',''), $_POST[19]);
+$_POST[19] = str_replace(array('-','php'),array('-',''), $_POST[19]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[19],null,'UTF-8')))))); 
-$_POST[20] = str_replace(array('-','php'),array(':)',''), $_POST[20]);
+$_POST[20] = str_replace(array('-','php'),array('-',''), $_POST[20]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[20],null,'UTF-8')))))); 
-$_POST[21] = str_replace(array('-','php'),array(':)',''), $_POST[21]);
+$_POST[21] = str_replace(array('-','php'),array('-',''), $_POST[21]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[21],null,'UTF-8')))))); 
-$_POST[22] = str_replace(array('-','php'),array(':)',''), $_POST[22]);
+$_POST[22] = str_replace(array('-','php'),array('-',''), $_POST[22]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[22],null,'UTF-8')))))); 
-$_POST[23] = str_replace(array('-','php'),array(':)',''), $_POST[23]);
+$_POST[23] = str_replace(array('-','php'),array('-',''), $_POST[23]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[23],null,'UTF-8')))))); 
-$_POST[24] = str_replace(array('-','php'),array(':)',''), $_POST[24]);
+$_POST[24] = str_replace(array('-','php'),array('-',''), $_POST[24]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[24],null,'UTF-8')))))); 
-$_POST[25] = str_replace(array('-','php'),array(':)',''), $_POST[25]);
+$_POST[25] = str_replace(array('-','php'),array('-',''), $_POST[25]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[25],null,'UTF-8'))))));
-$_POST[26] = str_replace(array('-','php'),array(':)',''), $_POST[26]);
+$_POST[26] = str_replace(array('-','php'),array('-',''), $_POST[26]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[26],null,'UTF-8')))))); 
-$_POST[27] = str_replace(array('-','php'),array(':)',''), $_POST[27]);
+$_POST[27] = str_replace(array('-','php'),array('-',''), $_POST[27]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[27],null,'UTF-8'))))));
-$_POST[28] = str_replace(array('-','php'),array(':)',''), $_POST[28]);
+$_POST[28] = str_replace(array('-','php'),array('-',''), $_POST[28]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[28],null,'UTF-8'))))));
-$_POST[29] = str_replace(array('-','php'),array(':)',''), $_POST[29]);
+$_POST[29] = str_replace(array('-','php'),array('-',''), $_POST[29]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[29],null,'UTF-8'))))));
-$_POST[30] = str_replace(array('-','php'),array(':)',''), $_POST[30]);
+$_POST[30] = str_replace(array('-','php'),array('-',''), $_POST[30]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[30],null,'UTF-8'))))));
 }
 
