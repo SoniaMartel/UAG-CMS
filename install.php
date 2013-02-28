@@ -105,6 +105,34 @@ echo '
 $lien = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
 $lien = str_replace('/install.php', '', $lien);
 
+$filehtaccess = '.htaccess';
+// Ouvre un fichier pour lire un contenu existant
+$current = file_get_contents($filehtaccess);
+// Ajoute une personne
+$current = "ErrorDocument 404 $lien/index.php?module=erreurs
+ErrorDocument 403 $lien/index.php?module=erreurs
+
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule ^article-([0-9]+)\.php$   index.php?module=articles&page=$1 [L]
+RewriteRule ^([0-9]+)-([a-z0-9\-]+)\.php$   index.php?module=articles&page=$1 [L]
+
+RewriteRule ^feed$   rss.php [L]
+
+<files .htaccess>
+order allow,deny
+deny from all
+ </files>
+
+ Options -Indexes
+
+ AddDefaultCharset UTF-8
+ 
+ ";
+// Écrit le résultat dans le fichier
+file_put_contents($filehtaccess, $current);
+
 echo '
 
 <input type="text" required name="5" readonly="readonly" value="'.$lien.'" placeholder="Adresse de votre site" STYLE="width:180px;"/>

@@ -100,8 +100,7 @@ echo'</style>
 <link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
 <link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />';
 
-echo'</head>
-';
+echo'</head>';
 
 echo'<body class="home blog"><div id="wrapper"><header id="header">';
 
