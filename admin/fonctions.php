@@ -304,13 +304,13 @@ function age($naiss)  {
   }
 age(''.base64_decode($tableau[13]).'/'.base64_decode($tableau[28]).'/'.base64_decode($tableau[29]).'');  
 
-echo' ans '.base64_decode($tableau[14]).' <img src="admin/images/pays/'.base64_decode($tableau[14]).'.png" alt="'.base64_decode($tableau[14]).'" style="border: black 1px solid;"> )</h1>';};
+echo' ans '.base64_decode($tableau[14]).' <img src="'.base64_decode($tableau[5]).'/admin/images/pays/'.base64_decode($tableau[14]).'.png" alt="'.base64_decode($tableau[14]).'" style="border: black 1px solid;"> )</h1>';};
 
 echo'<table>
 <tr>
 <td><img src="';
 
-if (base64_decode($tableau[15])=='') {echo 'photo.png';}
+if (base64_decode($tableau[15])=='') {echo ''.base64_decode($tableau[5]).'/photo.png';}
 
 else {echo''.base64_decode($tableau[15]).'';};
 
