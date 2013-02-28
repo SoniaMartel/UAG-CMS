@@ -97,8 +97,19 @@ echo'</style>
 <meta name="Generator" content="UAG CMS" />
 <link rel="alternate" type="application/rss+xml" title="flux rss" href="rss.php" />
 <link rel="stylesheet" type="text/css" href="'.base64_decode($tableau[5]).'/style.css" />
-<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
-<link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />';
+<link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css" />';
+
+
+if (base64_decode($tableau[31])=='') {
+echo'<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
+<link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />'
+;}
+else {
+echo'<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[31]).'" sizes="16x16" />
+<link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[31]).'" sizes="16x16" />'
+;}
+
+
 
 echo'</head>';
 

@@ -491,6 +491,8 @@ $_POST[29] = str_replace(array('-','php'),array('-',''), $_POST[29]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[29],null,'UTF-8'))))));
 $_POST[30] = str_replace(array('-','php'),array('-',''), $_POST[30]);
 ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[30],null,'UTF-8'))))));
+$_POST[31] = str_replace(array('-','php'),array('-',''), $_POST[31]);
+ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[31],null,'UTF-8'))))));
 }
 
 else {
@@ -1434,11 +1436,13 @@ echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.b
 </tr>
 
 <tr>
-<td COLSPAN=4><center><br/><b>Background</b></center></td>
+<td COLSPAN=4><center><br/><b>Background & Favicon</b></center></td>
 </tr>
 
 <tr>
-<td class="titre"></br>Lien &nbsp;</td><td COLSPAN=3></br><input type="text" name="30" value="'.base64_decode($tableau[30]).'" placeholder="Lien du background (Image de fond)" STYLE="width:496px;" /></td>
+<td class="titre"></br>Background &nbsp;</td><td></br><input type="text" name="30" value="'.base64_decode($tableau[30]).'" placeholder="Lien du background-Image" STYLE="width:170px;" /></td>
+<td class="profil"></br>Favicon &nbsp;</td><td></br><input type="text" name="31" value="'.base64_decode($tableau[31]).'" placeholder="Lien de Favicon (Icone)" STYLE="width:170px;" /></td>
+
 </tr>
 
 ';echo "\n";
