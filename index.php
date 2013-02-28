@@ -169,7 +169,7 @@ else if (base64_decode($tableau[25])=='') {}
 
 else {echo'<li><a href="'.base64_decode($tableau[25]).'">'.base64_decode($tableau[24]).'</a></li>'; }
 
-echo'</ul></div></nav>';
+echo'<li><a href="'.base64_decode($tableau[5]).'/rss.php">RSS</a></li</ul></div></nav>';
 
 echo'<br/><nav id="footer"><ul style="text-align: center"><li><strong><a rel="license" href="http://julien-et-nel.be/LLDGP1/">LLDGP1</a></strong> | <strong>'.base64_decode($tableau[0]).'</strong> | <strong><a href="http://julien-et-nel.be/UAG/">UAG CMS</a> | Design : ';
 
