@@ -929,9 +929,20 @@ elseif (base64_decode($tableau[14])=='Zimbabwe') {$pays197 = 'selected="selected
 else {$pays1 = 'selected="selected"';}
 
 echo'<div>
+<h2 class="title" style="display:none;">Accueil</h2>
+<table style="margin:auto;padding-right:60px;">
+<p><b>Bienvenue dans la configuration, vous pouvez configurer :</b></p><br/>
+<tr><td style="padding-left:10px;padding-top:10px;">Général</td><td style="padding-left:20px;padding-top:10px;"> Configurer l\'ensemble du blog </td> </tr>
+<tr><td style="padding-left:10px;padding-top:10px;">Profil</td><td style="padding-left:20px;padding-top:10px;"> Compléter les détails sur vous </td> </tr>
+<tr><td style="padding-left:10px;padding-top:10px;">Theme</td><td style="padding-left:20px;padding-top:10px;"> Personnaliser le graphisme du theme </td> </tr>
+<tr><td style="padding-left:10px;padding-top:10px;">Menu</td><td style="padding-left:20px;padding-top:10px;"> Ajouter des menus complémentaires </td> </tr>
+</table>
+</div>
+<div>
 <h2 class="title" style="display:none;">Général</h2>
 <table style="margin:auto;padding-right:60px;">
-<td class="titre"></br>'.Titre.'  &nbsp;</td><td></br><input type="text" name="0" value="'.base64_decode($tableau[0]).'" placeholder="Titre de votre blog" STYLE="width:170px;" /></td>
+<tr>
+<td class="titre"></br>'.Titre.'  &nbsp;</td><td></br><input type="text" name="0" value="'.base64_decode($tableau[0]).'" placeholder="Titre de votre blog" STYLE="width:170px;" /></td></tr>
 ';
 
 echo '<tr><td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[1]).'" name="1" STYLE="width:180px;">';
@@ -1009,8 +1020,9 @@ echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.b
 <div>
 <h2 class="title" style="display:none;">Profil</h2>
 <table style="margin:auto;padding-right:60px;">
-<td class="profil"></br>'.Prénom.'  &nbsp;</td><td></br><input type="text" name="11" value="'.base64_decode($tableau[11]).'" placeholder="Votre Prénom" STYLE="width:170px;" /></td>
 <tr>
+<td class="profil"></br>'.Prénom.'  &nbsp;</td><td></br><input type="text" name="11" value="'.base64_decode($tableau[11]).'" placeholder="Votre Prénom" STYLE="width:170px;" /></td>
+</tr><tr>
 <td class="profil"></br>'.Nom.'  &nbsp;</td><td></br><input type="text" name="12" value="'.base64_decode($tableau[12]).'" placeholder="Votre nom" STYLE="width:170px;" /></td>
 </tr>
 <tr>
