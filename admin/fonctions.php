@@ -416,12 +416,9 @@ function configuration() {
 echo'
 <head>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-    
-    <!--script src="./js/jquery-1.7.2.min.js"></script>
-    <script src="./js/jquery-ui-1.8.20.custom.min.js"></script>-->
-    <script src="http://kevinbatdorf.github.com/codaslider/js/jquery.coda-slider-3.0.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.coda-slider-3.0.js"></script>
 	
     <script>
       $(function() {
