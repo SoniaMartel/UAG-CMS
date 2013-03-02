@@ -966,7 +966,7 @@ css-tricks.com/musings-on-preprocessing/
   *
   *************************************************/
   clear: both;
-  overflow: auto;
+  overflow: none;
 }
 /* line 232, ../sass/coda-slider.scss */
 .coda-slider-wrapper .coda-slider {
@@ -975,7 +975,8 @@ css-tricks.com/musings-on-preprocessing/
   * slider styles 
   *
   *************************************************/
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   float: left;
   overflow: hidden;
   position: relative;
