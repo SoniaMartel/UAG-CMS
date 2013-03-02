@@ -23,3 +23,22 @@ body{margin:0;auto:0;background:#EEEEEE;font: 13px "helvetica", "arial", sans-se
 table {margin:auto;}
 
 .profil {padding-left:20px;padding-right:2px;}
+
+
+input.submit:hover, [type="submit"] :hover {
+    border: 1px solid rgb(221, 238, 255);
+    background: none repeat scroll 0% 0% white;
+	color:black;
+    cursor: pointer;
+    padding: 3px 30px;
+    margin: 0px 10px;
+}
+
+input.submit, input[type="submit"] {
+    border: 1px solid rgb(221, 238, 255);
+    background: none repeat scroll 0% 0% black;
+	color:white;
+    cursor: pointer;
+    padding: 3px 30px;
+    margin: 0px 10px;
+}
