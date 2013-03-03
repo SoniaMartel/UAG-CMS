@@ -22,9 +22,7 @@
 
 function terreurs()   {
 
-$fichier='admin/configuration.txt';
-$tableau=array();
-$tableau=lire_array($fichier);
+include ('admin/includes/config1.php');
 
 echo'<title>'.base64_decode($tableau[0]).' - 404</title>';
 
@@ -32,9 +30,7 @@ echo'<title>'.base64_decode($tableau[0]).' - 404</title>';
 
 function erreurs()   {
 
-$fichier='admin/configuration.txt';
-$tableau=array();
-$tableau=lire_array($fichier);
+include ('admin/includes/config1.php');
 
 echo'<h2>404</h2><center><img src="'.base64_decode($tableau[5]).'/404.gif" alt="404" width="180px"></center><div id="article" style="padding-left:10px"><br/><h1>La r&eacute;ponse à la page disparue, d&eacute;truite, d&eacute;plac&eacute;e ou autre.</h1>';
 
@@ -44,9 +40,7 @@ echo'<h2>404</h2><center><img src="'.base64_decode($tableau[5]).'/404.gif" alt="
 
 function tarticles()  {
 
-$fichier='admin/configuration.txt';
-$tableau=array();
-$tableau=lire_array($fichier);
+include ('admin/includes/config1.php');
 
 ob_start('ob_gzhandler'); register_shutdown_function('ob_end_flush');
 
@@ -72,9 +66,7 @@ else { echo'<title>'.base64_decode($tableau[0]).' - '.Informations.'</title><met
 
 function articles()  {
 
-$fichier='admin/configuration.txt';
-$tableau=array();
-$tableau=lire_array($fichier);
+include ('admin/includes/config1.php');
 
 ob_start('ob_gzhandler'); register_shutdown_function('ob_end_flush');
 
@@ -257,9 +249,7 @@ dsq.src = \'http://\' + disqus_shortname + \'.disqus.com/embed.js\';
 
 function tprofil()  {
 
-$fichier='admin/configuration.txt';
-$tableau=array();
-$tableau=lire_array($fichier);
+include ('admin/includes/config1.php');
 
 if ((base64_decode($tableau[11])=='') && (base64_decode($tableau[12])=='')) {echo'<title>'.base64_decode($tableau[0]).' - Non-renseign&eacute;</title>';}
 
@@ -269,9 +259,7 @@ else {echo'<title>'.base64_decode($tableau[0]).' - '.base64_decode($tableau[11])
 
 function profil()  {
 
-$fichier='admin/configuration.txt';
-$tableau=array();
-$tableau=lire_array($fichier);
+include ('admin/includes/config1.php');
 
 echo'<h2>'.Profil.'</h2><div id="article" style="padding-left:10px">
 
