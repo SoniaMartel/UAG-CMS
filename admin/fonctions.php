@@ -441,9 +441,7 @@ echo'
   </head>
   <body>';
 
-$fichier='configuration.txt';
-$tableau=array();
-$tableau=lire_array($fichier);
+include ('admin/includes/config2.php');
 
 if ($_GET['id']=='2') {  
 
@@ -1153,9 +1151,7 @@ echo'</body>';
 
 function liste_news() {
 
-$fichier='configuration.txt';
-$tableau=array();
-$tableau=lire_array($fichier);
+include ('admin/includes/config2.php');
 
 echo'<table class="data" style="border-collapse: collapse !important ;"><thead><tr>
 <th style="width:300px;border:1px solid #CCCCCC; text-transform: uppercase; background-color:#E2E2E2;"><center>'.Titre.'</center></th><th style="width:100px;border:1px solid #CCCCCC; text-transform: uppercase; background-color:#E2E2E2;"><center>'.Date.'</center></th><th style="width:100px;border:1px solid #CCCCCC; text-transform: uppercase; background-color:#E2E2E2;"><center>'.Auteur.'</center></th><th style="width:100px;border:1px solid #CCCCCC; text-transform: uppercase; background-color:#E2E2E2;"><center>'.Supprimer.'</center></th><th style="width:100px;border:1px solid #CCCCCC; text-transform: uppercase; background-color:#E2E2E2;"><center>'.Editer.'</center></th></tr></thead></table>';
@@ -1249,9 +1245,7 @@ if (get_magic_quotes_gpc()) {
 
 function ajout_news() {
 
-$fichier='configuration.txt';
-$tableau=array();
-$tableau=lire_array($fichier);
+include ('admin/includes/config2.php');
 
 if(isset($_POST['titre']) && isset($_POST['contenu']) && isset($_POST['chapo']) && isset($_POST['jour']) && isset($_POST['mois']) && isset($_POST['annee'])) {
      //On d&eacute;finit les variables
@@ -1363,9 +1357,7 @@ echo'</SELECT>&nbsp; &nbsp;<b>( Si vous voulez ajouter une note avec votre artic
 
 function editer_news() {
 
-$fichier='configuration.txt';
-$tableau=array();
-$tableau=lire_array($fichier);    
+include ('admin/includes/config2.php');    
 
 if(!isset($_GET['id'])) {
 	header('Location: index.php?page=liste');
