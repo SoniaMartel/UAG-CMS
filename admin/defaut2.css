@@ -62,4 +62,4 @@ footer a:hover{color:#43adff;text-shadow:#0090ff 0px 0px 2px;}
 ul, ol, dl{margin-bottom:15px;}
 ul li{list-style:inside;padding-left:20px;}
 #menu img{position:relative;max-width:1080px;padding:5px;margin:10px 10px 10px 0;border:1px solid #ebebeb;-webkit-box-shadow:0px 0px 5px 2px #cccccc;-moz-box-shadow:0px 0px 5px 2px #cccccc;-ms-box-shadow:0px 0px 5px 2px #cccccc;-o-box-shadow:0px 0px 5px 2px #cccccc;box-shadow:0px 0px 5px 2px #cccccc;}
-td{padding:10px;border:1px solid #373737;}
+td,th{padding:10px;border:1px solid #373737;}
