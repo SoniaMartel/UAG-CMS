@@ -87,7 +87,7 @@ default : tprofil();
 echo'
 <style type="text/css">
 ';
-if (base64_decode($tableau[30])=='') {echo 'html {background-image:url(\''.base64_decode($tableau[5]).'/fond.jpg\');}';}
+if (base64_decode($tableau[30])=='') {}
 else {echo'html {background-image:url(\''.base64_decode($tableau[30]).'\');}';}
 
 echo'</style>
