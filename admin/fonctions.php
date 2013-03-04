@@ -330,13 +330,13 @@ else {echo'<p>'.base64_decode($tableau[20]).'</p><p><b>Loisirs  :</b> '.base64_d
 echo'<td>';
 
 if (base64_decode($tableau[17])=='') {echo '';}
-else { echo'<p><a href="https://fr-fr.facebook.com/'.base64_decode($tableau[17]).'" style="text-decoration:none";>Facebook</a><br/></p>'; };
+else { echo'<p><a href="https://fr-fr.facebook.com/'.base64_decode($tableau[17]).'" style="text-decoration:none;">Facebook</a><br/></p>'; };
 
 if (base64_decode($tableau[18])=='') {echo '';}
-else { echo'<p><a href="https://plus.google.com/'.base64_decode($tableau[18]).'" style="text-decoration:none";>Google+</a><br/></p>'; };
+else { echo'<p><a href="https://plus.google.com/'.base64_decode($tableau[18]).'" style="text-decoration:none;">Google+</a><br/></p>'; };
 
 if (base64_decode($tableau[16])=='') {echo '';}
-else { echo'<p><a href="https://twitter.com/'.base64_decode($tableau[16]).'" style="text-decoration:none";>Twitter</a></p>'; };
+else { echo'<p><a href="https://twitter.com/'.base64_decode($tableau[16]).'" style="text-decoration:none;">Twitter</a></p>'; };
 
 echo'</td></tr></table></div>'; 
 
