@@ -1337,18 +1337,11 @@ echo'</SELECT>
 <OPTION>'.(date('Y')-4).'</OPTION>
 </SELECT>
 
-<br /><br /><label for="chapo"> '.Chapo.' : </label><input type="text" required name="chapo" id="chapo" rows="" cols="" placeholder="R&eacute;sum&eacute; de l\'article pour les moteurs de recherches. " style="width: 82%;"/><br /><br />
+<br /><br /><label for="chapo"> '.Chapo.' : </label><input type="text" required name="chapo" id="chapo" rows="" cols="" placeholder="R&eacute;sum&eacute; de l\'article pour les moteurs de recherches. " style="width: 82%;"/><br /><br />';
 
-<script>
-_.control[\':)\']=_.btn(\':)\',\'InsertHTML\',\'<img src="./images/smileys/Content.png">\',\':)\'); 
-_.control[\':(\']=_.btn(\':(\',\'InsertHTML\',\'<img src="./images/smileys/Embarrassed.png">\',\':(\'); 
-_.control[\'XD\']=_.btn(\'XD\',\'InsertHTML\',\'<img src="./images/smileys/Grin.png">\',\'XD\'); 
-_.control[\':D\']=_.btn(\':D\',\'InsertHTML\',\'<img src="./images/smileys/Laughing.png">\',\':D\'); 
-_.control[\':p\']=_.btn(\':p\',\'InsertHTML\',\'<img src="./images/smileys/Yuck.png">\',\':p\'); 
-_.control[\':o\']=_.btn(\':o\',\'InsertHTML\',\'<img src="./images/smileys/Gasp.png">\',\':o\'); 
-</script> 
+include ('includes/smiley.php');
 
-<textarea name="contenu" id="contenu" rows="" cols="" style="width: 100%;height: 400px;"></textarea>
+echo'<textarea name="contenu" id="contenu" rows="" cols="" style="width: 100%;height: 400px;"></textarea>
 <br/><label for="note">Note</label> : <SELECT name="note" id="note" STYLE="width:70px;">';
 
 $notes = array( 'Off','1','2','3','4','5');
@@ -1427,18 +1420,11 @@ array(
 <label for="jour">Jour : </label> <input type="text" name="jour" id="jour" value="'.$news[$newsAmodifier]['jour'].'" STYLE="width:70px;" readonly="readonly"/ > 
 - <label for="mois">Mois : </label> <input type="text" name="mois" id="mois" value="'.$news[$newsAmodifier]['mois'].'" STYLE="width:70px;" readonly="readonly" /> 
 - <label for="annee">Ann&eacute;e : </label> <input type="text" name="annee" id="annee" value="'.$news[$newsAmodifier]['annee'].'" STYLE="width:70px;" readonly="readonly" /> 
-<br /><br /><label for="chapo">'.Chapo.' : </label><input type="text" required placeholder="R&eacute;sum&eacute; de l\'article pour les moteurs de recherches. " name="chapo" id="chapo" rows="" cols="" value="'.$news[$newsAmodifier]['chapo'].'" style="width: 82%;"/><br /><br />
-	
-<script>
-_.control[\':)\']=_.btn(\':)\',\'InsertHTML\',\'<img src="./images/smileys/Content.png">\',\':)\'); 
-_.control[\':(\']=_.btn(\':(\',\'InsertHTML\',\'<img src="./images/smileys/Embarrassed.png">\',\':(\'); 
-_.control[\'XD\']=_.btn(\'XD\',\'InsertHTML\',\'<img src="./images/smileys/Grin.png">\',\'XD\'); 
-_.control[\':D\']=_.btn(\':D\',\'InsertHTML\',\'<img src="./images/smileys/Laughing.png">\',\':D\'); 
-_.control[\':p\']=_.btn(\':p\',\'InsertHTML\',\'<img src="./images/smileys/Yuck.png">\',\':p\'); 
-_.control[\':o\']=_.btn(\':o\',\'InsertHTML\',\'<img src="./images/smileys/Gasp.png">\',\':o\'); 
-</script> 	
+<br /><br /><label for="chapo">'.Chapo.' : </label><input type="text" required placeholder="R&eacute;sum&eacute; de l\'article pour les moteurs de recherches. " name="chapo" id="chapo" rows="" cols="" value="'.$news[$newsAmodifier]['chapo'].'" style="width: 82%;"/><br /><br />';
 
-<textarea name="contenu" id="contenu" rows="" cols="" style="width: 100%;height: 400px;">'.$news[$newsAmodifier]['contenu'].'</textarea>
+include ('includes/smiley.php');
+
+echo'<textarea name="contenu" id="contenu" rows="" cols="" style="width: 100%;height: 400px;">'.$news[$newsAmodifier]['contenu'].'</textarea>
 	
 <br/><label for="note">Note</label> : <SELECT name="note" id="note" STYLE="width:70px;">';
 
