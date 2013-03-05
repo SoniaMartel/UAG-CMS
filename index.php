@@ -16,7 +16,7 @@
 # *** LICENCE ***
 
 ******************************************************/
-require 'admin/fonctions.php';
+require 'admin/fonctions.php'; 
 
 function lire_array($fichier)
 {
@@ -161,7 +161,7 @@ else {echo '<div class="older-posts"><a href="'.base64_decode($tableau[5]).'/ind
 
 echo'</div></div></div>';
 
-echo'<nav id="menu" ><div class="menu-footer" ><ul id="menu-main" class="menu"><li><a href="'.base64_decode($tableau[5]).'/index.php">'.ACCUEIL.'</a></li>';
+echo'<nav id="menu" ><div class="menu-footer" ><ul id="menu-main" class="menu"><li><a href="'.base64_decode($tableau[5]).'/index.php">'.Accueil.'</a></li>';
 
 if (base64_decode($tableau[9])=='off') {}
 

@@ -32,7 +32,7 @@ function erreurs()   {
 
 include ('admin/includes/config1.php');
 
-echo'<h2>404</h2><center><img src="'.base64_decode($tableau[5]).'/404.gif" alt="404" width="180px"></center><div id="article" style="padding-left:10px"><br/><h1>La r&eacute;ponse à la page disparue, d&eacute;truite, d&eacute;plac&eacute;e ou autre.</h1>';
+echo'<h2>404</h2><center><img src="'.base64_decode($tableau[5]).'/404.gif" alt="404" width="180px"></center><div id="article" style="padding-left:10px"><br/><h1>'.error.'</h1>';
 
 }
 
@@ -144,7 +144,7 @@ echo'</strong></a></h2><div id="article" style="padding-left:10px">'.$news['cont
 
 else { header('Location: erreur.php'); }
 
-echo'</article><article style="min-height:0px;font-weight:bold;text-align:center;">Note :';
+echo'</article><article style="min-height:0px;font-weight:bold;text-align:center;">'.Note.' :';
 
 if ($news['note']=='0') {
 
@@ -215,14 +215,14 @@ echo'
 elseif ($news['note']=='Off') {
 
 echo'
-Désactivée
+Off
 ';
 }
 
 else {
 
 echo'
-Désactivée
+Off
 ';
 }
 
@@ -231,7 +231,13 @@ if (base64_decode($tableau[3])=='') {echo'</article><article style="min-height:0
 else {
 
 echo'</article><article><div id="disqus_thread"></div>
-<script type="text/javascript">
+<script type="text/javascript">';
+
+if (base64_decode($tableau[1])=='fr') {echo'var disqus_config = function () { this.language = "fr";};';}
+
+else {echo'var disqus_config = function () { this.language = "en";};';} 
+
+echo'
 var disqus_shortname = \''.base64_decode($tableau[3]).'\'; // required: replace example with your forum shortname
 (function() {
 var dsq = document.createElement(\'script\'); dsq.type = \'text/javascript\'; dsq.async = true;
@@ -251,7 +257,7 @@ function tprofil()  {
 
 include ('admin/includes/config1.php');
 
-if ((base64_decode($tableau[11])=='') && (base64_decode($tableau[12])=='')) {echo'<title>'.base64_decode($tableau[0]).' - Non-renseign&eacute;</title>';}
+if ((base64_decode($tableau[11])=='') && (base64_decode($tableau[12])=='')) {echo'<title>'.base64_decode($tableau[0]).' - '.Nonrenseigne.'</title>';}
 
 else {echo'<title>'.base64_decode($tableau[0]).' - '.base64_decode($tableau[11]).' '.base64_decode($tableau[12]).'</title>';};	
 
@@ -264,7 +270,7 @@ include ('admin/includes/config1.php');
 echo'<h2>'.Profil.'</h2><div id="article" style="padding-left:10px">
 
 <h1>';
-if ((base64_decode($tableau[11])=='') && (base64_decode($tableau[12])=='')) {echo 'Non-renseign&eacute;';}
+if ((base64_decode($tableau[11])=='') && (base64_decode($tableau[12])=='')) {echo Nonrenseigne;}
 
 else {echo''.base64_decode($tableau[11]).' '.base64_decode($tableau[12]).'';};
 
@@ -288,11 +294,20 @@ function age($naiss)  {
     else
       $annees--;
     }
-  echo $annees;
-  }
+	
+if ((base64_decode($tableau[13])=='') && (base64_decode($tableau[28])=='') && (base64_decode($tableau[29])=='')) {echo '';}
+
+else {
+  echo $annees; echo' ans ';
+  
+  }  }
 age(''.base64_decode($tableau[13]).'/'.base64_decode($tableau[28]).'/'.base64_decode($tableau[29]).'');  
 
-echo' ans '.base64_decode($tableau[14]).' <img src="'.base64_decode($tableau[5]).'/admin/images/pays/'.base64_decode($tableau[14]).'.png" alt="'.base64_decode($tableau[14]).'" style="border: black 1px solid;"> )</h1>';};
+if (base64_decode($tableau[14])=='Monde') {echo Monde;}
+
+else {echo''.base64_decode($tableau[14]).'';};
+
+echo' <img src="'.base64_decode($tableau[5]).'/admin/images/pays/'.base64_decode($tableau[14]).'.png" alt="'.base64_decode($tableau[14]).'" style="border: black 1px solid;"> )</h1>';};
 
 echo'<table>
 <tr>
@@ -317,12 +332,12 @@ line-height: 24px;
 margin-bottom: 20px;
 ">';
 
-if (base64_decode($tableau[19])=='') {echo 'Defaut';}
+if (base64_decode($tableau[19])=='') {echo Defaut;}
 else {echo''.base64_decode($tableau[19]).'';};
 
 echo'</h2>';
 
-if ((base64_decode($tableau[20])=='') && (base64_decode($tableau[21])=='')) {echo '<p>Loisirs : Cette zone est à remplir </td>';}
+if ((base64_decode($tableau[20])=='') && (base64_decode($tableau[21])=='')) {echo '<p>'.Loisirs.' </td>';}
 
 else {echo'<p>'.base64_decode($tableau[20]).'</p><p><b>Loisirs  :</b> '.base64_decode($tableau[21]).'</p></td>';};
 
@@ -401,45 +416,6 @@ echo'<div id="pays"><p>'.Pays.'</p></div>';
 /* Configuration du blog */ 
 
 function configuration() {
-echo'
-<head>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.coda-slider-3.0.js"></script>
-	
-    <script>
-      $(function() {
-        $(\'#main-slider\').codaSlider({
-          autoHeight: false,
-          continuous:false,
-          dynamicArrows: false,
-          dynamicTabs: false
-        });
-        $(\'#showcase\').codaSlider();
-        $(\'#continuous\').codaSlider({
-          autoSlide: false,
-          continuous: false,
-          dynamicArrowsGraphical: false,
-          dynamicTabsAlign: "right",
-          dynamicTabsPosition: "bottom",
-          panelTitleSelector: "div.title"
-        });
-        $(\'#dynamic-tabs\').codaSlider({
-          autoSlideControls:false,
-          dynamicTabsAlign: "left",
-          dynamicTabsPosition: "top",
-          dynamicArrows: false
-        })
-        $(\'#information\').codaSlider({
-          dynamicArrows: false,
-          dynamicTabs: false,
-          slideEaseFunction: "easeOutCirc"
-        });
-      });
-      </script>
-  </head>
-  <body>';
 
 $fichier='configuration.txt';
 $tableau=array();
@@ -452,74 +428,24 @@ echo'<meta http-equiv="refresh" content="1; URL=index.php?page=configuration">
  
 // Fichier de transition pour &eacute;cup&eacute;rer les donn&eacute;es du formulaire
 
- 	 $f=fopen($fichier,"w");fclose($f); // on efface le fichier, on le cr&eacute;e à nouveau (vide)
+$f=fopen($fichier,"w");fclose($f); // on efface le fichier, on le cr&eacute;e à nouveau (vide)
 
 $salt = 'BwGk15l8WX'; 
 
-$_POST[0] = str_replace(array('-','php'),array('-',''), $_POST[0]);	
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[0],null,'UTF-8'))))));
-$_POST[1] = str_replace(array('-','php'),array('-',''), $_POST[1]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[1],null,'UTF-8'))))));
-$_POST[2] = str_replace(array('-','php'),array('-',''), $_POST[2]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[2],null,'UTF-8'))))));
-$_POST[3] = str_replace(array('-','php'),array('-',''), $_POST[3]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[3],null,'UTF-8'))))));
-$_POST[4] = str_replace(array('-','php'),array('-',''), $_POST[4]);		 
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[4],null,'UTF-8'))))));
-$_POST[5] = str_replace(array('-','php'),array('-',''), $_POST[5]);		 
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[5],null,'UTF-8'))))));
-$_POST[6] = str_replace(array('-','php'),array('-',''), $_POST[6]);			 
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[6],null,'UTF-8')))))); 
-$_POST[7] = str_replace(array('-','php'),array('-',''), $_POST[7]);		 
-ajout($fichier,trim(base64_encode(stripslashes((sha1($_POST[7].$salt))))));
-$_POST[8] = str_replace(array('-','php'),array('-',''), $_POST[8]);			 
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[8],null,'UTF-8')))))); 
-$_POST[9] = str_replace(array('-','php'),array('-',''), $_POST[9]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[9],null,'UTF-8')))))); 
-$_POST[10] = str_replace(array('-','php'),array('-',''), $_POST[10]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[10],null,'UTF-8')))))); 
-$_POST[11] = str_replace(array('-','php'),array('-',''), $_POST[11]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[11],null,'UTF-8')))))); 
-$_POST[12] = str_replace(array('-','php'),array('-',''), $_POST[12]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[12],null,'UTF-8')))))); 
-$_POST[13] = str_replace(array('-','php'),array('-',''), $_POST[13]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[13],null,'UTF-8')))))); 
-$_POST[14] = str_replace(array('-','php'),array('-',''), $_POST[14]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[14],null,'UTF-8')))))); 
-$_POST[15] = str_replace(array('-','php'),array('-',''), $_POST[15]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[15],null,'UTF-8')))))); 
-$_POST[16] = str_replace(array('-','php'),array('-',''), $_POST[16]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[16],null,'UTF-8')))))); 
-$_POST[17] = str_replace(array('-','php'),array('-',''), $_POST[17]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[17],null,'UTF-8')))))); 
-$_POST[18] = str_replace(array('-','php'),array('-',''), $_POST[18]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[18],null,'UTF-8')))))); 
-$_POST[19] = str_replace(array('-','php'),array('-',''), $_POST[19]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[19],null,'UTF-8')))))); 
-$_POST[20] = str_replace(array('-','php'),array('-',''), $_POST[20]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[20],null,'UTF-8')))))); 
-$_POST[21] = str_replace(array('-','php'),array('-',''), $_POST[21]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[21],null,'UTF-8')))))); 
-$_POST[22] = str_replace(array('-','php'),array('-',''), $_POST[22]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[22],null,'UTF-8')))))); 
-$_POST[23] = str_replace(array('-','php'),array('-',''), $_POST[23]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[23],null,'UTF-8')))))); 
-$_POST[24] = str_replace(array('-','php'),array('-',''), $_POST[24]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[24],null,'UTF-8')))))); 
-$_POST[25] = str_replace(array('-','php'),array('-',''), $_POST[25]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[25],null,'UTF-8'))))));
-$_POST[26] = str_replace(array('-','php'),array('-',''), $_POST[26]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[26],null,'UTF-8')))))); 
-$_POST[27] = str_replace(array('-','php'),array('-',''), $_POST[27]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[27],null,'UTF-8'))))));
-$_POST[28] = str_replace(array('-','php'),array('-',''), $_POST[28]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[28],null,'UTF-8'))))));
-$_POST[29] = str_replace(array('-','php'),array('-',''), $_POST[29]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[29],null,'UTF-8'))))));
-$_POST[30] = str_replace(array('-','php'),array('-',''), $_POST[30]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[30],null,'UTF-8'))))));
-$_POST[31] = str_replace(array('-','php'),array('-',''), $_POST[31]);
-ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[31],null,'UTF-8'))))));
+$valideforma = array( '0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31');
+
+foreach ($valideforma as $valideforma1) { $_POST[$valideforma1] = str_replace(array('-','php'),array('-',''), $_POST[$valideforma1]); };
+
+$valideformb = array( '0','1','2','3','4','5','6');
+
+foreach ($valideformb as $valideformb1) { ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[$valideformb1],null,'UTF-8')))))); };
+
+ajout($fichier,trim(base64_encode(stripslashes((sha1($_POST[7].$salt))))));	
+
+$valideformc = array( '8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31');
+
+foreach ($valideformc as $valideformc1) { ajout($fichier,trim(base64_encode(stripslashes((htmlentities($_POST[$valideformc1],null,'UTF-8')))))); };
+
 }
 
 else {
@@ -537,11 +463,11 @@ elseif (base64_decode($tableau[4])==off) {$paginationOff = 'selected="selected"'
 else {$paginationOn = 'selected="selected"';}
 
 echo'<div>
-<h2 class="title" style="display:none;">Accueil</h2>
+<h2 class="title" style="display:none;">'.Accueil.'</h2>
 <table style="margin:auto;padding-right:60px;">
 <p><b>Bienvenue dans la configuration, vous pouvez configurer :</b></p><br/>
 <tr><td style="padding-left:10px;padding-top:10px;">Général</td><td style="padding-left:20px;padding-top:10px;"> Configurer l\'ensemble du blog </td> </tr>
-<tr><td style="padding-left:10px;padding-top:10px;">Profil</td><td style="padding-left:20px;padding-top:10px;"> Compléter les détails sur vous </td> </tr>
+<tr><td style="padding-left:10px;padding-top:10px;">'.Profil.'</td><td style="padding-left:20px;padding-top:10px;"> Compléter les détails sur vous </td> </tr>
 <tr><td style="padding-left:10px;padding-top:10px;">Theme</td><td style="padding-left:20px;padding-top:10px;"> Personnaliser le graphisme du theme </td> </tr>
 <tr><td style="padding-left:10px;padding-top:10px;">Menu</td><td style="padding-left:20px;padding-top:10px;"> Ajouter des menus complémentaires </td> </tr>
 </table>
@@ -624,7 +550,7 @@ echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.b
 </div>
 
 <div>
-<h2 class="title" style="display:none;">Profil</h2>
+<h2 class="title" style="display:none;">'.Profil.'</h2>
 <table style="margin:auto;padding-right:60px;">
 <tr>
 <td class="profil"></br>'.Prénom.'  &nbsp;</td><td></br><input type="text" name="11" value="'.base64_decode($tableau[11]).'" placeholder="Votre Prénom" STYLE="width:170px;" /></td>
@@ -1135,8 +1061,8 @@ echo'
 <br/> 
 
 <center>
-<input class="submit" type="submit" value="'.Ok.'" name="submit"/>
-</center>		
+<input class="submit" type="submit" value="'.Ok.'" name="submit" />
+</center>
 </form>
 ';
 

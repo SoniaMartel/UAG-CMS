@@ -54,4 +54,12 @@ define('Octobre', 'Octubre');
 define('Novembre', 'Noviembre');
 define('Decembre', 'Diciembre');
 
+define('Nonrenseigne', 'Not informed');
+define('Monde', 'World');
+define('Profil', 'Profile');
+define('Defaut', 'Default');
+define('Loisirs', 'Interests : This area is filled');
+define('error', 'The answer to the page disappeared, destroyed, moved or otherwise.');
+define('Note', 'Score');
+
 ?>

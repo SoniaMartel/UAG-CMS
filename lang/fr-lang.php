@@ -54,4 +54,12 @@ define('Octobre', 'Octobre');
 define('Novembre', 'Novembre');
 define('Decembre', 'Decembre');
 
+define('Nonrenseigne', 'Non-renseigné');
+define('Monde', 'Monde');
+define('Profil', 'Profil');
+define('Defaut', 'Defaut');
+define('Loisirs', 'Loisirs : Cette zone est à remplir');
+define('error', 'La r&eacute;ponse à la page disparue, d&eacute;truite, d&eacute;plac&eacute;e ou autre.');
+define('Note', 'Note');
+
 ?>
