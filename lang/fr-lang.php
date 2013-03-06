@@ -129,4 +129,17 @@ define('LienBanniere', 'Lien Banniere');
 define('LienBackground', 'Lien de l\'image de fond');
 define('LienFavicon', 'Lien de Favicon (Icone)');
 
+define('Pagingi', 'Nouveau vers Ancien');
+define('Pagingii', 'Ancien vers Nouveau');
+
+define('urli', 'Url sans Titre');
+define('urlii', 'Url avec Titre');
+define('urliii', 'Pas de réecriture');
+
+define('urliiii', 'Afficher');
+define('urliiiii', 'Cacher');
+
+define('Lettre', 'Lettre');
+define('Chiffre', 'Chiffre');
+
 ?>

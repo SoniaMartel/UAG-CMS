@@ -516,8 +516,8 @@ echo'</SELECT></td></tr>
 <td class="titre"></br>Disqus  &nbsp;</td><td></br><input type="text" name="3" value="'.base64_decode($tableau[3]).'" placeholder="ID DISQUS" STYLE="width:170px;"/></td></tr>
 <tr>
 <td class="titre"></br>'.Pagination.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[4]).'" name="4" STYLE="width:180px;">
-<option value="on" '.$paginationOn.'>Nouveau à Ancien</option>
-<option value="off" '.$paginationOff.'>Ancien à nouveau</option>
+<option value="on" '.$paginationOn.'>'.Pagingi.'</option>
+<option value="off" '.$paginationOff.'>'.Pagingii.'</option>
 </select></td>
 </tr><tr><td class="titre"></br>'.AdresseSite.'  &nbsp;</td><td></br>
 
@@ -534,9 +534,9 @@ elseif (base64_decode($tableau[8])==on2) {$selectedon2 = 'selected="selected"';}
 elseif (base64_decode($tableau[8])==off) {$selectedoff = 'selected="selected"';}
 
 echo'<tr><td class="titre"></br>URL Rewriting  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[8]).'" name="8" STYLE="width:180px;">
-<OPTION VALUE="on" '.$selectedon.'>Url Sans titre</OPTION>
-<OPTION VALUE="on2" '.$selectedon2.'>Url avec Titre</OPTION>
-<OPTION VALUE="off" '.$selectedoff.'>Pas de r&eacute;ecriture</OPTION>
+<OPTION VALUE="on" '.$selectedon.'>'.urli.'</OPTION>
+<OPTION VALUE="on2" '.$selectedon2.'>'.urlii.'</OPTION>
+<OPTION VALUE="off" '.$selectedoff.'>'.urliii.'</OPTION>
 </SELECT></td></tr>';
 
 if (base64_decode($tableau[9])==on) {$selected1 = 'selected="selected"';}
@@ -544,8 +544,8 @@ if (base64_decode($tableau[9])==on) {$selected1 = 'selected="selected"';}
 elseif (base64_decode($tableau[9])==off) {$selected2 = 'selected="selected"';}
 
 echo'<tr><td class="titre"></br>'.LienAdmin.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[9]).'" name="9" STYLE="width:180px;">
-<OPTION VALUE="on" '.$selected1.'>Afficher</OPTION>
-<OPTION VALUE="off" '.$selected2.'>Cacher</OPTION>
+<OPTION VALUE="on" '.$selected1.'>'.urliiii.'</OPTION>
+<OPTION VALUE="off" '.$selected2.'>'.urliiiii.'</OPTION>
 </SELECT></td></tr>';
 
 if (base64_decode($tableau[10])==on) {$selecteddate1 = 'selected="selected"';}
@@ -553,8 +553,8 @@ if (base64_decode($tableau[10])==on) {$selecteddate1 = 'selected="selected"';}
 elseif (base64_decode($tableau[10])==off) {$selecteddate2 = 'selected="selected"';}
 
 echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[10]).'" name="10" STYLE="width:180px;">
-<OPTION VALUE="on" '.$selecteddate1.'>Lettre</OPTION>
-<OPTION VALUE="off" '.$selecteddate2.'>Chiffre</OPTION>
+<OPTION VALUE="on" '.$selecteddate1.'>'.Lettre.'</OPTION>
+<OPTION VALUE="off" '.$selecteddate2.'>'.Chiffre.'</OPTION>
 </SELECT></td></tr>
 
 </table>

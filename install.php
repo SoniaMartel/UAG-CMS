@@ -95,9 +95,9 @@ echo '
 
 <td class="titre"></br>DISQUS  &nbsp;</td><td></br><input type="text" name="3" value="'.$tableau[3].'" STYLE="width:180px;"/></td></tr><tr>
 
-<td class="titre"></br>Pagination  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[4]).'" name="4" STYLE="width:180px;">
-<option value="on" '.$paginationOn.'>Nouveau vers Ancien</option>
-<option value="off" '.$paginationOff.'>Ancien vers nouveau</option>
+<td class="titre"></br>'.Pagination.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[4]).'" name="4" STYLE="width:180px;">
+<option value="on" '.$paginationOn.'>'.Pagingi.'</option>
+<option value="off" '.$paginationOff.'>'.Pagingii.'</option>
 </select></td></tr><tr>
 
 <td class="titre"></br>Adresse site  &nbsp;</td><td></br>'; 
@@ -106,9 +106,7 @@ $lien = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'];
 $lien = str_replace('/install.php', '', $lien);
 
 $filehtaccess = '.htaccess';
-// Ouvre un fichier pour lire un contenu existant
 $current = file_get_contents($filehtaccess);
-// Ajoute une personne
 $current = "ErrorDocument 404 $lien/index.php?module=erreurs
 ErrorDocument 403 $lien/index.php?module=erreurs
 
@@ -147,21 +145,21 @@ echo '</tr><tr>
 
 <tr>
 <td class="titre"></br>URL Rewriting  &nbsp;</td><td></br><SELECT value="'.$tableau[8].'" name="8" STYLE="width:180px;">
-<OPTION VALUE="on">Url Sans titre</OPTION>
-<OPTION VALUE="on2" selected="selected">Url avec Titre</OPTION>
-<OPTION VALUE="off">Pas de r&eacute;ecriture</OPTION>
+<OPTION VALUE="on">'.urli.'</OPTION>
+<OPTION VALUE="on2" selected="selected">'.urlii.'</OPTION>
+<OPTION VALUE="off">'.urliii.'</OPTION>
 </SELECT></td></tr>';echo "\n";
 
 echo '<tr>
-<td class="titre"></br>Lien Admin  &nbsp;</td><td></br><SELECT value="'.$tableau[9].'" name="9" STYLE="width:180px;">
-		<OPTION VALUE="on">Afficher</OPTION>
-		<OPTION VALUE="off" selected="selected">Cacher</OPTION>
+<td class="titre"></br>'.LienAdmin.'  &nbsp;</td><td></br><SELECT value="'.$tableau[9].'" name="9" STYLE="width:180px;">
+		<OPTION VALUE="on">'.urliiii.'</OPTION>
+		<OPTION VALUE="off" selected="selected">'.urliiiii.'</OPTION>
 	</SELECT></td></tr>';echo "\n";
 
 echo '<tr>
 <td class="titre"></br>Date  &nbsp;</td><td></br><SELECT value="'.$tableau[10].'" name="10" STYLE="width:180px;">
-		<OPTION VALUE="on">Lettre</OPTION>
-		<OPTION VALUE="off">Chiffre</OPTION>
+		<OPTION VALUE="on">'.Lettre.'</OPTION>
+		<OPTION VALUE="off">'.Chiffre.'</OPTION>
 	</SELECT></td></tr>';echo "\n";
 
 echo '</table></center></br>';echo "\n";
