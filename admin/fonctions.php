@@ -93,18 +93,18 @@ if (base64_decode($tableau[10])=='on') {
 
 echo ''.$news['jour'].' ';
 
-if     ($news['mois']=='01') {echo Janvier ;}
-elseif ($news['mois']=='02') {echo Fevrier ;}
-elseif ($news['mois']=='03') {echo Mars ;}
-elseif ($news['mois']=='04') {echo Avril ;}
-elseif ($news['mois']=='05') {echo Mai ;}
-elseif ($news['mois']=='06') {echo Juin ;}
-elseif ($news['mois']=='07') {echo Juillet ;}
-elseif ($news['mois']=='08') {echo Aout ;}
-elseif ($news['mois']=='09') {echo Septembre ;}
-elseif ($news['mois']=='10') {echo Octobre ;}
-elseif ($news['mois']=='11') {echo Novembre ;}
-elseif ($news['mois']=='12') {echo Decembre ;}
+if     ($news['mois']=='01') {echo ''.Janvier.'' ;}
+elseif ($news['mois']=='02') {echo ''.Fevrier.'' ;}
+elseif ($news['mois']=='03') {echo ''.Mars.'' ;}
+elseif ($news['mois']=='04') {echo ''.Avril.'' ;}
+elseif ($news['mois']=='05') {echo ''.Mai.'' ;}
+elseif ($news['mois']=='06') {echo ''.Juin.'' ;}
+elseif ($news['mois']=='07') {echo ''.Juillet.'' ;}
+elseif ($news['mois']=='08') {echo ''.Aout.'' ;}
+elseif ($news['mois']=='09') {echo ''.Septembre.'' ;}
+elseif ($news['mois']=='10') {echo ''.Octobre.'' ;}
+elseif ($news['mois']=='11') {echo ''.Novembre.'' ;}
+elseif ($news['mois']=='12') {echo ''.Decembre.'' ;}
 
 echo ' '.$news['annee'].' ';
 
@@ -118,18 +118,18 @@ if (base64_decode($tableau[10])=='on') {
 
 echo ''.$news['annee'].' ';
 
-if     ($news['mois']=='01') {echo Janvier ;}
-elseif ($news['mois']=='02') {echo Fevrier ;}
-elseif ($news['mois']=='03') {echo Mars ;}
-elseif ($news['mois']=='04') {echo Avril ;}
-elseif ($news['mois']=='05') {echo Mai ;}
-elseif ($news['mois']=='06') {echo Juin ;}
-elseif ($news['mois']=='07') {echo Juillet ;}
-elseif ($news['mois']=='08') {echo Aout ;}
-elseif ($news['mois']=='09') {echo Septembre ;}
-elseif ($news['mois']=='10') {echo Octobre ;}
-elseif ($news['mois']=='11') {echo Novembre ;}
-elseif ($news['mois']=='12') {echo Decembre ;}
+if     ($news['mois']=='01') {echo ''.Janvier.'' ;}
+elseif ($news['mois']=='02') {echo ''.Fevrier.'' ;}
+elseif ($news['mois']=='03') {echo ''.Mars.'' ;}
+elseif ($news['mois']=='04') {echo ''.Avril.'' ;}
+elseif ($news['mois']=='05') {echo ''.Mai.'' ;}
+elseif ($news['mois']=='06') {echo ''.Juin.'' ;}
+elseif ($news['mois']=='07') {echo ''.Juillet.'' ;}
+elseif ($news['mois']=='08') {echo ''.Aout.'' ;}
+elseif ($news['mois']=='09') {echo ''.Septembre.'' ;}
+elseif ($news['mois']=='10') {echo ''.Octobre.'' ;}
+elseif ($news['mois']=='11') {echo ''.Novembre.'' ;}
+elseif ($news['mois']=='12') {echo ''.Decembre.'' ;}
 
 echo ' '.$news['jour'].' ';
 
@@ -230,8 +230,17 @@ if (base64_decode($tableau[3])=='') {echo'</article><article style="min-height:0
 
 else {
 
-echo'</article><article><div id="disqus_thread"></div>
-<script type="text/javascript">';
+echo'</article>';
+
+$connect2 = TRUE; $ip_internet2 = 'www.disqus.com'; $port_internet2 = 80; 
+
+if (! $sock2 = @fsockopen($ip_internet2, $port_internet2, $num2, $error2, 5)) { 
+
+echo '<article style="min-height:0px;font-weight:bold;text-align:center;">
+
+<div id="disqus_thread" style="text-align:center;">Disqus : Off'; }
+
+else { echo'<article><div id="disqus_thread"><script type="text/javascript">';
 
 if (base64_decode($tableau[1])=='fr') {echo'var disqus_config = function () { this.language = "fr";};';}
 
@@ -248,6 +257,8 @@ dsq.src = \'http://\' + disqus_shortname + \'.disqus.com/embed.js\';
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 ';
 
+};
+echo'</div>';
 }
 }
 
@@ -465,18 +476,18 @@ else {$paginationOn = 'selected="selected"';}
 echo'<div>
 <h2 class="title" style="display:none;">'.Accueil.'</h2>
 <table style="margin:auto;padding-right:60px;">
-<p><b>Bienvenue dans la configuration, vous pouvez configurer :</b></p><br/>
-<tr><td style="padding-left:10px;padding-top:10px;">Général</td><td style="padding-left:20px;padding-top:10px;"> Configurer l\'ensemble du blog </td> </tr>
-<tr><td style="padding-left:10px;padding-top:10px;">'.Profil.'</td><td style="padding-left:20px;padding-top:10px;"> Compléter les détails sur vous </td> </tr>
-<tr><td style="padding-left:10px;padding-top:10px;">Theme</td><td style="padding-left:20px;padding-top:10px;"> Personnaliser le graphisme du theme </td> </tr>
-<tr><td style="padding-left:10px;padding-top:10px;">Menu</td><td style="padding-left:20px;padding-top:10px;"> Ajouter des menus complémentaires </td> </tr>
+<p><b>'.BienvenueConfig.'</b></p><br/>
+<tr><td style="padding-left:10px;padding-top:10px;">'.General.'</td><td style="padding-left:20px;padding-top:10px;">'.Generala.'</td> </tr>
+<tr><td style="padding-left:10px;padding-top:10px;">'.Profil.'</td><td style="padding-left:20px;padding-top:10px;">'.Profila.'</td> </tr>
+<tr><td style="padding-left:10px;padding-top:10px;">'.Theme.'</td><td style="padding-left:20px;padding-top:10px;">'.Themea.'</td> </tr>
+<tr><td style="padding-left:10px;padding-top:10px;">'.Menu.'</td><td style="padding-left:20px;padding-top:10px;">'.Menua.'</td> </tr>
 </table>
 </div>
 <div>
 <h2 class="title" style="display:none;">Général</h2>
 <table style="margin:auto;padding-right:60px;">
 <tr>
-<td class="titre"></br>'.Titre.'  &nbsp;</td><td></br><input type="text" name="0" value="'.base64_decode($tableau[0]).'" placeholder="Titre de votre blog" STYLE="width:170px;" /></td></tr>
+<td class="titre"></br>'.Titre.'  &nbsp;</td><td></br><input type="text" name="0" value="'.base64_decode($tableau[0]).'" placeholder="'.Titreb.'" STYLE="width:170px;" /></td></tr>
 ';
 
 echo '<tr><td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[1]).'" name="1" STYLE="width:180px;">';
@@ -500,20 +511,20 @@ echo'<option '.$languages2.'>'.$languages1.'</option>';
 
 echo'</SELECT></td></tr>
 
-<tr><td class="titre"></br>'.Gerant.'  &nbsp;</td><td></br><input type="text" required name="2" value="'.base64_decode($tableau[2]).'" placeholder="Nom affich&eacute; sur le blog" STYLE="width:170px;"/></td>
+<tr><td class="titre"></br>'.Gerant.'  &nbsp;</td><td></br><input type="text" required name="2" value="'.base64_decode($tableau[2]).'" placeholder="'.Webmasterb.'" STYLE="width:170px;"/></td>
 </tr><tr>
 <td class="titre"></br>Disqus  &nbsp;</td><td></br><input type="text" name="3" value="'.base64_decode($tableau[3]).'" placeholder="ID DISQUS" STYLE="width:170px;"/></td></tr>
 <tr>
-<td class="titre"></br>Pagination  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[4]).'" name="4" STYLE="width:180px;">
+<td class="titre"></br>'.Pagination.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[4]).'" name="4" STYLE="width:180px;">
 <option value="on" '.$paginationOn.'>Nouveau à Ancien</option>
 <option value="off" '.$paginationOff.'>Ancien à nouveau</option>
 </select></td>
-</tr><tr><td class="titre"></br>Adresse site  &nbsp;</td><td></br>
+</tr><tr><td class="titre"></br>'.AdresseSite.'  &nbsp;</td><td></br>
 
-<input type="text" name="5"  required value="'.base64_decode($tableau[5]).'" placeholder="Adresse de votre site" STYLE="width:170px;"/></td></tr>
+<input type="text" name="5"  required value="'.base64_decode($tableau[5]).'" placeholder="'.Urlb.'" STYLE="width:170px;"/></td></tr>
 
 <tr>
-<td class="titre"></br>'.Login.'  &nbsp;</td><td></br><input type="text" required name="6" value="'.base64_decode($tableau[6]).'" placeholder="Votre pseudo de connexion" STYLE="width:170px;" alt=""/></td>
+<td class="titre"></br>'.Login.'  &nbsp;</td><td></br><input type="text" required name="6" value="'.base64_decode($tableau[6]).'" placeholder="'.Loginb.'" STYLE="width:170px;" alt=""/></td>
 </tr>';
 
 if (base64_decode($tableau[8])==on) {$selectedon = 'selected="selected"';}
@@ -532,7 +543,7 @@ if (base64_decode($tableau[9])==on) {$selected1 = 'selected="selected"';}
 
 elseif (base64_decode($tableau[9])==off) {$selected2 = 'selected="selected"';}
 
-echo'<tr><td class="titre"></br>Lien Admin  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[9]).'" name="9" STYLE="width:180px;">
+echo'<tr><td class="titre"></br>'.LienAdmin.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[9]).'" name="9" STYLE="width:180px;">
 <OPTION VALUE="on" '.$selected1.'>Afficher</OPTION>
 <OPTION VALUE="off" '.$selected2.'>Cacher</OPTION>
 </SELECT></td></tr>';
@@ -553,17 +564,17 @@ echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.b
 <h2 class="title" style="display:none;">'.Profil.'</h2>
 <table style="margin:auto;padding-right:60px;">
 <tr>
-<td class="profil"></br>'.Prénom.'  &nbsp;</td><td></br><input type="text" name="11" value="'.base64_decode($tableau[11]).'" placeholder="Votre Prénom" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Prenom.'  &nbsp;</td><td></br><input type="text" name="11" value="'.base64_decode($tableau[11]).'" placeholder="'.Prenoma.'" STYLE="width:170px;" /></td>
 </tr><tr>
-<td class="profil"></br>'.Nom.'  &nbsp;</td><td></br><input type="text" name="12" value="'.base64_decode($tableau[12]).'" placeholder="Votre nom" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Nom.'  &nbsp;</td><td></br><input type="text" name="12" value="'.base64_decode($tableau[12]).'" placeholder="'.Noma.'" STYLE="width:170px;" /></td>
 </tr>
 <tr>
-<td class="profil"></br>Date de Naissance  &nbsp;</td><td></br>
+<td class="profil"></br>'.Datedenaissance.'  &nbsp;</td><td></br>
 <SELECT value="'.base64_decode($tableau[13]).'" name="13" STYLE="width:62px;">';
 
 $year = array(
 
-'Année' => $an0a,
+''.Annee.'' => $an0a,
 (date('Y')+0) => $an0b, 
 (date('Y')-1) => $an1,
 (date('Y')-2) => $an2, 
@@ -703,7 +714,7 @@ echo'
 
 $month = array(
 
-'Mois' => $mois0,
+''.Mois.'' => $mois0,
 '01' => $mois1, 
 '02' => $mois2,
 '03' => $mois3,
@@ -729,7 +740,7 @@ echo'</SELECT>
 
 $day = array(
 
-'Jour' => $jour0,
+''.Jour.'' => $jour0,
 '01' => $jour1, 
 '02' => $jour2,
 '03' => $jour3,
@@ -770,11 +781,11 @@ echo'<option '.$day2.'>'.$day1.'</option>';
  };
 
 echo'</SELECT></td></tr><tr>
-<td class="profil"></br>Pays  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[14]).'" name="14" STYLE="width:180px;">';
+<td class="profil"></br>'.Paysa.' &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[14]).'" name="14" STYLE="width:180px;">';
 
 $world = array(
 
-'Monde' => $pays1, 
+''.Monde.'' => $pays1, 
 'Internet' => $pays2,
 'Afghanistan' => $pays3,
 'Afrique du Sud' => $pays4,
@@ -982,25 +993,25 @@ echo'<option '.$world2.'>'.$world1.'</option>';
 echo'
 </select>
 </td></tr><tr>
-<td class="profil"></br>'.Photo.'  &nbsp;</td><td></br><input type="text" name="15" value="'.base64_decode($tableau[15]).'" placeholder="Une photo de vous" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Photo.'  &nbsp;</td><td></br><input type="text" name="15" value="'.base64_decode($tableau[15]).'" placeholder="'.Photoa.'" STYLE="width:170px;" /></td>
 </tr>
 <tr>
-<td class="profil"></br>'.Twitter.'  &nbsp;</td><td></br><input type="text" name="16" value="'.base64_decode($tableau[16]).'" placeholder="Votre Compte Twitter" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Twitter.'  &nbsp;</td><td></br><input type="text" name="16" value="'.base64_decode($tableau[16]).'" placeholder="'.Twittera.'" STYLE="width:170px;" /></td>
 </tr>
 <tr>
-<td class="profil"></br>'.Facebook.'  &nbsp;</td><td></br><input type="text" name="17" value="'.base64_decode($tableau[17]).'" placeholder="Votre Compte Facebook" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Facebook.'  &nbsp;</td><td></br><input type="text" name="17" value="'.base64_decode($tableau[17]).'" placeholder="'.Facebooka.'" STYLE="width:170px;" /></td>
 </tr>
 <tr>
-<td class="profil"></br>Google +  &nbsp;</td><td></br><input type="text" name="18" value="'.base64_decode($tableau[18]).'" placeholder="Votre Compte Google +" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Googleplus.'  &nbsp;</td><td></br><input type="text" name="18" value="'.base64_decode($tableau[18]).'" placeholder="'.Googleplusa.'" STYLE="width:170px;" /></td>
 </tr>
 <tr>
-<td class="profil"></br>Activit&eacute;</td><td></br><input type="text" name="19" value="'.base64_decode($tableau[19]).'" placeholder="Codeur, Vendeur, etc" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Activite.'</td><td></br><input type="text" name="19" value="'.base64_decode($tableau[19]).'" placeholder="'.Activitea.'" STYLE="width:170px;" /></td>
 </tr>
 <tr>
-<td class="profil"></br>Biographie</td><td></br><input type="text" name="20" value="'.base64_decode($tableau[20]).'" placeholder="Quelques mots sur vous" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Biographie.'</td><td></br><input type="text" name="20" value="'.base64_decode($tableau[20]).'" placeholder="'.Biographiea.'" STYLE="width:170px;" /></td>
 </tr>
 <tr>
-<td class="profil"></br>Loisirs</td><td></br><input type="text" name="21" value="'.base64_decode($tableau[21]).'" placeholder="Jeux vid&eacute;os, Mangas, etc" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Loisirsa.'</td><td></br><input type="text" name="21" value="'.base64_decode($tableau[21]).'" placeholder="'.Loisirsaa.'" STYLE="width:170px;" /></td>
 </tr>
 </table>
 </div>
@@ -1009,13 +1020,13 @@ echo'
 <h2 class="title" style="display:none;">Theme</h2>
 <table style="margin:auto;padding-right:60px;">
 <tr>
-<td COLSPAN=4><center><br/><b>Banniere</b></center></td>
+<td COLSPAN=4><center><br/><b>'.Banniere.'</b></center></td>
 </tr>
 
 <tr>
-<td class="titre"></br>Lien &nbsp;</td><td></br><input type="text" name="26" value="'.base64_decode($tableau[26]).'" placeholder="Lien Banniere" STYLE="width:170px;" /></td>
+<td class="titre"></br>'.Lienc.' &nbsp;</td><td></br><input type="text" name="26" value="'.base64_decode($tableau[26]).'" placeholder="'.LienBanniere.'" STYLE="width:170px;" /></td>
 </tr><tr>
-<td class="profil"></br>Titre &nbsp;</td><td></br><input type="text" name="27" value="'.base64_decode($tableau[27]).'" placeholder="Titre Banniere" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Titrec.' &nbsp;</td><td></br><input type="text" name="27" value="'.base64_decode($tableau[27]).'" placeholder="'.TitreBanniere.'" STYLE="width:170px;" /></td>
 </tr>
 
 <tr>
@@ -1023,9 +1034,9 @@ echo'
 </tr>
 
 <tr>
-<td class="titre"></br>Background &nbsp;</td><td></br><input type="text" name="30" value="'.base64_decode($tableau[30]).'" placeholder="Lien du background-Image" STYLE="width:170px;" /></td>
+<td class="titre"></br>Background &nbsp;</td><td></br><input type="text" name="30" value="'.base64_decode($tableau[30]).'" placeholder="'.LienBackground.'" STYLE="width:170px;" /></td>
 </tr><tr>
-<td class="profil"></br>Favicon &nbsp;</td><td></br><input type="text" name="31" value="'.base64_decode($tableau[31]).'" placeholder="Lien de Favicon (Icone)" STYLE="width:170px;" /></td>
+<td class="profil"></br>Favicon &nbsp;</td><td></br><input type="text" name="31" value="'.base64_decode($tableau[31]).'" placeholder="'.LienFavicon.'" STYLE="width:170px;" /></td>
 </tr>
 </table>
 </div>
@@ -1034,19 +1045,19 @@ echo'
 <h2 class="title" style="display:none;">Menu</h2>
 <table style="margin:auto;padding-right:60px;">
 <tr>
-<td COLSPAN=4><center><br/><b>Menu</b></center></td>
+<td COLSPAN=4><center><br/><b>'.Menu.'</b></center></td>
 </tr>
 
 <tr>
-<td class="titre"></br>Titre A  &nbsp;</td><td></br><input type="text" name="22" value="'.base64_decode($tableau[22]).'" placeholder="Titre du menu A" STYLE="width:170px;" /></td>
+<td class="titre"></br>'.Titrec.' A  &nbsp;</td><td></br><input type="text" name="22" value="'.base64_decode($tableau[22]).'" placeholder="'.Titred.' A" STYLE="width:170px;" /></td>
 </tr><tr>
-<td class="profil"></br>Lien A  &nbsp;</td><td></br><input type="text" name="23" value="'.base64_decode($tableau[23]).'" placeholder="Lien du menu A" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Lienc.' A  &nbsp;</td><td></br><input type="text" name="23" value="'.base64_decode($tableau[23]).'" placeholder="'.Liend.' A" STYLE="width:170px;" /></td>
 </tr>
 
 <tr>
-<td class="titre"></br>Titre B  &nbsp;</td><td></br><input type="text" name="24" value="'.base64_decode($tableau[24]).'" placeholder="Titre du menu B" STYLE="width:170px;" /></td>
+<td class="titre"></br>'.Titrec.' B  &nbsp;</td><td></br><input type="text" name="24" value="'.base64_decode($tableau[24]).'" placeholder="'.Titred.' B" STYLE="width:170px;" /></td>
 </tr><tr>
-<td class="profil"></br>Lien B  &nbsp;</td><td></br><input type="text" name="25" value="'.base64_decode($tableau[25]).'" placeholder="Lien du menu B" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Lienc.' B  &nbsp;</td><td></br><input type="text" name="25" value="'.base64_decode($tableau[25]).'" placeholder="'.Liend.' B" STYLE="width:170px;" /></td>
 </tr>
 </table>
 </div>
@@ -1054,7 +1065,7 @@ echo'
 
 <table style="margin:auto;padding-right:0px;">
 <tr>
-<td class="titre"></br>'.Code.'  &nbsp;</td><td></br><input type="password" autocomplete="off" required name="7" value="" placeholder="Mot de passe de connexion" STYLE="width:170px;" alt=""/ ></td>
+<td class="titre"></br>'.Code.'  &nbsp;</td><td></br><input type="password" autocomplete="off" required name="7" value="" placeholder="'.Codea.'" STYLE="width:170px;" alt=""/ ></td>
 </tr>  
 </table>
 		
@@ -1233,9 +1244,9 @@ array(
 }
 else {
 	 echo'<form action="" method="post">
-<label for="pseudo">'.Auteur.'</label> :<strong> '.base64_decode($tableau[2]).'</strong> -  <label for="titre">'.Titre.' : </label> <input type="text" required name="titre" id="titre" placeholder="Titre de votre article" /> -  
+<label for="pseudo">'.Auteur.'</label> :<strong> '.base64_decode($tableau[2]).'</strong> -  <label for="titre">'.Titre.' : </label> <input type="text" required name="titre" id="titre" placeholder="'.Articla.'" /> -  
 
-<label for="jour">Jour</label> : <SELECT name="jour" id="jour" STYLE="width:70px;">';
+<label for="jour">'.Jour.'</label> : <SELECT name="jour" id="jour" STYLE="width:70px;">';
 
 $days = array('01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31');  
 
@@ -1245,7 +1256,7 @@ echo'<OPTION>'.$d.'</OPTION>';
 
 echo'</SELECT>
 -
-<label for="mois">Mois</label> : <SELECT name="mois" id="mois" STYLE="width:70px;">';
+<label for="mois">'.Mois.'</label> : <SELECT name="mois" id="mois" STYLE="width:70px;">';
 
 $month = array('01','02','03','04','05','06','07','08','09','10','11','12');  
 
@@ -1255,7 +1266,7 @@ echo'<OPTION>'.$m.'</OPTION>';
  
 echo'</SELECT>
 -
-<label for="annee">Ann&eacute;e</label> : <SELECT name="annee" id="annee" STYLE="width:70px;">
+<label for="annee">'.Annee.'</label> : <SELECT name="annee" id="annee" STYLE="width:70px;">
 <OPTION>'.(date('Y')+0).'</OPTION>
 <OPTION>'.(date('Y')-1).'</OPTION>
 <OPTION>'.(date('Y')-2).'</OPTION>
@@ -1263,18 +1274,18 @@ echo'</SELECT>
 <OPTION>'.(date('Y')-4).'</OPTION>
 </SELECT>
 
-<br /><br /><label for="chapo"> '.Chapo.' : </label><input type="text" required name="chapo" id="chapo" rows="" cols="" placeholder="R&eacute;sum&eacute; de l\'article pour les moteurs de recherches. " style="width: 82%;"/><br /><br />';
+<br /><br /><label for="chapo"> '.Chapo.' : </label><input type="text" required name="chapo" id="chapo" rows="" cols="" placeholder="'.Articlb.'" style="width: 82%;"/><br /><br />';
 
 include ('includes/smiley.php');
 
 echo'<textarea name="contenu" id="contenu" rows="" cols="" style="width: 100%;height: 400px;"></textarea>
-<br/><label for="note">Note</label> : <SELECT name="note" id="note" STYLE="width:70px;">';
+<br/><label for="note">'.Note.'</label> : <SELECT name="note" id="note" STYLE="width:70px;">';
 
 $notes = array( 'Off','1','2','3','4','5');
 
 foreach ($notes as $notesA) { echo'<option>'.$notesA.'</option>'; };
 
-echo'</SELECT>&nbsp; &nbsp;<b>( Si vous voulez ajouter une note avec votre article sur des jeux vidéos, mangas, films, etc )</b> .<br/><br/><center><input type="submit" value="'.Ok.'" /></center></form>';
+echo'</SELECT>&nbsp; &nbsp;<b>'.Nota.'</b> .<br/><br/><center><input type="submit" value="'.Ok.'" /></center></form>';
 }
 }
 
@@ -1342,17 +1353,17 @@ array(
 } else {
 
 	echo'<form action="" method="POST">
-	'.Auteur.' : <strong>'.base64_decode($tableau[2]).'</strong> - <label for="titre">'.Titre.' : </label> <input type="text" required name="titre" id="titre"  placeholder="Titre de votre article" value="'.$news[$newsAmodifier]['titre'].'" /> -  
-<label for="jour">Jour : </label> <input type="text" name="jour" id="jour" value="'.$news[$newsAmodifier]['jour'].'" STYLE="width:70px;" readonly="readonly"/ > 
-- <label for="mois">Mois : </label> <input type="text" name="mois" id="mois" value="'.$news[$newsAmodifier]['mois'].'" STYLE="width:70px;" readonly="readonly" /> 
-- <label for="annee">Ann&eacute;e : </label> <input type="text" name="annee" id="annee" value="'.$news[$newsAmodifier]['annee'].'" STYLE="width:70px;" readonly="readonly" /> 
-<br /><br /><label for="chapo">'.Chapo.' : </label><input type="text" required placeholder="R&eacute;sum&eacute; de l\'article pour les moteurs de recherches. " name="chapo" id="chapo" rows="" cols="" value="'.$news[$newsAmodifier]['chapo'].'" style="width: 82%;"/><br /><br />';
+	'.Auteur.' : <strong>'.base64_decode($tableau[2]).'</strong> - <label for="titre">'.Titre.' : </label> <input type="text" required name="titre" id="titre"  placeholder="'.Articla.'" value="'.$news[$newsAmodifier]['titre'].'" /> -  
+<label for="jour">'.Jour.' : </label> <input type="text" name="jour" id="jour" value="'.$news[$newsAmodifier]['jour'].'" STYLE="width:70px;" readonly="readonly"/ > 
+- <label for="mois">'.Mois.' : </label> <input type="text" name="mois" id="mois" value="'.$news[$newsAmodifier]['mois'].'" STYLE="width:70px;" readonly="readonly" /> 
+- <label for="annee">'.Annee.' : </label> <input type="text" name="annee" id="annee" value="'.$news[$newsAmodifier]['annee'].'" STYLE="width:70px;" readonly="readonly" /> 
+<br /><br /><label for="chapo">'.Chapo.' : </label><input type="text" required placeholder="'.Articlb.'" name="chapo" id="chapo" rows="" cols="" value="'.$news[$newsAmodifier]['chapo'].'" style="width: 82%;"/><br /><br />';
 
 include ('includes/smiley.php');
 
 echo'<textarea name="contenu" id="contenu" rows="" cols="" style="width: 100%;height: 400px;">'.$news[$newsAmodifier]['contenu'].'</textarea>
 	
-<br/><label for="note">Note</label> : <SELECT name="note" id="note" STYLE="width:70px;">';
+<br/><label for="note">'.Note.'</label> : <SELECT name="note" id="note" STYLE="width:70px;">';
 
 if ($news[$newsAmodifier]['note']=='Off') {$notesoff = 'selected="selected"';}
 elseif ($news[$newsAmodifier]['note']==1) {$notes1 = 'selected="selected"';}
@@ -1377,7 +1388,7 @@ foreach ($notes as $notesA => $notesB) {
 echo'<option '.$notesB.'>'.$notesA.'</option>';
  };
 
-echo'</SELECT>&nbsp; &nbsp;<b>( Si vous voulez ajouter une note avec votre article sur des jeux vidéos, mangas, films, etc )</b> .<br/>
+echo'</SELECT>&nbsp; &nbsp;<b>'.Nota.'</b> .<br/>
 		<br/>
 <center><input type="submit" value="'.Ok.'" /></center>
 	</form>';

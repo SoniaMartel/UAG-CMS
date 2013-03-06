@@ -96,9 +96,19 @@ echo'</style>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <meta name="Generator" content="UAG CMS" />
 <link rel="alternate" type="application/rss+xml" title="flux rss" href="rss.php" />
-<link rel="stylesheet" type="text/css" href="'.base64_decode($tableau[5]).'/style.css" />
-<link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css" />';
+<link rel="stylesheet" type="text/css" href="'.base64_decode($tableau[5]).'/style.css" />';
 
+$connect3 = TRUE;                              
+$ip_internet3 = 'www.googleapis.com';          
+$port_internet3 = 80; 
+
+if (! $sock3 = @fsockopen($ip_internet3, $port_internet3, $num3, $error3, 5)) { echo '';}
+
+else { 
+
+echo'<link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css" />';
+
+};
 
 if (base64_decode($tableau[31])=='') {
 echo'<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />

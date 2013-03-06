@@ -62,4 +62,71 @@ define('Loisirs', 'Loisirs : Cette zone est à remplir');
 define('error', 'La r&eacute;ponse à la page disparue, d&eacute;truite, d&eacute;plac&eacute;e ou autre.');
 define('Note', 'Note');
 
+define('AdresseSite', 'Adresse site');
+define('LienAdmin', 'Lien Admin');
+define('Pagination', 'Pagination');
+
+define('BienvenueConfig', 'Bienvenue dans la configuration, vous pouvez configurer :');
+define('General', 'Général');
+define('Theme', 'Thème');
+define('Menu', 'Menu');
+
+define('Profila', 'Configurer l\'ensemble du blog');
+define('Generala', 'Compléter les détails sur vous ');
+define('Themea', 'Personnaliser le graphisme du theme');
+define('Menua', 'Ajouter des menus complémentaires');
+
+define('Jour', 'Jour');
+define('Mois', 'Mois ');
+define('Annee', 'Année');
+define('Monde', 'Monde');
+
+define('Nota', '(Si vous voulez ajouter une note de notation avec votre article sur des jeux vidéos, mangas, films, etc.)');
+
+define('Articla', 'Titre de votre article');
+define('Articlb', 'R&eacute;sum&eacute; de l\'article pour les moteurs de recherches.');
+
+define('Prenom', 'Prénom');
+define('Nom', 'Nom');
+define('Datedenaissance', 'Date de naissance');
+define('Paysa', 'Pays');
+define('Photo', 'Photo');
+define('Twitter', 'Twitter');
+define('Facebook', 'Facebook');
+define('Googleplus', 'Google +');
+define('Activite', 'Activité');
+define('Biographie', 'Biographie');
+define('Loisirsa', 'Loisirs');
+
+define('Prenoma', 'Votre Prénom');
+define('Noma', 'Votre nom');
+define('Photoa', 'Une photo de vous');
+define('Twittera', 'Votre Compte Twitter');
+define('Facebooka', 'Votre Compte Facebook');
+define('Googleplusa', 'Votre Compte Google +');
+define('Activitea', 'Codeur, Vendeur, etc');
+define('Biographiea', 'Quelques mots sur vous');
+define('Loisirsaa', 'Jeux vid&eacute;os, Mangas, etc');
+
+define('Codea', 'Mot de passe de connexion');
+
+define('Titreb', 'Titre de votre blog');
+define('Webmasterb', 'Nom affich&eacute; sur le blog');
+define('Urlb', 'Adresse de votre site');
+define('Loginb', 'Votre pseudo de connexion');
+
+define('Banniere', 'Banniere');
+define('Menu', 'Menu');
+
+define('Titrec', 'Titre');
+define('Lienc', 'Lien');
+define('Titred', 'Titre du menu');
+define('Liend', 'Lien du menu');
+
+define('TitreBanniere', 'Titre Banniere');
+define('LienBanniere', 'Lien Banniere');
+
+define('LienBackground', 'Lien de l\'image de fond');
+define('LienFavicon', 'Lien de Favicon (Icone)');
+
 ?>
