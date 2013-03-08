@@ -157,4 +157,7 @@ define('NewsEdit', 'La news a bien &eacute;t&eacute; edit&eacute;e.');
 define('Retour', 'Retour');
 define('Install', 'Installation effectu&eacute;e !');
 
+define('Erreuracceuila', 'LE SITE DU DEVELLOPEUR EST HORS LIGNE');
+define('Erreuracceuilb', 'Le site du développeur est temporairement indisponible ou en maintenance.');
+
 ?>

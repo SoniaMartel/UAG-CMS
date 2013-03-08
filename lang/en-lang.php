@@ -157,4 +157,7 @@ define('NewsEdit', 'The news has been published.');
 define('Retour', 'Return');
 define('Install', 'Installation is complete!');
 
+define('Erreuracceuila', 'THE SITE DEVELOPER IS OFFLINE');
+define('Erreuracceuilb', 'The developer\'s website is temporarily unavailable or down for maintenance.');
+
 ?>

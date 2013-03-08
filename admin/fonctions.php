@@ -378,22 +378,34 @@ $connect = TRUE;
 $ip_internet = 'www.julien-et-nel.be';          
 $port_internet = 80; 
 
-if (! $sock = @fsockopen($ip_internet, $port_internet, $num, $error, 5)) { echo ' <div id="erreur"><p>LE SITE DU DEVELLOPEUR EST HORS LIGNE</p></div>'; }
+if (! $sock = @fsockopen($ip_internet, $port_internet, $num, $error, 5)) { echo ' <div id="erreur"><p>'.Erreuracceuila.'</p></div>'; }
 
 else { 
 
+if (base64_decode($tableau[1])=='fr') { 
 $file2 = 'http://julien-et-nel.be/UAG/mots.txt';
+}
+else {
+$file2 = 'http://julien-et-nel.be/UAG/mots2.txt';
+};
+
 $file_headers2 = @get_headers($file2);
 
 if($file_headers2[0] == 'HTTP/1.1 503 Service Unavailable') { 
 
-echo'<div id="erreur"><p>Le site du développeur est temporairement indisponible ou en maintenance.</p></div>';
+echo'<div id="erreur"><p>'.Erreuracceuilb.'</p></div>';
+
+}
+
+elseif($file_headers2[0] == 'HTTP/1.1 404 Not Found') { 
+
+echo'<div id="erreur"><p>'.Erreuracceuilb.'</p></div>';
 
 }
 
 elseif($file_headers2[0] == 'HTTP/1.1 502 Not Implemented') { 
 
-echo'<div id="erreur"><p>Le site du développeur est temporairement indisponible ou en maintenance.</p></div>';
+echo'<div id="erreur"><p>'.Erreuracceuilb.'</p></div>';
 
 }
 
