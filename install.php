@@ -187,7 +187,7 @@ function ajout($fichier,$ajout)
 ?>
 
 <meta http-equiv="refresh" content="1; URL=index.php">
-<p style="color:green">Installation effectu&eacute;e !</p>
+<p style="color:green">'.Install.'</p>
 
 <?php 
 // Fichier de transition pour écupérer les données du formulaire

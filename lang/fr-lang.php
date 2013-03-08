@@ -141,5 +141,20 @@ define('urliiiii', 'Cacher');
 
 define('Lettre', 'Lettre');
 define('Chiffre', 'Chiffre');
+define('Modificationeffectuee', 'Modification effectu&eacute;e ! Redirection en cours ...');
+
+define('ImageUpload', 'Vous devez uploader une image, vous allez être rediriger :)');
+define('ImageGros', 'Le fichier est trop gros... Vous allez être rediriger :)');
+define('ImageSuccess', 'Upload effectu&eacute; avec succ&egrave;s ! Vous allez être rediriger :)');
+define('ImageEchec', 'Echec de l\'upload ! Vous allez être rediriger :)');
+define('ImageDelete', 'Suppression effectu&eacute; avec succ&egrave;s ! Vous allez être rediriger :)');
+
+define('NewsDelOn', 'La news a bien &eacute;t&eacute; supprim&eacute;e !');
+define('NewsDelOff', 'La news n\'existe pas.');
+define('NewsAdd', 'La news a bien &eacute;t&eacute; ajout&eacute;e !');
+define('NewsEdit', 'La news a bien &eacute;t&eacute; edit&eacute;e.');
+
+define('Retour', 'Retour');
+define('Install', 'Installation effectu&eacute;e !');
 
 ?>

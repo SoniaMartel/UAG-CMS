@@ -435,7 +435,7 @@ $tableau=lire_array($fichier);
 if ($_GET['id']=='2') {  
 
 echo'<meta http-equiv="refresh" content="1; URL=index.php?page=configuration">
-<p style="color:green">Modification effectu&eacute;e ! Redirection en cours ... </p>';
+<p style="color:green">'.Modificationeffectuee.' </p>';
  
 // Fichier de transition pour &eacute;cup&eacute;rer les donn&eacute;es du formulaire
 
@@ -1238,9 +1238,9 @@ array(
 	$news[] = array('titre' => $titre, 'jour' => $jour, 'mois' => $mois, 'annee' => $annee,'contenu' => $contenu, 'chapo' => $chapo, 'note' => $note);
 	file_put_contents('../news.php', base64_encode(serialize($news)));
 	
-      echo '<div id="valide"><p>La news a bien &eacute;t&eacute; ajout&eacute;e !</p></div>';
+      echo '<div id="valide"><p>'.NewsAdd.'</p></div>';
       echo '<br />';
-      echo '<center><a href="index.php?page=liste">Retour</a></center>';
+      echo '<center><a href="index.php?page=liste">'.Retour.'</a></center>';
 }
 else {
 	 echo'<form action="" method="post">
@@ -1347,9 +1347,9 @@ array(
 	$news[$newsAmodifier]['chapo'] = htmlentities($_POST['chapo'],null,'UTF-8');
 	$news[$newsAmodifier]['note'] = htmlentities($_POST['note'],null,'UTF-8');
 	file_put_contents('../news.php', base64_encode(serialize($news)));
-	echo '<div id="valide"><p>La news a bien &eacute;t&eacute; edit&eacute;e.</p></div>';
+	echo '<div id="valide"><p>'.NewsEdit.'</p></div>';
 	echo '<br />';
-	echo '<center><a href="index.php?page=liste">Retour</a></center>';
+	echo '<center><a href="index.php?page=liste">'.Retour.'</a></center>';
 } else {
 
 	echo'<form action="" method="POST">
@@ -1426,7 +1426,7 @@ $id = basename($_GET['id']);
 $fichier = "../images/".$id;
 unlink ($fichier);
 echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
-echo '<div id="valide"><p>Suppression effectu&eacute; avec succ&egrave;s ! Vous allez être rediriger :) </p></div>';
+echo '<div id="valide"><p>'.ImageDelete.'</p></div>';
 
 }
 
@@ -1454,13 +1454,13 @@ if(isset($news[$id])) {
 	//Puis on sauvegarde le tout
 	file_put_contents('../news.php',  base64_encode(serialize($news)));
 
-echo '<div id="valide"><p>La news a bien &eacute;t&eacute; supprim&eacute;e !</p></div>';
+echo '<div id="valide"><p>'.NewsDelOn.'</p></div>';
 }
 else {
-echo '<div id="erreur"><p>La news n\'existe pas.</p></div>';
+echo '<div id="erreur"><p>'.NewsDelOff.'</p></div>';
 }
 echo '<br />';
-echo '<center><a href="index.php?page=liste">Retour</a></center>';
+echo '<center><a href="index.php?page=liste">'.Retour.'</a></center>';
 
 }
 
@@ -1477,12 +1477,12 @@ $extension = strrchr($_FILES['avatar']['name'], '.');
 if(!in_array($extension, $extensions)) 
 {
      echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
-     $erreur = '<div id="erreur"><p>Vous devez uploader une image, vous allez être rediriger :)</p></div>';
+     $erreur = '<div id="erreur"><p>'.ImageUpload.'</p></div>';
 }
 if($taille>$taille_maxi)
 {
      echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
-     $erreur = '<div id="erreur"><p>Le fichier est trop gros... Vous allez être rediriger :)</p></div>';
+     $erreur = '<div id="erreur"><p>'.ImageGros.'</p></div>';
 }
 if(!isset($erreur)) 
 {
@@ -1493,12 +1493,12 @@ if(!isset($erreur))
      if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . uniqid()  . $extension)) 
      {
 	  echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
-          echo '<div id="valide"><p>Upload effectu&eacute; avec succ&egrave;s ! Vous allez être rediriger :) </p></div>';
+          echo '<div id="valide"><p>'.ImageSuccess.'</p></div>';
      }
      else 
      {
 	  echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
-          echo '<div id="erreur"><p>Echec de l\'upload ! Vous allez être rediriger :)</p></div>';
+          echo '<div id="erreur"><p>'.ImageEchec.'</p></div>';
      }
 }
 else

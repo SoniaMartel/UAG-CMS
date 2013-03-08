@@ -141,5 +141,20 @@ define('urliiiii', 'Hide');
 
 define('Lettre', 'Letters');
 define('Chiffre', 'Numbers');
+define('Modificationeffectuee', 'Changes made ! Redirect in progress ...');
+
+define('ImageUpload', 'You must upload an image, you will be redirected :)');
+define('ImageGros', 'The file is too big ... You will be redirected :)');
+define('ImageSuccess', 'Upload completed successfully! You will be redirected :)');
+define('ImageEchec', 'Failed to upload! You will be redirected :)');
+define('ImageDelete', 'Removal completed successfully! You will be redirected :)');
+
+define('NewsDelOn', 'The news has been deleted !');
+define('NewsDelOff', 'The news does not exist .');
+define('NewsAdd', 'The news has been added !');
+define('NewsEdit', 'The news has been published.');
+
+define('Retour', 'Return');
+define('Install', 'Installation is complete!');
 
 ?>
