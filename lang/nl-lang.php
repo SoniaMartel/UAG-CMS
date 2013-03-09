@@ -54,110 +54,110 @@ define('Octobre', 'Oktober');
 define('Novembre', 'November');
 define('Decembre', 'December');
 
-define('Nonrenseigne', 'Not informed');
-define('Monde', 'World');
-define('Profil', 'Profile');
-define('Defaut', 'Default');
-define('Loisirs', 'Interests : This area is filled');
-define('error', 'The answer to the page disappeared, destroyed, moved or otherwise.');
-define('Note', 'Score');
+define('Nonrenseigne', 'Niet meegedeeld');
+define('Monde', 'Wereld');
+define('Profil', 'Profiel');
+define('Defaut', 'Standaard');
+define('Loisirs', 'Interesses : Dit gebied is gevuld');
+define('error', 'Het antwoord op verdwenen de pagina, vernietigd, verplaatst of anderszins.');
+define('Note', 'Noot');
 
-define('AdresseSite', 'Url Website ');
-define('LienAdmin', 'Url Admin');
+define('AdresseSite', 'Site Adres');
+define('LienAdmin', 'Admin koppeling');
 define('Pagination', 'Paging');
 
-define('BienvenueConfig', 'Welcome to the configuration, you can configure : ');
-define('General', 'General');
-define('Theme', 'Theme');
+define('BienvenueConfig', 'Welkom bij de configuratie, kunt u:');
+define('General', 'Algemeen');
+define('Theme', 'Thema');
 define('Menu', 'Menu');
 
-define('Profila', 'Configure the entire blog');
-define('Generala', 'Complete details about you');
-define('Themea', 'Customize the graphics of the theme');
-define('Menua', 'Add additional menus');
+define('Profila', 'Configureer de hele blog');
+define('Generala', 'Volledige details over u');
+define('Themea', 'Pas de graphics van het thema');
+define('Menua', 'Voeg extra menu\'s');
 
-define('Jour', 'Day');
-define('Mois', 'Month');
-define('Annee', 'Year');
-define('Monde', 'World');
+define('Jour', 'Dag');
+define('Mois', 'Maand');
+define('Annee', 'Jaar');
+define('Monde', 'Wereld');
 
-define('Nota', '(If you want to add a score with your article rating on video games, manga, movies ... )');
+define('Nota', '(Als u wilt een score toe te voegen met uw artikel rating op video games, manga, films ...)');
 
-define('Articla', 'Your article title');
-define('Articlb', 'Summary of the article for search engines.');
+define('Articla', 'Uw titel van het artikel');
+define('Articlb', 'Samenvatting van het artikel voor zoekmachines.');
 
-define('Prenom', 'First Name');
-define('Nom', 'Last Name');
-define('Datedenaissance', 'Date of birth');
-define('Paysa', 'Country');
-define('Photo', 'Photo');
+define('Prenom', 'Voornaam');
+define('Nom', 'Achternaam');
+define('Datedenaissance', 'Geboortedatum');
+define('Paysa', 'Land');
+define('Photo', 'Foto');
 define('Twitter', 'Twitter');
 define('Facebook', 'Facebook');
 define('Googleplus', 'Google +');
-define('Activite', 'Activity');
-define('Biographie', 'Biography');
-define('Loisirsa', 'Interests');
+define('Activite', 'Bezigheid');
+define('Biographie', 'Biografie');
+define('Loisirsa', 'Interesses');
 
-define('Prenoma', 'Your first Name');
-define('Noma', 'Your Last Name');
-define('Photoa', 'A photo of you');
-define('Twittera', 'Your Twitter account');
-define('Facebooka', 'Your Facebook account');
-define('Googleplusa', 'Your Google + account');
-define('Activitea', 'Programmer, Merchant, etc');
-define('Biographiea', 'Few words about yourself');
+define('Prenoma', 'Uw voornaam');
+define('Noma', 'Uw achternaam');
+define('Photoa', 'Een foto van je');
+define('Twittera', 'Uw Twitter account');
+define('Facebooka', 'Uw Facebook account');
+define('Googleplusa', 'Uw Google + account');
+define('Activitea', 'Programmeur, Merchant, enz.');
+define('Biographiea', 'Paar woorden over jezelf');
 define('Loisirsaa', 'Video Games, Manga, Etc');
 
-define('Codea', 'Password connection');
+define('Codea', 'Wachtwoord aansluiting');
 
-define('Titreb', 'Title of your blog');
-define('Webmasterb', 'Name displayed on the blog');
-define('Urlb', 'URL of your site');
-define('Loginb', 'Your login name');
+define('Titreb', 'Titel van uw blog');
+define('Webmasterb', 'Naam weergegeven op de blog');
+define('Urlb', 'URL van uw site');
+define('Loginb', 'Uw loginnaam');
 
-define('Banniere', 'Banner');
+define('Banniere', 'Banier');
 define('Menu', 'Menu');
 
-define('Titrec', 'Title');
+define('Titrec', 'Titel');
 define('Lienc', 'Link');
-define('Titred', 'Menu title');
+define('Titred', 'Menu titel');
 define('Liend', 'Menu link');
 
-define('TitreBanniere', 'Banner Title');
-define('LienBanniere', 'Banner Link');
+define('TitreBanniere', 'Banier Titel');
+define('LienBanniere', 'Banier Link');
 
-define('LienBackground', 'Link to the background image');
-define('LienFavicon', 'Link Favicon (icon))');
+define('LienBackground', 'Link naar de achtergrond afbeelding');
+define('LienFavicon', 'Link Favicon (icon)');
 
-define('Pagingi', 'New to Old');
-define('Pagingii', 'Old to New');
+define('Pagingi', 'Nieuw tot oud');
+define('Pagingii', 'Oud naar Nieuw');
 
 define('urli', 'Url untitled');
-define('urlii', 'Url with title');
-define('urliii', 'No rewriting');
+define('urlii', 'Url met titel');
+define('urliii', 'Geen herschrijven');
 
-define('urliiii', 'Show');
-define('urliiiii', 'Hide');
+define('urliiii', 'Weergeven');
+define('urliiiii', 'Verbergen');
 
-define('Lettre', 'Letters');
+define('Lettre', 'Letteren');
 define('Chiffre', 'Numbers');
-define('Modificationeffectuee', 'Changes made ! Redirect in progress ...');
+define('Modificationeffectuee', 'Wijzigingen die zijn aangebracht ! Redirect in progress ...');
 
-define('ImageUpload', 'You must upload an image, you will be redirected :)');
-define('ImageGros', 'The file is too big ... You will be redirected :)');
-define('ImageSuccess', 'Upload completed successfully! You will be redirected :)');
-define('ImageEchec', 'Failed to upload! You will be redirected :)');
-define('ImageDelete', 'Removal completed successfully! You will be redirected :)');
+define('ImageUpload', 'U moet een afbeelding te uploaden, wordt u doorgestuurd :)');
+define('ImageGros', 'Het bestand is te groot ... U wordt doorgestuurd :)');
+define('ImageSuccess', 'Upload succesvol afgerond! U wordt doorgestuurd :)');
+define('ImageEchec', 'Mislukt om te uploaden! U wordt doorgestuurd :)');
+define('ImageDelete', 'Verwijdering succesvol afgerond! U wordt doorgestuurd :)');
 
-define('NewsDelOn', 'The news has been deleted !');
-define('NewsDelOff', 'The news does not exist .');
-define('NewsAdd', 'The news has been added !');
-define('NewsEdit', 'The news has been published.');
+define('NewsDelOn', 'Het nieuws is verwijderd !');
+define('NewsDelOff', 'Het nieuws bestaat niet .');
+define('NewsAdd', 'Het nieuws is toegevoegd !');
+define('NewsEdit', 'Het nieuws is gepubliceerd .');
 
-define('Retour', 'Return');
-define('Install', 'Installation is complete!');
+define('Retour', 'Terugkeren');
+define('Install', 'De installatie is voltooid !');
 
-define('Erreuracceuila', 'THE SITE DEVELOPER IS OFFLINE');
-define('Erreuracceuilb', 'The developer\'s website is temporarily unavailable or down for maintenance.');
+define('Erreuracceuila', 'DE SITE DEVELOPER IS OFFLINE');
+define('Erreuracceuilb', 'Website van de ontwikkelaar is tijdelijk niet beschikbaar of als er onderhoudswerkzaamheden.');
 
 ?>

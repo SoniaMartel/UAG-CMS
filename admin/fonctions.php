@@ -496,7 +496,7 @@ echo'<div>
 </table>
 </div>
 <div>
-<h2 class="title" style="display:none;">Général</h2>
+<h2 class="title" style="display:none;">'.General.'</h2>
 <table style="margin:auto;padding-right:60px;">
 <tr>
 <td class="titre"></br>'.Titre.'  &nbsp;</td><td></br><input type="text" name="0" value="'.base64_decode($tableau[0]).'" placeholder="'.Titreb.'" STYLE="width:170px;" /></td></tr>
@@ -1029,7 +1029,7 @@ echo'
 </div>
 
 <div>
-<h2 class="title" style="display:none;">Theme</h2>
+<h2 class="title" style="display:none;">'.Theme.'</h2>
 <table style="margin:auto;padding-right:60px;">
 <tr>
 <td COLSPAN=4><center><br/><b>'.Banniere.'</b></center></td>
