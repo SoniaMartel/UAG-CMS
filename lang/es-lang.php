@@ -55,7 +55,7 @@ define('Novembre', 'Noviembre');
 define('Decembre', 'Diciembre');
 
 define('Nonrenseigne', 'Not informed');
-define('Monde', 'World');
+define('Monde', 'Mundo');
 define('Profil', 'Profile');
 define('Defaut', 'Default');
 define('Loisirs', 'Interests : This area is filled');
@@ -79,7 +79,7 @@ define('Menua', 'Add additional menus');
 define('Jour', 'Day');
 define('Mois', 'Month');
 define('Annee', 'Year');
-define('Monde', 'World');
+define('Monde', 'Mundo');
 
 define('Nota', '(If you want to add a score with your article rating on video games, manga, movies ... )');
 
