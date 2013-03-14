@@ -165,4 +165,12 @@ define('OUI', 'OUI');
 define('CHMODCORRECT', 'Le CHMOD est-il bon ?');
 define('CHMODCORRECT2', 'Le CHMOD des répertoires doit être en <b>777</b> et les fichiers en <b>666</b> .');
 
+define('CONFIGOUI', 'La page de configuration est activée, vous pouvez configurer votre blog .');
+define('IMAGESOUI', 'Le formulaire d\'image est activé, vous pouvez envoyez des images .');
+define('ARTICLOUI', 'Les articles sont activés, vous pouvez écrire ou éditer un article .');
+
+define('CONFIGNON', 'Le fichier <b>Configuration.txt</b> doit être en CHMOD <b>666</b>');
+define('IMAGESNON', 'Le dossier <b>Images</b> doit être en CHMOD <b>777</b>');
+define('ARTICLNON', 'Le fichier <b>News.php</b> doit être en CHMOD <b>666</b>');
+
 ?>

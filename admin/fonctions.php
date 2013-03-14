@@ -374,6 +374,12 @@ echo'</td></tr></table></div>';
 
 function accueil() {
 
+echo'<br/>';
+
+$test01=substr(decoct(fileperms("../admin/configuration.txt")),3);
+$test02=substr(decoct(fileperms("../images")),2);
+$test03=substr(decoct(fileperms("../news.php")),3);
+
 $connect = TRUE;                              
 $ip_internet = 'www.julien-et-nel.be';          
 $port_internet = 80; 
@@ -418,6 +424,12 @@ echo htmlspecialchars(file_get_contents($file2));
 echo'</p></div>';
 
 }
+
+if ($test01=='666') { echo '<div id="valide"><p>'.CONFIGOUI.'</p></div>'; } else {echo'<div id="erreur"><p>'.CONFIGNON.'</p></div>';};
+
+if ($test02=='777') { echo '<div id="valide"><p>'.IMAGESOUI.'</p></div>'; } else {echo'<div id="erreur"><p>'.IMAGESNON.'</p></div>';};
+
+if ($test03=='666') { echo '<div id="valide"><p>'.ARTICLOUI.'</p></div>'; } else {echo'<div id="erreur"><p>'.ARTICLNON.'</p></div>';};
 
 $file = 'http://julien-et-nel.be/UAG/UAG-1-97.txt';
 $file_headers = @get_headers($file);

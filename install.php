@@ -201,12 +201,11 @@ function ajout($fichier,$ajout)
   fclose($inF);
 }
 
-?>
+include('lang/'.$_GET['lang'].'-lang.php');
 
-<meta http-equiv="refresh" content="1; URL=index.php">
-<p style="color:green">'.Install.'</p>
+echo'<meta http-equiv="refresh" content="1; URL=index.php">
+<p style="color:green">'.Install.'</p>';
 
-<?php 
 // Fichier de transition pour écupérer les données du formulaire
 
  	 $f=fopen('admin/configuration.txt',"w");fclose($f); // on efface le fichier, on le crée à nouveau (vide)

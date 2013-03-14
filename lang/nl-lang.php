@@ -165,4 +165,12 @@ define('OUI', 'JA');
 define('CHMODCORRECT', 'CHMOD is het goed?');
 define('CHMODCORRECT2', 'CHMOD de mappen moet <b>777</b> en bestanden <b>666</b>.');
 
+define('CONFIGOUI', 'De configuratiepagina wordt ingeschakeld, kunt u uw blog .');
+define('IMAGESOUI', 'Vormen het beeld geactiveerd is, kunt u foto\'s .');
+define('ARTICLOUI', 'Items worden ingeschakeld, kunt u schrijven of bewerken van een artikel .');
+
+define('CONFIGNON', 'Het bestand "Configuration.txt" moet CHMOD 666 .');
+define('IMAGESNON', 'De "Images" map moet CHMOD 777 .');
+define('ARTICLNON', 'Het bestand "News.php" moet CHMOD 666.');
+
 ?>

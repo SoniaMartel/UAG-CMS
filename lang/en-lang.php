@@ -165,4 +165,12 @@ define('OUI', 'YES');
 define('CHMODCORRECT', 'CHMOD is it good ?');
 define('CHMODCORRECT2', 'CHMOD the directories should be <b>777</b> and files <b>666</b> .');
 
+define('CONFIGOUI', 'The configuration page is enabled, you can configure your blog .');
+define('IMAGESOUI', 'Form the image is activated, you can send pictures .');
+define('ARTICLOUI', 'Items are enabled, you can write or edit an article .');
+
+define('CONFIGNON', 'The file "configuration.txt" must be CHMOD 666 .');
+define('IMAGESNON', 'The folder "Images" should be CHMOD 777 .');
+define('ARTICLNON', 'The file "News.php" must be CHMOD 666 .');
+
 ?>
