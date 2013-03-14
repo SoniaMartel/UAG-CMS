@@ -160,4 +160,9 @@ define('Install', 'De installatie is voltooid !');
 define('Erreuracceuila', 'DE SITE DEVELOPER IS OFFLINE');
 define('Erreuracceuilb', 'Website van de ontwikkelaar is tijdelijk niet beschikbaar of als er onderhoudswerkzaamheden.');
 
+define('NON', 'NEE');
+define('OUI', 'JA');
+define('CHMODCORRECT', 'CHMOD is het goed?');
+define('CHMODCORRECT2', 'CHMOD de mappen moet <b>777</b> en bestanden <b>666</b>.');
+
 ?>

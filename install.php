@@ -21,7 +21,7 @@
 
 <title>UAG CMS : Installation du CMS</title>
 
-<style type="text/css">body {margin: 0; } #titre {font-weight: 400;text-align:center;color: #777777;font-size: 20px;width:600px;} #retour a:hover {font-weight: bold;} a {color: #777777;text-decoration: none;} #retour {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 12px;width:600px;} #page { margin: auto; width: 600px;} #UAG{text-align:center;font-size: 9px;color: #666666;}#Ok input{color: black;font-weight: 700;background: #DDDDDD !important;border:1px solid #2E83D9;font-size: 14px;} #login form {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 14px;width:600px;} #login input { box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.196);border:1px solid #BBBBBB;background: #F5F5F5; }</style>
+<style type="text/css">body {margin: 0; } #titre {font-weight: 400;text-align:center;color: #777777;font-size: 20px;width:600px;} #retour a:hover {font-weight: bold;} a {color: #777777;text-decoration: none;} #retour {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 12px;width:600px;} #page { margin: auto; width: 600px;} #UAG{text-align:center;font-size: 9px;color: #666666;}#Ok input{color: black;font-weight: 700;background: #DDDDDD !important;border:1px solid #2E83D9;font-size: 14px;} #login form {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 0px 24px 24px;text-align:center;color: #777777;font-size: 14px;width:600px;} #login input { box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.196);border:1px solid #BBBBBB;background: #F5F5F5; }</style>
 
 <?php
 error_reporting(0); 
@@ -76,7 +76,24 @@ function ajout($fichier,$ajout)
 	 }
 
 echo '<div id="page"><br/><div id="login"><form action="install.php?page=3&" method="post">';
-echo '<div id="titre">Installation de UAG CMS</div><br/>CHMOD 777 :  "<b>admin/configuration.txt [ '.substr(decoct(fileperms("admin/configuration.txt")),3).' ]</b>", "<b>Images [ '.substr(decoct(fileperms("images")),2).' ] </b> et "<b>News.php [ '.substr(decoct(fileperms("news.php")),3).' ] </b>"<br/><center><table>';
+
+$test01=substr(decoct(fileperms("admin/configuration.txt")),3);
+$test02=substr(decoct(fileperms("images")),2);
+$test03=substr(decoct(fileperms("news.php")),3);
+
+echo '<div id="titre"><p>Installation de UAG CMS</p></div><p>'.CHMODCORRECT2.'</p>'.CHMODCORRECT.' :   <b>admin/configuration.txt [ ';
+
+if ($test01=='666') { echo ''.OUI.''; } else {echo''.NON.'';};
+
+echo' ]</b> - <b>Images [ ';
+
+if ($test02=='777') { echo ''.OUI.''; } else {echo''.NON.'';};
+
+echo' ] </b> - <b>News.php [ ';
+
+if ($test03=='666') { echo ''.OUI.''; } else {echo''.NON.'';};
+
+echo' ] </b><br/><center><table>';
 
 echo '<tr><td class="titre"></br>'.Titre.'  &nbsp;</td><td></br><input type="text" name="0" value="'.$tableau[0].'" STYLE="width:180px;" /></td></tr><tr>';
 

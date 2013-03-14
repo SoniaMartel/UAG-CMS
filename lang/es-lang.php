@@ -160,4 +160,9 @@ define('Install', 'Installation is complete!');
 define('Erreuracceuila', 'THE SITE DEVELOPER IS OFFLINE');
 define('Erreuracceuilb', 'The developer\'s website is temporarily unavailable or down for maintenance.');
 
+define('NON', 'NO');
+define('OUI', 'SI');
+define('CHMODCORRECT', 'CHMOD es bueno ?');
+define('CHMODCORRECT2', 'CHMOD los directorios debería ser <b>777</b> y los archivos <b>666</b> .');
+
 ?>

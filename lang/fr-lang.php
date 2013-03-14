@@ -160,4 +160,9 @@ define('Install', 'Installation effectu&eacute;e !');
 define('Erreuracceuila', 'LE SITE DU DEVELLOPEUR EST HORS LIGNE');
 define('Erreuracceuilb', 'Le site du développeur est temporairement indisponible ou en maintenance.');
 
+define('NON', 'NON');
+define('OUI', 'OUI');
+define('CHMODCORRECT', 'Le CHMOD est-il bon ?');
+define('CHMODCORRECT2', 'Le CHMOD des répertoires doit être en <b>777</b> et les fichiers en <b>666</b> .');
+
 ?>
