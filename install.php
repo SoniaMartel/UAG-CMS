@@ -133,6 +133,9 @@ RewriteEngine on
 RewriteRule ^article-([0-9]+)\.php$   index.php?module=articles&page=$1 [L]
 RewriteRule ^([0-9]+)-([a-z0-9\-]+)\.php$   index.php?module=articles&page=$1 [L]
 
+RewriteRule ^article-([0-9]+)\.php$   index2.php?module=articles&page=$1 [L]
+RewriteRule ^([0-9]+)-([a-z0-9\-]+)\.php$   index2.php?module=articles&page=$1 [L]
+
 RewriteRule ^feed$   rss.php [L]
 
 <files .htaccess>
