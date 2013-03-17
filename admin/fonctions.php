@@ -18,6 +18,100 @@
 
 /* BLOG */
 
+function lien1()   {
+
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+echo'<iframe src="'.base64_decode($tableau[23]).'" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+
+}
+
+function lien2()   {
+
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+echo'<iframe src="'.base64_decode($tableau[25]).'" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+
+}
+
+function LLDGP1()   {
+
+echo'<iframe src="http://julien-et-nel.be/LLDGP1/" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+
+}
+
+function RSS()   {
+
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+echo'<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 600px !important;
+margin:0px !important;
+};
+</style>
+
+<iframe src="'.base64_decode($tableau[5]).'/rss.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+
+}
+
+function UAG()   {
+
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+echo'<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 600px !important;
+margin:0px !important;
+};
+</style>
+
+<iframe src="http://julien-et-nel.be/UAG/" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+
+}
+
+function blog2()   {
+
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+echo'<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 600px !important;
+margin:0px !important;
+};
+</style>
+
+<iframe src="'.base64_decode($tableau[5]).'/index2.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+
+}
+
+function blog()   {
+
+$fichier='configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+echo'<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 600px !important;
+margin:0px !important;
+};
+</style>
+
+<iframe src="'.base64_decode($tableau[5]).'/index2.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+
+}
+
 /* erreurs */
 
 function terreurs()   {
@@ -225,6 +319,13 @@ echo'
 Off
 ';
 }
+}
+
+function disqus()  {
+
+$fichier='admin/configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
 
 if (base64_decode($tableau[3])=='') {echo'</article><article style="min-height:0px;font-weight:bold;text-align:center;">Les commentaires ne sont pas activés.';}
 
@@ -459,7 +560,15 @@ $tableau=lire_array($fichier);
 if ($_GET['id']=='2') {  
 
 echo'<meta http-equiv="refresh" content="1; URL=index.php?page=configuration">
-<p style="color:green">'.Modificationeffectuee.' </p>';
+<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 0px !important;
+margin:0px !important;
+};
+</style>
+<div class="ui-state-highlight ui-corner-all" style="text-align:center;">
+<p><span class="ui-icon ui-icon-info" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>
+'.Modificationeffectuee.'</p></div>';
  
 // Fichier de transition pour &eacute;cup&eacute;rer les donn&eacute;es du formulaire
 
@@ -511,10 +620,8 @@ echo'<div>
 <h2 class="title" style="display:none;">'.General.'</h2>
 <table style="margin:auto;padding-right:60px;">
 <tr>
-<td class="titre"></br>'.Titre.'  &nbsp;</td><td></br><input type="text" name="0" value="'.base64_decode($tableau[0]).'" placeholder="'.Titreb.'" STYLE="width:170px;" /></td></tr>
-';
-
-echo '<tr><td class="titre"></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[1]).'" name="1" STYLE="width:180px;">';
+<td class="titre"></br>'.Titre.'  &nbsp;</td><td></br><input type="text" name="0" value="'.base64_decode($tableau[0]).'" placeholder="'.Titreb.'" STYLE="width:170px;" /></td>
+<td class="titre" style="padding-left:20px;" ></br>'.Langue.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[1]).'" name="1" STYLE="width:180px;">';
 
 $languages = array(
 
@@ -536,20 +643,19 @@ echo'<option '.$languages2.'>'.$languages1.'</option>';
 echo'</SELECT></td></tr>
 
 <tr><td class="titre"></br>'.Gerant.'  &nbsp;</td><td></br><input type="text" required name="2" value="'.base64_decode($tableau[2]).'" placeholder="'.Webmasterb.'" STYLE="width:170px;"/></td>
-</tr><tr>
-<td class="titre"></br>Disqus  &nbsp;</td><td></br><input type="text" name="3" value="'.base64_decode($tableau[3]).'" placeholder="ID DISQUS" STYLE="width:170px;"/></td></tr>
+<td class="titre" style="padding-left:20px;"></br>Disqus  &nbsp;</td><td></br><input type="text" name="3" value="'.base64_decode($tableau[3]).'" placeholder="ID DISQUS" STYLE="width:170px;"/></td></tr>
 <tr>
 <td class="titre"></br>'.Pagination.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[4]).'" name="4" STYLE="width:180px;">
 <option value="on" '.$paginationOn.'>'.Pagingi.'</option>
 <option value="off" '.$paginationOff.'>'.Pagingii.'</option>
 </select></td>
-</tr><tr><td class="titre"></br>'.AdresseSite.'  &nbsp;</td><td></br>
+<td class="titre" style="padding-left:20px;"></br>'.AdresseSite.'  &nbsp;</td><td></br>
 
 <input type="text" name="5"  required value="'.base64_decode($tableau[5]).'" placeholder="'.Urlb.'" STYLE="width:170px;"/></td></tr>
 
 <tr>
 <td class="titre"></br>'.Login.'  &nbsp;</td><td></br><input type="text" required name="6" value="'.base64_decode($tableau[6]).'" placeholder="'.Loginb.'" STYLE="width:170px;" alt=""/></td>
-</tr>';
+';
 
 if (base64_decode($tableau[8])==on) {$selectedon = 'selected="selected"';}
 
@@ -557,7 +663,7 @@ elseif (base64_decode($tableau[8])==on2) {$selectedon2 = 'selected="selected"';}
 
 elseif (base64_decode($tableau[8])==off) {$selectedoff = 'selected="selected"';}
 
-echo'<tr><td class="titre"></br>URL Rewriting  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[8]).'" name="8" STYLE="width:180px;">
+echo'<td class="titre" style="padding-left:20px;"></br>URL Rewriting  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[8]).'" name="8" STYLE="width:180px;">
 <OPTION VALUE="on" '.$selectedon.'>'.urli.'</OPTION>
 <OPTION VALUE="on2" '.$selectedon2.'>'.urlii.'</OPTION>
 <OPTION VALUE="off" '.$selectedoff.'>'.urliii.'</OPTION>
@@ -570,13 +676,13 @@ elseif (base64_decode($tableau[9])==off) {$selected2 = 'selected="selected"';}
 echo'<tr><td class="titre"></br>'.LienAdmin.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[9]).'" name="9" STYLE="width:180px;">
 <OPTION VALUE="on" '.$selected1.'>'.urliiii.'</OPTION>
 <OPTION VALUE="off" '.$selected2.'>'.urliiiii.'</OPTION>
-</SELECT></td></tr>';
+</SELECT></td>';
 
 if (base64_decode($tableau[10])==on) {$selecteddate1 = 'selected="selected"';}
 
 elseif (base64_decode($tableau[10])==off) {$selecteddate2 = 'selected="selected"';}
 
-echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[10]).'" name="10" STYLE="width:180px;">
+echo'<td class="titre" style="padding-left:20px;"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[10]).'" name="10" STYLE="width:180px;">
 <OPTION VALUE="on" '.$selecteddate1.'>'.Lettre.'</OPTION>
 <OPTION VALUE="off" '.$selecteddate2.'>'.Chiffre.'</OPTION>
 </SELECT></td></tr>
@@ -589,8 +695,7 @@ echo'<tr><td class="titre"></br>'.Date.'  &nbsp;</td><td></br><SELECT value="'.b
 <table style="margin:auto;padding-right:60px;">
 <tr>
 <td class="profil"></br>'.Prenom.'  &nbsp;</td><td></br><input type="text" name="11" value="'.base64_decode($tableau[11]).'" placeholder="'.Prenoma.'" STYLE="width:170px;" /></td>
-</tr><tr>
-<td class="profil"></br>'.Nom.'  &nbsp;</td><td></br><input type="text" name="12" value="'.base64_decode($tableau[12]).'" placeholder="'.Noma.'" STYLE="width:170px;" /></td>
+<td class="profil" style="padding-left:20px;"></br>'.Nom.'  &nbsp;</td><td></br><input type="text" name="12" value="'.base64_decode($tableau[12]).'" placeholder="'.Noma.'" STYLE="width:170px;" /></td>
 </tr>
 <tr>
 <td class="profil"></br>'.Datedenaissance.'  &nbsp;</td><td></br>
@@ -804,8 +909,8 @@ if (base64_decode($tableau[29])==$day1) {$day2 = 'selected="selected"';}
 echo'<option '.$day2.'>'.$day1.'</option>';
  };
 
-echo'</SELECT></td></tr><tr>
-<td class="profil"></br>'.Paysa.' &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[14]).'" name="14" STYLE="width:180px;">';
+echo'</SELECT></td>
+<td class="profil" style="padding-left:20px;"></br>'.Paysa.' &nbsp;</td><td></br><SELECT value="'.base64_decode($tableau[14]).'" name="14" STYLE="width:180px;">';
 
 $world = array(
 
@@ -1018,24 +1123,18 @@ echo'
 </select>
 </td></tr><tr>
 <td class="profil"></br>'.Photo.'  &nbsp;</td><td></br><input type="text" name="15" value="'.base64_decode($tableau[15]).'" placeholder="'.Photoa.'" STYLE="width:170px;" /></td>
-</tr>
-<tr>
-<td class="profil"></br>'.Twitter.'  &nbsp;</td><td></br><input type="text" name="16" value="'.base64_decode($tableau[16]).'" placeholder="'.Twittera.'" STYLE="width:170px;" /></td>
-</tr>
-<tr>
-<td class="profil"></br>'.Facebook.'  &nbsp;</td><td></br><input type="text" name="17" value="'.base64_decode($tableau[17]).'" placeholder="'.Facebooka.'" STYLE="width:170px;" /></td>
-</tr>
-<tr>
-<td class="profil"></br>'.Googleplus.'  &nbsp;</td><td></br><input type="text" name="18" value="'.base64_decode($tableau[18]).'" placeholder="'.Googleplusa.'" STYLE="width:170px;" /></td>
+<td class="profil" style="padding-left:20px;"></br>'.Twitter.'  &nbsp;</td><td></br><input type="text" name="16" value="'.base64_decode($tableau[16]).'" placeholder="'.Twittera.'" STYLE="width:170px;" /></td>
 </tr>
 <tr>
 <td class="profil"></br>'.Activite.'</td><td></br><input type="text" name="19" value="'.base64_decode($tableau[19]).'" placeholder="'.Activitea.'" STYLE="width:170px;" /></td>
+<td class="profil" style="padding-left:20px;"></br>'.Facebook.'  &nbsp;</td><td></br><input type="text" name="17" value="'.base64_decode($tableau[17]).'" placeholder="'.Facebooka.'" STYLE="width:170px;" /></td>
 </tr>
 <tr>
 <td class="profil"></br>'.Biographie.'</td><td></br><input type="text" name="20" value="'.base64_decode($tableau[20]).'" placeholder="'.Biographiea.'" STYLE="width:170px;" /></td>
+<td class="profil" style="padding-left:20px;"></br>'.Googleplus.'  &nbsp;</td><td></br><input type="text" name="18" value="'.base64_decode($tableau[18]).'" placeholder="'.Googleplusa.'" STYLE="width:170px;" /></td>
 </tr>
 <tr>
-<td class="profil"></br>'.Loisirsa.'</td><td></br><input type="text" name="21" value="'.base64_decode($tableau[21]).'" placeholder="'.Loisirsaa.'" STYLE="width:170px;" /></td>
+<td class="profil"></br>'.Loisirsa.'</td><td COLSPAN=3></br><input type="text" name="21" value="'.base64_decode($tableau[21]).'" placeholder="'.Loisirsaa.'" STYLE="width:450px;" /></td>
 </tr>
 </table>
 </div>
@@ -1089,7 +1188,7 @@ echo'
 
 <table style="margin:auto;padding-right:0px;">
 <tr>
-<td class="titre"></br>'.Code.'  &nbsp;</td><td></br><input type="password" autocomplete="off" required name="7" value="" placeholder="'.Codea.'" STYLE="width:170px;" alt=""/ ></td>
+<td class="titre"></br>'.Code.'  &nbsp;</td><td></br><input type="password" autocomplete="off" required name="7" value="" placeholder="'.Codea.'" alt="" STYLE="width:200px;" /></td>
 </tr>  
 </table>
 		
@@ -1157,7 +1256,37 @@ echo'<form method="POST" action="index.php?page=upload" enctype="multipart/form-
 
 function images() {
 
+$fichier='configuration.txt';
+$tableau=array();
+$tableau=lire_array($fichier);
+
+echo'
+
+<style>
+#gallery { float: left; width: 100%;     overflow: auto;
+ max-height: 320px !important;; }
+.gallery.custom-state-active { background: #eee; }
+.gallery li { float: left; width: 116px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+.gallery li h5 { margin: 0 0 0.4em; }
+.gallery li a { float: right; }
+.gallery li a.ui-icon-zoomin { float: left; }
+.gallery li img { width: 100%; }
+#trash { float: right; width: 32%; min-height: 18em; padding: 1%; }
+#trash h4 { line-height: 16px; margin: 0 0 0.4em; }
+#trash h4 .ui-icon { float: left; }
+#trash .gallery h5 { display: none; }
+</style>
+
+ <SCRIPT language=javascript>
+    function OuvrirPopup(page,nom,option) {
+       window.open(page,nom,option);
+    }
+  </SCRIPT>
+  
+<ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">';
+
 $dir = '../images/';
+$dir2 = '/images/';
 $valide_extensions = array('jpg', 'jpeg', 'gif', 'png', 'svg', 'bmp', 'JPG', 'JPEG', 'GIF', 'PNG', 'SVG', 'BMP');
 
 $Ressource = opendir($dir);
@@ -1167,6 +1296,7 @@ while($fichier = readdir($Ressource))
 
      $test_Fichier = $dir.$fichier;
      $test_Fichier2 = $fichier;
+	 $test_Fichier3 = $dir2.$fichier;
 
 
      if(!in_array($fichier, $berk) && !is_dir($test_Fichier))
@@ -1175,16 +1305,17 @@ while($fichier = readdir($Ressource))
 
          if(in_array($ext, $valide_extensions))
          {
-echo '<div style="float:left; margin:7px;"><img src="'.$test_Fichier.'" style="border:1px; border-color:black;border-style: solid ;height:100px; width:100px; background-color:white;padding:6px"/><div style="text-align:center;" /><a href="'.$test_Fichier.'"><img src="images/liens.png" alt="Liens" width="16px">';
+echo '<li class="ui-widget-content ui-corner-tr" style="list-style-type:none;margin-top:25px;"><div> <h5 class="ui-widget-header">'.$test_Fichier2.'</h5>
 
-echo '</a> - <a href="index.php?page=delete&id='.$test_Fichier2.'"><img src="images/supprimer.png" alt="Supprimer" width="16px">';
+<img src="'.$test_Fichier.'" "width="96" height="72">
 
-echo'</a></div>
-                 </div>';
-}
-}
-}
-}
+<div style="text-align:center;" /><a href="javascript:OuvrirPopup(\''.base64_decode($tableau[5]).''.$test_Fichier3.'\', \'\', \'resizable=no, location=no, width=500, height=500,top=200px,left=200px, menubar=no, status=no, scrollbars=no, menubar=no\')" class="ui-icon ui-icon-zoomin"></a>
+
+<a href="index.php?page=delete&id='.$test_Fichier2.'" class="ui-icon ui-icon-trash">';
+
+echo'</a></div></div></li>'; } } }
+
+echo'</ul>'; }
 
 /* Script pour &eacute;viter les slash dans les articles */
 function anti_slash() {
@@ -1262,7 +1393,14 @@ array(
 	$news[] = array('titre' => $titre, 'jour' => $jour, 'mois' => $mois, 'annee' => $annee,'contenu' => $contenu, 'chapo' => $chapo, 'note' => $note);
 	file_put_contents('../news.php', base64_encode(serialize($news)));
 	
-      echo '<div id="valide"><p>'.NewsAdd.'</p></div>';
+      echo '<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 0px !important;
+margin:0px !important;
+};
+</style>
+<div class="ui-state-highlight ui-corner-all" style="text-align:center;">
+<p><span class="ui-icon ui-icon-info" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.NewsAdd.'</p></div>';
       echo '<br />';
       echo '<center><a href="index.php?page=liste">'.Retour.'</a></center>';
 }
@@ -1371,7 +1509,14 @@ array(
 	$news[$newsAmodifier]['chapo'] = htmlentities($_POST['chapo'],null,'UTF-8');
 	$news[$newsAmodifier]['note'] = htmlentities($_POST['note'],null,'UTF-8');
 	file_put_contents('../news.php', base64_encode(serialize($news)));
-	echo '<div id="valide"><p>'.NewsEdit.'</p></div>';
+	echo '<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 0px !important;
+margin:0px !important;
+};
+</style>
+<div class="ui-state-highlight ui-corner-all" style="text-align:center;">
+<p><span class="ui-icon ui-icon-info" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.NewsEdit.'</p></div>';
 	echo '<br />';
 	echo '<center><a href="index.php?page=liste">'.Retour.'</a></center>';
 } else {
@@ -1432,13 +1577,14 @@ $_SESSION['token'] = $token;
 
 $_SESSION['token_time'] = time();
 
-echo'<style type="text/css">body {margin: 0; } #titre2 {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: red;font-size: 12px;width:250px;} #titre {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 25px;width:250px;} #retour a:hover {font-weight: bold;} #retour a {color: #777777;text-decoration: none;} #retour {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 12px;width:250px;} #page { margin: auto; width: 200px;} #UAG{text-align:center;font-size: 9px;color: #666666;}#Ok input{color: #FFFFFF;font-weight: 700;background: #A0A0A0 !important;border:1px solid #2E83D9;font-size: 14px;} #login form {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 14px;width:250px;} #login input { box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.196);border:1px solid #BBBBBB;background: #F5F5F5; }</style><div id="page"><br/><div id="titre">UAG CMS</div><br/><div id="login"><form action="identification.php" method="post"><b>'.Connexion.'</b><br/><br/>
+echo'<style type="text/css"> #titre2 {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: red;font-size: 12px;width:250px;} #titre {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 25px;width:250px;} #retour a:hover {font-weight: bold;} #retour a {color: #777777;text-decoration: none;} #retour {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 12px;width:250px;} #page2 { margin: auto; width: 200px;} #UAG{text-align:center;font-size: 9px;color: #666666;}#Ok input{color: #FFFFFF;font-weight: 700;background: black !important;border:1px solid #2E83D9;font-size: 14px;} #login form {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 14px;width:95%;} #login input { box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.196);border:1px solid #BBBBBB;background: #F5F5F5; }</style>
+<div id="login"><form action="identification.php" method="post"><b>'.Connexion.'</b><br/><br/>
      '.Login.' <br/><input type="text" name="login" value="" /><br /><br />
      '.Code.' <br/><input type="password" name="mdp" value="" /><br /><br />
 
   <input type="hidden" name="token" id="token" value="'.$token.'"/>
 
-     <div id="Ok"><input type="submit" value="'.Ok.'"></div></form><div id="retour"><a href="../index.php">'.Accueil.'</a></div></div></div>';
+     <div id="Ok"><input type="submit" value="'.Ok.'"></div></form></div>';
 
 }
 
@@ -1450,7 +1596,14 @@ $id = basename($_GET['id']);
 $fichier = "../images/".$id;
 unlink ($fichier);
 echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
-echo '<div id="valide"><p>'.ImageDelete.'</p></div>';
+echo '<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 0px !important;
+margin:0px !important;
+};
+</style>
+<div class="ui-state-highlight ui-corner-all" style="text-align:center;">
+<p><span class="ui-icon ui-icon-info" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.ImageDelete.'</p></div>';
 
 }
 
@@ -1478,10 +1631,24 @@ if(isset($news[$id])) {
 	//Puis on sauvegarde le tout
 	file_put_contents('../news.php',  base64_encode(serialize($news)));
 
-echo '<div id="valide"><p>'.NewsDelOn.'</p></div>';
+echo '<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 0px !important;
+margin:0px !important;
+};
+</style>
+<div class="ui-state-highlight ui-corner-all" style="text-align:center;">
+<p><span class="ui-icon ui-icon-info" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.NewsDelOn.'</p></div>';
 }
 else {
-echo '<div id="erreur"><p>'.NewsDelOff.'</p></div>';
+echo '<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 0px !important;
+margin:0px !important;
+};
+</style>
+<div class="ui-state-error ui-corner-all" style="text-align:center;">
+<p><span class="ui-icon ui-icon-alert" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.NewsDelOff.'</p></div>';
 }
 echo '<br />';
 echo '<center><a href="index.php?page=liste">'.Retour.'</a></center>';
@@ -1501,12 +1668,26 @@ $extension = strrchr($_FILES['avatar']['name'], '.');
 if(!in_array($extension, $extensions)) 
 {
      echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
-     $erreur = '<div id="erreur"><p>'.ImageUpload.'</p></div>';
+     $erreur = '<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 0px !important;
+margin:0px !important;
+};
+</style>
+<div class="ui-state-error ui-corner-all" style="text-align:center;">
+<p><span class="ui-icon ui-icon-alert" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.ImageUpload.'</p></div>';
 }
 if($taille>$taille_maxi)
 {
      echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
-     $erreur = '<div id="erreur"><p>'.ImageGros.'</p></div>';
+     $erreur = '<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 0px !important;
+margin:0px !important;
+};
+</style>
+<div class="ui-state-error ui-corner-all" style="text-align:center;">
+<p><span class="ui-icon ui-icon-alert" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.ImageGros.'</p></div>';
 }
 if(!isset($erreur)) 
 {
@@ -1516,13 +1697,28 @@ if(!isset($erreur))
      $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
      if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . uniqid()  . $extension)) 
      {
-	  echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
-          echo '<div id="valide"><p>'.ImageSuccess.'</p></div>';
+echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
+echo '
+<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 0px !important;
+margin:0px !important;
+};
+</style>
+<div class="ui-state-highlight ui-corner-all" style="text-align:center;">
+<p><span class="ui-icon ui-icon-info" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.ImageSuccess.'</p></div>';
      }
      else 
      {
 	  echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
-          echo '<div id="erreur"><p>'.ImageEchec.'</p></div>';
+          echo '<style type="text/css">
+.ui-dialog,.ui-dialog-content{
+min-height: 0px !important;
+margin:0px !important;
+};
+</style>
+<div class="ui-state-error ui-corner-all" style="text-align:center;">
+<p><span class="ui-icon ui-icon-alert" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.ImageEchec.'</p></div>';
      }
 }
 else

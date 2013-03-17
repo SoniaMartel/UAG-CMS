@@ -38,19 +38,5 @@ else
      }
 }
 
-$timestamp_ancien = time() - (30*60);
-
-if($_SESSION['token_time'] >= $timestamp_ancien) {}
-
-else
-
-{
-unset($_SESSION);
-unset($_COOKIE);
-session_destroy();
-header ("X-FRAME-OPTIONS: DENY");
-header ('Location: connexion.php');
-}
-
 header ("X-FRAME-OPTIONS: DENY");
 ?>

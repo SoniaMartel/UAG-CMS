@@ -173,4 +173,5 @@ define('CONFIGNON', 'Het bestand "Configuration.txt" moet CHMOD 666 .');
 define('IMAGESNON', 'De "Images" map moet CHMOD 777 .');
 define('ARTICLNON', 'Het bestand "News.php" moet CHMOD 666.');
 
+
 ?>

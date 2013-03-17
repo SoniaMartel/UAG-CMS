@@ -173,4 +173,5 @@ define('CONFIGNON', 'El archivo "Configuration.txt" debe ser CHMOD 666 .');
 define('IMAGESNON', 'La carpeta "Images" debería ser CHMOD 777 .');
 define('ARTICLNON', 'El archivo "News.php" debe ser CHMOD 666 .');
 
+define('Liendimage', 'Voici le lien de votre image');
 ?>

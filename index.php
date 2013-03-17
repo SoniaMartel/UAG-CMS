@@ -1,5 +1,4 @@
 <?php
-
 /******************************************************
 
 # *** LICENCE ***
@@ -16,7 +15,6 @@
 # *** LICENCE ***
 
 ******************************************************/
-require 'admin/fonctions.php'; 
 
 function lire_array($fichier)
 {
@@ -48,151 +46,219 @@ $tableau=array();
 $tableau=lire_array($fichier);
 error_reporting(0);
 
-if (filesize($fichier) > 0) {
+$filename = 'admin/configuration.txt';
 
- unlink('install.php'); 
-
-} 
+if (filesize($filename) > 0) {} 
 
 else { header('Location: install.php'); } 
 
-ob_start('ob_gzhandler'); register_shutdown_function('ob_end_flush');
-
-$allnews = unserialize(base64_decode(file_get_contents('news.php')));
-
-$nb_messagetotal = count($allnews);
-
-$nbPages = ceil($nb_messagetotal / 1);
-
-if(isset($_GET['page']) && (intval($_GET['page']) <= $nbPages)) {
-
-$page = intval($_GET['page']) - 1; }
-
-$liste_news = array_slice($allnews, $page, 1); 
+error_reporting(0); 
 
 include('lang/'.base64_decode($tableau[1]).'-lang.php');
 
-echo'<!DOCTYPE html><!-- Systeme de Pagination Par Qwerty : http://etudiant-libre.fr.nf/ --> <html lang="'.base64_decode($tableau[1]).'"><head>';
+require 'admin/fonctions.php';
 
-switch ($_GET['module'])
-{
+echo'
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title>UAG CMS</title>
+<meta name="Description" content="Administration de UAG CMS" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="admin/defaut.css" />
+<link rel="stylesheet" href="admin/defaut2.css" />
+<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
+<link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
+<link rel="stylesheet" href="admin/jquery/css/ui-lightness/jquery-ui-1.10.2.custom.css" />
+<script src="admin/js/jquery.min.js"></script>
+<script src="admin/js/jquery-ui.min.js"></script>
+<script src="admin/js/jquery.coda-slider-3.0.js"></script>
 
-case 'articles': tarticles(); break;
+    <script>
+      $(function() {
+        $(\'#main-slider\').codaSlider({
+          autoHeight: false,
+          continuous:false,
+          dynamicArrows: false,
+          dynamicTabs: false
+        });
+        $(\'#showcase\').codaSlider();
+        $(\'#continuous\').codaSlider({
+          autoSlide: false,
+          continuous: false,
+          dynamicArrowsGraphical: false,
+          dynamicTabsAlign: "right",
+          dynamicTabsPosition: "bottom",
+          panelTitleSelector: "div.title"
+        });
+        $(\'#dynamic-tabs\').codaSlider({
+          autoSlideControls:false,
+          dynamicTabsAlign: "left",
+          dynamicTabsPosition: "top",
+          dynamicArrows: false
+        })
+        $(\'#information\').codaSlider({
+          dynamicArrows: false,
+          dynamicTabs: false,
+          slideEaseFunction: "easeOutCirc"
+        });
+      });
+      </script>
 
-case 'erreurs': terreurs(); break;
+<script src="admin/js/editeur.js"></script>
+<script type="text/javascript">addEvt(window,\'load\',whizzywig);</script>
+    <script>
+        $(function(){
+            setInterval(function(){
+                $(\'#ajax-refresh\').load(\'admin/chat.php\');
+            }, 0);
+        });
+    </script>
+	
+<script>
+$(function() {
+$( "#dialog-modal" ).dialog({
+width: 1020,
+modal: false
+});
+});
+ $(function() {
+$( "#draggable" ).draggable();
+});
+ $(function() {
+$( "#draggable2" ).draggable();
+});
+ $(function() {
+$( "#draggable3" ).draggable();
+});
+ $(function() {
+$( "#draggable4" ).draggable();
+});
+ $(function() {
+$( "#draggable5" ).draggable();
+});
+ $(function() {
+$( "#draggable6" ).draggable();
+});
+ $(function() {
+$( "#draggable7" ).draggable();
+});
+</script>
 
-default : tprofil();
-}
+</head>
+<body>
+<body onload="whizzywig()">';
 
 echo'
 <style type="text/css">
 ';
-if (base64_decode($tableau[30])=='') {}
-else {echo'html {background-image:url(\''.base64_decode($tableau[30]).'\');}';}
+if (base64_decode($tableau[30])=='') {echo'
+html {background-image:url(\''.base64_decode($tableau[5]).'/fond.jpg\');}
+page{background-color:transparent !important;}
+body{background-color:transparent !important;}';}
+else {echo'
+html {background-image:url(\''.base64_decode($tableau[30]).'\');}
+page{background-color:transparent !important;}
+body{background-color:transparent !important;}';}
 
 echo'</style>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<meta name="Generator" content="UAG CMS" />
-<link rel="alternate" type="application/rss+xml" title="flux rss" href="rss.php" />
-<link rel="stylesheet" type="text/css" href="'.base64_decode($tableau[5]).'/style.css" />';
 
-$connect3 = TRUE;                              
-$ip_internet3 = 'www.googleapis.com';          
-$port_internet3 = 80; 
+<div id="page">
+<div id="header2">
+<div id="ajax-refresh">';
+include('admin/chat.php');
 
-if (! $sock3 = @fsockopen($ip_internet3, $port_internet3, $num3, $error3, 5)) { echo '';}
+echo'</div>';
 
-else { 
+echo'</div>
+<div id="header">UAG CMS
+';
 
-echo'<link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css" />';
-
-};
-
-if (base64_decode($tableau[31])=='') {
-echo'<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
-<link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />'
-;}
-else {
-echo'<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[31]).'" sizes="16x16" />
-<link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[31]).'" sizes="16x16" />'
-;}
-
-
-
-echo'</head>';
-
-echo'<body class="home blog"><div id="wrapper"><header id="header">';
-
-if (base64_decode($tableau[26])=='') {echo '<h1 id="site-title">'.base64_decode($tableau[0]).'</h1>';}
-else if (base64_decode($tableau[27])=='') {echo '<h1 id="site-title"><img src="'.base64_decode($tableau[26]).'" alt="'.base64_decode($tableau[0]).'"></h1>';}
-else {echo '<h1 id="site-title"><img src="'.base64_decode($tableau[26]).'" alt="'.base64_decode($tableau[27]).'"></h1>';}
-
-echo'</header><div id="content"><article>';
-
-switch ($_GET['module'])
-{
-
-case 'articles': articles(); break;
-
-case 'erreurs': erreurs(); break;
-
-default : profil();
-}
-
-echo'</article><div id="piedpage">';
-
-if (base64_decode($tableau[4])=='on') {krsort($allnews);}
-else if (base64_decode($tableau[4])=='off') {};
-
-foreach($allnews as $i => $news) { 
-
-$i2 = $i + 1 ;
-
-$news['titre'] = preg_replace( "`&([a-z])(acute|uml|circ|grave|ring|cedil|slash|tilde|caron|lig);`i","\\1", $news['titre'] );
-$news['titre'] = preg_replace("`\[.*\]`U","",$news['titre']);
-$news['titre'] = preg_replace('`&(amp;)?#?[a-z0-9]+;`i','-',$news['titre']);
-$news['titre'] = preg_replace( array("`[^a-z0-9]`i","`[-]+`") , "-", $news['titre']);
-$news['titre'] = ( $news['titre'] == "" ) ? $type : strtolower(trim($news['titre'], '-'));
-$news['titre'] = htmlentities($news['titre'], ENT_COMPAT, 'utf8');
-
-if (base64_decode($tableau[8])=='off') {echo '<div class="older-posts"><a href="'.base64_decode($tableau[5]).'/index.php?module=articles&page=' . $i2 . '">' . $i2 . '</a></div>';}
-
-elseif  (base64_decode($tableau[8])=='on') {echo '<div class="older-posts"><a href="'.base64_decode($tableau[5]).'/article-' . $i2 . '.php">' . $i2 . '</a></div>';}
-
-elseif  (base64_decode($tableau[8])=='on2') {
-
-echo'<div class="older-posts"><a href="'.base64_decode($tableau[5]).'/' . $i2 . '-'.$news['titre'].'.php">' . $i2 . '</a></div>';}
-
-else {echo '<div class="older-posts"><a href="'.base64_decode($tableau[5]).'/index.php?module=articles&page=' . $i2 . '">' . $i2 . '</a></div>';}
-
-}
-
-echo'</div></div></div>';
-
-echo'<nav id="menu" ><div class="menu-footer" ><ul id="menu-main" class="menu"><li><a href="'.base64_decode($tableau[5]).'/index.php">'.Accueil.'</a></li>';
+echo'</div><div id="menu"> <div id="draggable"  style="margin-bottom:10px;"><a href="index.php" title="Blog(s)"><img src="admin/images/home.png">Blog(s)</a></div>';
 
 if (base64_decode($tableau[9])=='off') {}
 
-elseif  (base64_decode($tableau[9])=='on') {echo'<li><a href="'.base64_decode($tableau[5]).'/admin/connexion.php">'.Administration.'</a></li>';}
+else { echo'<div id="draggable2" style="margin-bottom:10px;"><a href="/admin" title="'.Administration.'"><img src="admin/images/configure.png">'.Administration.'</a></div>';}
+
+echo'<div id="draggable3" style="margin-bottom:10px;"><a href="index.php?page=LLDGP1" title="LLDGP1"><img src="admin/images/info.png">LLDGP1</a></div>';
 
 if (base64_decode($tableau[22])=='') {}
 
 else if (base64_decode($tableau[23])=='') {}
 
-else {echo'<li><a href="'.base64_decode($tableau[23]).'">'.base64_decode($tableau[22]).'</a></li>'; }
+else {
+echo'<div id="draggable4" style="margin-bottom:10px;">
+<a href="index.php?page=lien1" title="'.base64_decode($tableau[22]).'"><img src="admin/images/liens.png">'.base64_decode($tableau[22]).'</a></div>';}
 
 if (base64_decode($tableau[24])=='') {}
 
 else if (base64_decode($tableau[25])=='') {}
 
-else {echo'<li><a href="'.base64_decode($tableau[25]).'">'.base64_decode($tableau[24]).'</a></li>'; }
+else {
+echo'<div id="draggable5" style="margin-bottom:10px;">
+<a href="index.php?page=lien2" title="'.base64_decode($tableau[24]).'"><img src="admin/images/liens.png">'.base64_decode($tableau[24]).'</a></div>';}
 
-echo'<li><a href="'.base64_decode($tableau[5]).'/rss.php">RSS</a></li></ul></div></nav>';
+echo'
 
-echo'<br/><nav id="footer"><ul style="text-align: center"><li><strong><a rel="license" href="http://julien-et-nel.be/LLDGP1/">LLDGP1</a></strong> | <strong>'.base64_decode($tableau[0]).'</strong> | <strong><a href="http://julien-et-nel.be/UAG/">UAG CMS</a> | Design : ';
+<div id="draggable6" style="margin-bottom:10px;"><a href="index.php?page=RSS" title="RSS"><img src="admin/images/rss.png">RSS</a></div>
 
-echo'<a href="http://aldarone.fr/">Alda</a></strong></li></ul></nav></body></html>';
- 
+<div id="draggable7" style="margin-bottom:10px;"><a href="index.php?page=UAG" title="UAG"><img src="admin/images/pays.png">UAG</a></div>
+
+</div><div id="contenu2">';
+
+/* Les différentes Pages de l'administration */
+
+echo'<div id="dialog-modal" title="';
+
+switch ($_GET['page'])
+{
+
+case 'LLDGP1': echo LLDGP1;  break;
+
+case 'RSS': echo RSS;  break;
+
+case 'UAG': echo UAG;  break;
+
+case 'lien1': echo''.base64_decode($tableau[22]).'';  break;
+
+case 'lien2': echo''.base64_decode($tableau[24]).'';  break;
+
+default : echo 'Blog(s)';
+
+} 
+
+echo'">';
+
+switch ($_GET['page'])
+{
+
+case 'LLDGP1': LLDGP1(); break;
+
+case 'lien1': lien1();  break;
+
+case 'lien2': lien2();  break;
+
+case 'RSS': RSS();  break;
+
+case 'UAG': UAG();  break;
+
+default : blog2();
+
+}
+
+echo'</div>';
+
+switch ($_GET['page'])
+{
+
+case 'images': break;
+
+case 'configuration': break;
+
+default : include('admin/includes/bas.php');
+}
+
 ?>
