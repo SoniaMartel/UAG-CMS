@@ -24,7 +24,9 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<iframe src="'.base64_decode($tableau[23]).'" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+echo'<iframe src="'.base64_decode($tableau[23]).'" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+
+<a href="'.base64_decode($tableau[23]).'" target="cwindow"></a>';
 
 }
 
@@ -34,13 +36,17 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<iframe src="'.base64_decode($tableau[25]).'" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+echo'<iframe src="'.base64_decode($tableau[25]).'" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+
+<a href="'.base64_decode($tableau[25]).'" target="cwindow"></a>';
 
 }
 
 function LLDGP1()   {
 
-echo'<iframe src="http://julien-et-nel.be/LLDGP1/" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+echo'<iframe src="http://julien-et-nel.be/LLDGP1/" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+
+<a href="http://julien-et-nel.be/LLDGP1/" target="cwindow"></a>';
 
 }
 
@@ -57,7 +63,9 @@ margin:0px !important;
 };
 </style>
 
-<iframe src="'.base64_decode($tableau[5]).'/rss.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+<iframe src="'.base64_decode($tableau[5]).'/rss.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+
+<a href="'.base64_decode($tableau[5]).'/rss.php" target="cwindow"></a>';
 
 }
 
@@ -74,7 +82,9 @@ margin:0px !important;
 };
 </style>
 
-<iframe src="http://julien-et-nel.be/UAG/" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+<iframe src="http://julien-et-nel.be/UAG/" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+
+<a href="http://julien-et-nel.be/UAG/" target="cwindow"></a>';
 
 }
 
@@ -91,7 +101,11 @@ margin:0px !important;
 };
 </style>
 
-<iframe src="'.base64_decode($tableau[5]).'/index2.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+<iframe src="'.base64_decode($tableau[5]).'/index2.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+
+<a href="'.base64_decode($tableau[5]).'/index2.php" target="cwindow"></a>
+
+';
 
 }
 
@@ -108,7 +122,9 @@ margin:0px !important;
 };
 </style>
 
-<iframe src="'.base64_decode($tableau[5]).'/index2.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>';
+<iframe src="'.base64_decode($tableau[5]).'/index2.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+
+<a href="'.base64_decode($tableau[5]).'/index2.php" target="cwindow"></a>';
 
 }
 
