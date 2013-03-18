@@ -65,7 +65,7 @@ echo'
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <title>UAG CMS</title>
-<meta name="Description" content="Administration de UAG CMS" />
+<meta name="Description" content="" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="admin/defaut.css" />
