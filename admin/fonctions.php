@@ -491,8 +491,6 @@ echo'</td></tr></table></div>';
 
 function accueil() {
 
-echo'<br/>';
-
 $test01=substr(decoct(fileperms("../admin/configuration.txt")),3);
 $test02=substr(decoct(fileperms("../images")),2);
 $test03=substr(decoct(fileperms("../news.php")),3);
@@ -573,9 +571,48 @@ $fichier='configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
+echo'
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title>UAG CMS</title>
+<meta name="Description" content="Administration de UAG CMS" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="defaut.css" />
+<link rel="stylesheet" href="defaut2.css" />
+<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
+<link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
+<link rel="stylesheet" href="jquery/css/ui-lightness/jquery-ui-1.10.2.custom.css" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.coda-slider-3.0.js"></script>
+
+<script src="js/editeur.js"></script>
+<script type="text/javascript">addEvt(window,\'load\',whizzywig);</script>
+    <script>
+        $(function(){
+            setInterval(function(){
+                $(\'#ajax-refresh\').load(\'chat.php\');
+            }, 0);
+        });
+    </script>
+
+</head>
+<body>
+<body onload="whizzywig()">';
+
+echo'<style type="text/css">
+td,th{
+border:none !important;
+};
+</style>';
+
 if ($_GET['id']=='2') {  
 
-echo'<meta http-equiv="refresh" content="1; URL=index.php?page=configuration">
+echo'<meta http-equiv="refresh" content="1; URL=index2.php?page=configuration">
 <style type="text/css">
 .ui-dialog,.ui-dialog-content{
 min-height: 0px !important;
@@ -612,7 +649,7 @@ else {
   
 error_reporting(0);
 
-echo'<form action="index.php?page=configuration&id=2" method="post">
+echo'<form action="index2.php?page=configuration&id=2" method="post">
 	
 <div class="coda-slider"  id="main-slider">
 <div>
@@ -1251,7 +1288,7 @@ else { echo' '.$news['annee'].'-'.$news['mois'].'-'.$news['jour'].' '; }
 echo'</td>
 <td style="width:100px;border:1px solid #CCCCCC;background-color:#FFF9F4;"><center>';
 echo base64_decode($tableau[2]);
-echo'</center></td><td style="width:100px;border:1px solid #CCCCCC;background-color:#FFF9F4;"><center><a href="index.php?page=supprimer&id='.$id.'");"><img src="images/supprimer.png" alt="Supprimer" width="16px"></a></center></td><td style="width:100px;border:1px solid #CCCCCC;background-color:#FFF9F4;"><center><a href="index.php?page=editer&id='.$id.'"><img src="images/edition.png" alt="Editer" width="16px"></a></center></td></tr></thead></table>';
+echo'</center></td><td style="width:100px;border:1px solid #CCCCCC;background-color:#FFF9F4;"><center><a href="index2.php?page=supprimer&id='.$id.'");"><img src="images/supprimer.png" alt="Supprimer" width="16px"></a></center></td><td style="width:100px;border:1px solid #CCCCCC;background-color:#FFF9F4;"><center><a href="index2.php?page=editer&id='.$id.'"><img src="images/edition.png" alt="Editer" width="16px"></a></center></td></tr></thead></table>';
 }
 }
 } 
@@ -1260,7 +1297,7 @@ echo'</center></td><td style="width:100px;border:1px solid #CCCCCC;background-co
 
 function formulaire_images() {
 
-echo'<form method="POST" action="index.php?page=upload" enctype="multipart/form-data">
+echo'<form method="POST" action="index2.php?page=upload" enctype="multipart/form-data">
      <input type="hidden" name="MAX_FILE_SIZE" value="1048576">
      '.Fichier.' : <input type="file" name="avatar">
      <input type="submit" name="envoyer" value="'.Ok.'">
@@ -1327,7 +1364,7 @@ echo '<li class="ui-widget-content ui-corner-tr" style="list-style-type:none;mar
 
 <div style="text-align:center;" /><a href="javascript:OuvrirPopup(\''.base64_decode($tableau[5]).''.$test_Fichier3.'\', \'\', \'resizable=no, location=no, width=500, height=500,top=200px,left=200px, menubar=no, status=no, scrollbars=no, menubar=no\')" class="ui-icon ui-icon-zoomin"></a>
 
-<a href="index.php?page=delete&id='.$test_Fichier2.'" class="ui-icon ui-icon-trash">';
+<a href="index2.php?page=delete&id='.$test_Fichier2.'" class="ui-icon ui-icon-trash">';
 
 echo'</a></div></div></li>'; } } }
 
@@ -1418,7 +1455,7 @@ margin:0px !important;
 <div class="ui-state-highlight ui-corner-all" style="text-align:center;">
 <p><span class="ui-icon ui-icon-info" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.NewsAdd.'</p></div>';
       echo '<br />';
-      echo '<center><a href="index.php?page=liste">'.Retour.'</a></center>';
+      echo '<center><a href="index2.php?page=ajouter">'.Retour.'</a></center>';
 }
 else {
 	 echo'<form action="" method="post">
@@ -1534,7 +1571,7 @@ margin:0px !important;
 <div class="ui-state-highlight ui-corner-all" style="text-align:center;">
 <p><span class="ui-icon ui-icon-info" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.NewsEdit.'</p></div>';
 	echo '<br />';
-	echo '<center><a href="index.php?page=liste">'.Retour.'</a></center>';
+	echo '<center><a href="index2.php?page=liste">'.Retour.'</a></center>';
 } else {
 
 	echo'<form action="" method="POST">
@@ -1593,7 +1630,7 @@ $_SESSION['token'] = $token;
 
 $_SESSION['token_time'] = time();
 
-echo'<style type="text/css"> #titre2 {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: red;font-size: 12px;width:250px;} #titre {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 25px;width:250px;} #retour a:hover {font-weight: bold;} #retour a {color: #777777;text-decoration: none;} #retour {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 12px;width:250px;} #page2 { margin: auto; width: 200px;} #UAG{text-align:center;font-size: 9px;color: #666666;}#Ok input{color: #FFFFFF;font-weight: 700;background: black !important;border:1px solid #2E83D9;font-size: 14px;} #login form {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 14px;width:95%;} #login input { box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.196);border:1px solid #BBBBBB;background: #F5F5F5; }</style>
+echo'<style type="text/css">#titre2 {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: red;font-size: 12px;width:250px;} #titre {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 25px;width:250px;} #retour a:hover {font-weight: bold;} #retour a {color: #777777;text-decoration: none;} #retour {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 12px;width:250px;} #page2 { margin: auto; width: 200px;} #UAG{text-align:center;font-size: 9px;color: #666666;}#Ok input{color: #FFFFFF;font-weight: 700;background: black !important;border:1px solid #2E83D9;font-size: 14px;} #login form {box-shadow: rgba(200, 200, 200, 0.702) 0px 4px 10px -1px;border: 1px solid #E5E5E5;background: #FFFFFF;font-weight: 400;padding: 24px 24px 24px;text-align:center;color: #777777;font-size: 14px;width:95%;} #login input { box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.196);border:1px solid #BBBBBB;background: #F5F5F5; }</style>
 <div id="login"><form action="identification.php" method="post"><b>'.Connexion.'</b><br/><br/>
      '.Login.' <br/><input type="text" name="login" value="" /><br /><br />
      '.Code.' <br/><input type="password" name="mdp" value="" /><br /><br />
@@ -1611,7 +1648,7 @@ function supprimer_images() {
 $id = basename($_GET['id']);
 $fichier = "../images/".$id;
 unlink ($fichier);
-echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
+echo '<meta http-equiv="Refresh" content="2; url=index2.php?page=images" />';
 echo '<style type="text/css">
 .ui-dialog,.ui-dialog-content{
 min-height: 0px !important;
@@ -1667,7 +1704,7 @@ margin:0px !important;
 <p><span class="ui-icon ui-icon-alert" style="float: left; margin:auto;text-align:center;margin-right: .3em;margin-left: .3em;"></span>'.NewsDelOff.'</p></div>';
 }
 echo '<br />';
-echo '<center><a href="index.php?page=liste">'.Retour.'</a></center>';
+echo '<center><a href="index2.php?page=liste">'.Retour.'</a></center>';
 
 }
 
@@ -1683,7 +1720,7 @@ $extensions = array('.png', '.gif', '.jpg', '.bmp', '.svg', '.jpeg', '.PNG', '.G
 $extension = strrchr($_FILES['avatar']['name'], '.'); 
 if(!in_array($extension, $extensions)) 
 {
-     echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
+     echo '<meta http-equiv="Refresh" content="2; url=index2.php?page=images" />';
      $erreur = '<style type="text/css">
 .ui-dialog,.ui-dialog-content{
 min-height: 0px !important;
@@ -1695,7 +1732,7 @@ margin:0px !important;
 }
 if($taille>$taille_maxi)
 {
-     echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
+     echo '<meta http-equiv="Refresh" content="2; url=index2.php?page=images" />';
      $erreur = '<style type="text/css">
 .ui-dialog,.ui-dialog-content{
 min-height: 0px !important;
@@ -1713,7 +1750,7 @@ if(!isset($erreur))
      $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
      if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . uniqid()  . $extension)) 
      {
-echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
+echo '<meta http-equiv="Refresh" content="2; url=index2.php?page=images" />';
 echo '
 <style type="text/css">
 .ui-dialog,.ui-dialog-content{
@@ -1726,7 +1763,7 @@ margin:0px !important;
      }
      else 
      {
-	  echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
+	  echo '<meta http-equiv="Refresh" content="2; url=index2.php?page=images" />';
           echo '<style type="text/css">
 .ui-dialog,.ui-dialog-content{
 min-height: 0px !important;
@@ -1739,7 +1776,7 @@ margin:0px !important;
 }
 else
 {
-     echo '<meta http-equiv="Refresh" content="2; url=index.php?page=images" />';
+     echo '<meta http-equiv="Refresh" content="2; url=index2.php?page=images" />';
      echo $erreur;
 }
 }

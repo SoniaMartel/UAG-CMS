@@ -37,6 +37,4 @@ else
          exit();
      }
 }
-
-header ("X-FRAME-OPTIONS: DENY");
 ?>

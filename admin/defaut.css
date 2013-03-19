@@ -25,13 +25,13 @@ body{margin:0;auto:0;font: 13px;font-family: "Trebuchet MS",Helvetica,Jamrul,san
 
 #pieddepage {background:#EEEEEE;height:10px;margin:auto;}
 
-#erreur {color:black;text-align:center;border: 1px solid #F44242;border-radius:4px;background: url("images/erreur.png") 10px 7px no-repeat #F46F6F;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
+#erreur {padding-left:38px;color:black;text-align:center;border: 1px solid #F44242;border-radius:4px;background: url("images/erreur.png") 10px 7px no-repeat #F46F6F;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
 
-#valide {color:black;text-align:center;border: 1px solid #189F0E;border-radius:4px;background: url("images/valide.png") 10px 7px no-repeat #62B956;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
+#valide {padding-left:32px;color:black;text-align:center;border: 1px solid #189F0E;border-radius:4px;background: url("images/valide.png") 10px 7px no-repeat #62B956;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
 
-#info {color:black;text-align:center;border: 1px solid #1981FF;border-radius:4px;background: url("images/info.png") 10px 7px no-repeat #80B9FF;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
+#info {padding-left:32px;color:black;text-align:center;border: 1px solid #1981FF;border-radius:4px;background: url("images/info.png") 10px 7px no-repeat #80B9FF;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
 
-#pays {color:black;text-align:center;border: 1px solid orange;border-radius:4px;background: url("images/pays.png") 10px 7px no-repeat #FDEBAE;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
+#pays {padding-left:32px;color:black;text-align:center;border: 1px solid orange;border-radius:4px;background: url("images/pays.png") 10px 7px no-repeat #FDEBAE;min-height: 45px;font-size:15px;font-weight: bold;margin-bottom:10px;}
 
 table {margin:auto;}
 

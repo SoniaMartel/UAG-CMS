@@ -92,7 +92,8 @@ echo'</div>
 <div id="header">UAG CMS
 ';
 
-include('includes/centre.php'); 
+echo'</div><div id="menu">';
+echo'</div><div id="contenu2">';
 
 /* Les différentes Pages de l'administration */
 
@@ -103,18 +104,9 @@ echo Connexion;
 echo'">';
 
 connexion_blog();
-header ("X-FRAME-OPTIONS: DENY");
 
 echo'</div>';
 
-switch ($_GET['page'])
-{
-
-case 'images': break;
-
-case 'configuration': break;
-
-default : include('includes/bas.php');
-}
+include('includes/bas.php');
 
 ?>

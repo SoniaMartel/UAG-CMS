@@ -120,6 +120,131 @@ echo'
 	
 <script>
 $(function() {
+$( "#dialog1" ).dialog({
+width: 1020,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener1" ).click(function() {
+$( "#dialog1" ).dialog( "open" );
+});
+});
+</script>
+<script>
+$(function() {
+$( "#dialog2" ).dialog({
+width: 1020,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener2" ).click(function() {
+$( "#dialog2" ).dialog( "open" );
+});
+});
+</script>
+
+<script>
+$(function() {
+$( "#dialog3" ).dialog({
+width: 1060,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener3" ).click(function() {
+$( "#dialog3" ).dialog( "open" );
+});
+});
+</script>
+
+<script>
+$(function() {
+$( "#dialog4" ).dialog({
+width: 1020,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener4" ).click(function() {
+$( "#dialog4" ).dialog( "open" );
+});
+});
+</script>
+
+<script>
+$(function() {
+$( "#dialog5" ).dialog({
+width: 1020,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener5" ).click(function() {
+$( "#dialog5" ).dialog( "open" );
+});
+});
+</script>
+
+<script>
+$(function() {
+$( "#dialog6" ).dialog({
+width: 1020,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener6" ).click(function() {
+$( "#dialog6" ).dialog( "open" );
+});
+});
+</script>	
+	
+<script>
+$(function() {
 $( "#dialog-modal" ).dialog({
 width: 1020,
 modal: false
@@ -177,41 +302,49 @@ echo'</div>
 <div id="header">UAG CMS
 ';
 
-echo'</div><div id="menu"> <div id="draggable"  style="margin-bottom:10px;"><a href="index.php" title="Blog(s)"><img src="admin/images/home.png">Blog(s)</a></div>';
+echo'</div><div id="menu">';
+
+echo' <div id="dialog1" title="Blog(s)"><p>'; blog2(); echo'</p></div>'; 
+
+echo'<div id="draggable" style="margin-bottom:10px;"><div id="opener1"><img src="admin/images/home.png">Blog(s)</div></div>';
 
 if (base64_decode($tableau[9])=='off') {}
 
 else { echo'<div id="draggable2" style="margin-bottom:10px;"><a href="/admin" title="'.Administration.'"><img src="admin/images/configure.png">'.Administration.'</a></div>';}
 
-echo'<div id="draggable3" style="margin-bottom:10px;"><a href="index.php?page=LLDGP1" title="LLDGP1"><img src="admin/images/info.png">LLDGP1</a></div>';
+echo' <div id="dialog2" title="LLDGP1"><p>'; LLDGP1(); echo'</p></div>'; 
+
+echo'<div id="draggable3" style="margin-bottom:10px;"><div id="opener2"><img src="admin/images/info.png">LLDGP1</div></div>';
 
 if (base64_decode($tableau[22])=='') {}
 
 else if (base64_decode($tableau[23])=='') {}
 
 else {
-echo'<div id="draggable4" style="margin-bottom:10px;">
-<a href="index.php?page=lien1" title="'.base64_decode($tableau[22]).'"><img src="admin/images/liens.png">'.base64_decode($tableau[22]).'</a></div>';}
+echo' <div id="dialog3" title="'.base64_decode($tableau[22]).'"><p>'; lien1(); echo'</p></div>'; 
+
+echo'<div id="draggable4" style="margin-bottom:10px;"><div id="opener3"><img src="admin/images/liens.png">'.base64_decode($tableau[22]).'</div></div>';}
 
 if (base64_decode($tableau[24])=='') {}
 
 else if (base64_decode($tableau[25])=='') {}
 
 else {
-echo'<div id="draggable5" style="margin-bottom:10px;">
-<a href="index.php?page=lien2" title="'.base64_decode($tableau[24]).'"><img src="admin/images/liens.png">'.base64_decode($tableau[24]).'</a></div>';}
+echo' <div id="dialog4" title="'.base64_decode($tableau[24]).'"><p>'; lien2(); echo'</p></div>'; 
 
-echo'
+echo'<div id="draggable5" style="margin-bottom:10px;"><div id="opener4"><img src="admin/images/liens.png">'.base64_decode($tableau[24]).'</div></div>';}
 
-<div id="draggable6" style="margin-bottom:10px;"><a href="index.php?page=RSS" title="RSS"><img src="admin/images/rss.png">RSS</a></div>
+echo' <div id="dialog5" title="RSS"><p>'; RSS(); echo'</p></div>'; 
 
-<div id="draggable7" style="margin-bottom:10px;"><a href="index.php?page=UAG" title="UAG"><img src="admin/images/pays.png">UAG</a></div>
+echo'<div id="draggable6" style="margin-bottom:10px;"><div id="opener5"><img src="admin/images/rss.png">RSS</div></div>';
 
-</div><div id="contenu2">';
+echo' <div id="dialog6" title="UAG"><p>'; UAG(); echo'</p></div>'; 
+
+echo'<div id="draggable7" style="margin-bottom:10px;"><div id="opener6"><img src="admin/images/pays.png">UAG</div></div>';
+
+echo'</div><div id="contenu2">';
 
 /* Les différentes Pages de l'administration */
-
-echo'<div id="dialog-modal" title="';
 
 switch ($_GET['page'])
 {
@@ -226,11 +359,9 @@ case 'lien1': echo''.base64_decode($tableau[22]).'';  break;
 
 case 'lien2': echo''.base64_decode($tableau[24]).'';  break;
 
-default : echo 'Blog(s)';
+default :  ;
 
 } 
-
-echo'">';
 
 switch ($_GET['page'])
 {
@@ -245,11 +376,9 @@ case 'RSS': RSS();  break;
 
 case 'UAG': UAG();  break;
 
-default : blog2();
+default : ;
 
 }
-
-echo'</div>';
 
 switch ($_GET['page'])
 {

@@ -134,7 +134,7 @@ min-height:0px !important;
 switch ($_GET['module'])
 {
 
-case 'articles': articles(); break;
+case 'articles': articles(); disqus(); break;
 
 case 'erreurs': erreurs(); break;
 
@@ -142,12 +142,6 @@ default : profil();
 }
 
 echo'</article>';
-
-echo'<header id="header">
-
-<h1></h1>';
-
-echo'</header>';
 
 echo'<div id="piedpage">';
 
@@ -158,9 +152,15 @@ foreach($allnews as $i => $news) {
 
 $i2 = $i + 1 ;
 
-echo '<div class="older-posts"><a href="'.base64_decode($tableau[5]).'/index2.php?module=articles&page=' . $i2 . '">' . $i2 . '</a></div>';
+echo '<div class="older-posts"><a href="'.base64_decode($tableau[5]).'/index2.php?module=articles&page=' . $i2 . '">' . $i2 . '</a></div></div>';
 
 }
+
+echo'<header id="header">
+
+<h1></h1>';
+
+echo'</header>';
 
 echo'</div></div></div>';
 

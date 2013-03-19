@@ -118,6 +118,131 @@ $( "#draggable7" ).draggable();
 });
 </script>
 
+<script>
+$(function() {
+$( "#dialog1" ).dialog({
+width: 1020,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener1" ).click(function() {
+$( "#dialog1" ).dialog( "open" );
+});
+});
+</script>
+<script>
+$(function() {
+$( "#dialog2" ).dialog({
+width: 1020,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener2" ).click(function() {
+$( "#dialog2" ).dialog( "open" );
+});
+});
+</script>
+
+<script>
+$(function() {
+$( "#dialog3" ).dialog({
+width: 1060,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener3" ).click(function() {
+$( "#dialog3" ).dialog( "open" );
+});
+});
+</script>
+
+<script>
+$(function() {
+$( "#dialog4" ).dialog({
+width: 1020,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener4" ).click(function() {
+$( "#dialog4" ).dialog( "open" );
+});
+});
+</script>
+
+<script>
+$(function() {
+$( "#dialog5" ).dialog({
+width: 1020,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener5" ).click(function() {
+$( "#dialog5" ).dialog( "open" );
+});
+});
+</script>
+
+<script>
+$(function() {
+$( "#dialog6" ).dialog({
+width: 1020,
+modal: false,
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+},
+hide: {
+effect: "hide",
+duration: 1000
+}
+});
+$( "#opener6" ).click(function() {
+$( "#dialog6" ).dialog( "open" );
+});
+});
+</script>
+
 </head>
 <body>
 <body onload="whizzywig()">';
@@ -149,68 +274,9 @@ echo'</div>
 
 include('includes/centre.php'); 
 
-/* Les différentes Pages de l'administration */
-
-echo'<div id="dialog-modal" title="';
-
 switch ($_GET['page'])
+
 {
-
-case 'liste': echo Articles; break;
-
-case 'supprimer': echo Articles; break;
-
-case 'ajouter': echo Ecrire; break;
-
-case 'editer': echo Editer; break;
-
-case 'images': echo Images; break;
-
-case 'upload': echo Images; break;
-
-case 'delete': echo Images; break;
-
-case 'configuration': echo Configuration; break;
-
-case 'blog': echo Blog; break;
-
-default : echo Accueil;
-} 
-
-echo'">';
-
-switch ($_GET['page'])
-{
-
-case 'liste': liste_news(); break;
-
-case 'supprimer': supprimer_news(); break;
-
-case 'ajouter': anti_slash(); ajout_news(); break;
-
-case 'editer': anti_slash(); editer_news(); break;
-
-case 'images': formulaire_images(); images(); break;
-
-case 'upload': envoyer_images(); break;
-
-case 'delete': supprimer_images(); break;
-
-case 'configuration': configuration(); break;
-
-case 'blog': blog(); break;
-
-default : accueil();
-}
-
-echo'</div>';
-
-switch ($_GET['page'])
-{
-
-case 'images': break;
-
-case 'configuration': break;
 
 default : include('includes/bas.php');
 }
