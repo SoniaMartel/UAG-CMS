@@ -145,6 +145,8 @@ echo'</article>';
 
 echo'<div id="piedpage">';
 
+echo '<div class="older-posts">';
+
 if (base64_decode($tableau[4])=='on') {krsort($allnews);}
 else if (base64_decode($tableau[4])=='off') {};
 
@@ -152,9 +154,11 @@ foreach($allnews as $i => $news) {
 
 $i2 = $i + 1 ;
 
-echo '<div class="older-posts"><a href="'.base64_decode($tableau[5]).'/index2.php?module=articles&page=' . $i2 . '">' . $i2 . '</a></div></div>';
+echo'<a href="'.base64_decode($tableau[5]).'/index2.php?module=articles&page=' . $i2 . '" style="padding:5px;margin-left:10px;">' . $i2 . '</a>';
 
 }
+
+echo'</div></div>';
 
 echo'</div></div></div>';
 
