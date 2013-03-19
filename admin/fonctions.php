@@ -1458,7 +1458,40 @@ margin:0px !important;
       echo '<center><a href="index2.php?page=ajouter">'.Retour.'</a></center>';
 }
 else {
-	 echo'<form action="" method="post">
+	 echo'
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title>UAG CMS</title>
+<meta name="Description" content="Administration de UAG CMS" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="defaut.css" />
+<link rel="stylesheet" href="defaut2.css" />
+<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
+<link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
+<link rel="stylesheet" href="jquery/css/ui-lightness/jquery-ui-1.10.2.custom.css" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.coda-slider-3.0.js"></script>
+
+<script src="js/editeur.js"></script>
+<script type="text/javascript">addEvt(window,\'load\',whizzywig);</script>
+    <script>
+        $(function(){
+            setInterval(function(){
+                $(\'#ajax-refresh\').load(\'chat.php\');
+            }, 0);
+        });
+    </script>
+
+</head>
+<body>
+<body onload="whizzywig()">	 
+	 
+	 <form action="" method="post">
 <label for="pseudo">'.Auteur.'</label> :<strong> '.base64_decode($tableau[2]).'</strong> -  <label for="titre">'.Titre.' : </label> <input type="text" required name="titre" id="titre" placeholder="'.Articla.'" /> -  
 
 <label for="jour">'.Jour.'</label> : <SELECT name="jour" id="jour" STYLE="width:70px;">';
@@ -1574,7 +1607,40 @@ margin:0px !important;
 	echo '<center><a href="index2.php?page=liste">'.Retour.'</a></center>';
 } else {
 
-	echo'<form action="" method="POST">
+	echo'
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title>UAG CMS</title>
+<meta name="Description" content="Administration de UAG CMS" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="defaut.css" />
+<link rel="stylesheet" href="defaut2.css" />
+<link rel="shortcut icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
+<link rel="icon" type="image/x-icon" href="'.base64_decode($tableau[5]).'/Favicon.ico" sizes="16x16" />
+<link rel="stylesheet" href="jquery/css/ui-lightness/jquery-ui-1.10.2.custom.css" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.coda-slider-3.0.js"></script>
+
+<script src="js/editeur.js"></script>
+<script type="text/javascript">addEvt(window,\'load\',whizzywig);</script>
+    <script>
+        $(function(){
+            setInterval(function(){
+                $(\'#ajax-refresh\').load(\'chat.php\');
+            }, 0);
+        });
+    </script>
+
+</head>
+<body>
+<body onload="whizzywig()">
+	
+	<form action="" method="POST">
 	'.Auteur.' : <strong>'.base64_decode($tableau[2]).'</strong> - <label for="titre">'.Titre.' : </label> <input type="text" required name="titre" id="titre"  placeholder="'.Articla.'" value="'.$news[$newsAmodifier]['titre'].'" /> -  
 <label for="jour">'.Jour.' : </label> <input type="text" name="jour" id="jour" value="'.$news[$newsAmodifier]['jour'].'" STYLE="width:70px;" readonly="readonly"/ > 
 - <label for="mois">'.Mois.' : </label> <input type="text" name="mois" id="mois" value="'.$news[$newsAmodifier]['mois'].'" STYLE="width:70px;" readonly="readonly" /> 
