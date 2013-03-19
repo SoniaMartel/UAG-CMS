@@ -9,6 +9,55 @@ body{margin:0;auto:0;font: 13px;font-family: "Trebuchet MS",Helvetica,Jamrul,san
     max-height: 200px !important;
 }
 
+#dialog_window_minimized_container {
+   position: fixed;
+   bottom: 0px;
+   left: 0px;
+}
+ 
+.dialog_window_minimized {
+   float: left;
+   padding-left: 5px;
+   font-size: 12px;
+   cursor: pointer;
+   margin-right: 2px;
+   display: none;
+   background: none repeat scroll 0% 0% rgb(50, 50, 50) !important;
+   color:white !important;
+   border:none !important;
+   padding-bottom:5px !important;
+}
+
+.dialog_window_minimized:hover {
+background: none repeat scroll 0% 0% white !important;
+   color:black !important;
+}
+ 
+.dialog_window_minimized .ui-icon {
+   display: inline-block !important;
+   position: relative;
+   top: 3px;
+   cursor: pointer;
+}
+ 
+.ui-dialog .ui-dialog-titlebar-minimize {
+    height: 0px;
+    width: 19px;
+    padding: 1px;
+    position: absolute;
+    right: 30px;
+    top: 0px;
+}
+ 
+.ui-dialog .ui-dialog-titlebar-minimize .ui-icon {
+   display: block;
+   margin: 1px;
+}
+ 
+.ui-dialog .ui-dialog-titlebar-minimize:hover, .ui-dialog .ui-dialog-titlebar-minimize:focus {
+   padding: 0;
+}
+
 #page{margin:auto;}
 
 #header2{bottom:0;position:absolute;width:100%;background:#323232;font-weight: bold;color:white;text-align:center;padding-top:5px;padding-bottom:5px;font-size: 12px;}
