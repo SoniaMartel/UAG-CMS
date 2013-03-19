@@ -156,12 +156,6 @@ echo '<div class="older-posts"><a href="'.base64_decode($tableau[5]).'/index2.ph
 
 }
 
-echo'<header id="header">
-
-<h1></h1>';
-
-echo'</header>';
-
 echo'</div></div></div>';
 
 echo'</body></html>';
