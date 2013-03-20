@@ -165,9 +165,11 @@ echo'
 <script>
 $(function() {
 $( "#dialog1" ).dialog({
+minHeight: 550,
 width: 1020,
 modal: false,
 autoOpen: false,
+resizable: false,
 show: {
 effect: "blind",
 duration: 1000
@@ -185,9 +187,11 @@ $( "#dialog1" ).dialog( "open" );
 <script>
 $(function() {
 $( "#dialog2" ).dialog({
+minHeight: 550,
 width: 1020,
 modal: false,
 autoOpen: false,
+resizable: false,
 show: {
 effect: "blind",
 duration: 1000
@@ -207,8 +211,10 @@ $( "#dialog2" ).dialog( "open" );
 $(function() {
 $( "#dialog3" ).dialog({
 width: 1060,
+minHeight: 550,
 modal: false,
 autoOpen: false,
+resizable: false,
 show: {
 effect: "blind",
 duration: 1000
@@ -228,8 +234,10 @@ $( "#dialog3" ).dialog( "open" );
 $(function() {
 $( "#dialog4" ).dialog({
 width: 1020,
+minHeight: 550,
 modal: false,
 autoOpen: false,
+resizable: false,
 show: {
 effect: "blind",
 duration: 1000
@@ -248,9 +256,11 @@ $( "#dialog4" ).dialog( "open" );
 <script>
 $(function() {
 $( "#dialog5" ).dialog({
+minHeight: 550,
 width: 1020,
 modal: false,
 autoOpen: false,
+resizable: false,
 show: {
 effect: "blind",
 duration: 1000
@@ -269,9 +279,11 @@ $( "#dialog5" ).dialog( "open" );
 <script>
 $(function() {
 $( "#dialog6" ).dialog({
+minHeight: 550,
 width: 1020,
 modal: false,
 autoOpen: false,
+resizable: false,
 show: {
 effect: "blind",
 duration: 1000

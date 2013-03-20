@@ -24,7 +24,7 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<iframe src="'.base64_decode($tableau[23]).'" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+echo'<iframe src="'.base64_decode($tableau[23]).'" style="min-width:100%;min-height:550px !important;background:black !important;background-image:none;"></iframe>
 
 <a href="'.base64_decode($tableau[23]).'" target="cwindow"></a>';
 
@@ -36,7 +36,7 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<iframe src="'.base64_decode($tableau[25]).'" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+echo'<iframe src="'.base64_decode($tableau[25]).'" style="min-width:100%;min-height:550px !important;background:black !important;background-image:none;"></iframe>
 
 <a href="'.base64_decode($tableau[25]).'" target="cwindow"></a>';
 
@@ -44,7 +44,7 @@ echo'<iframe src="'.base64_decode($tableau[25]).'" style="min-width:100%;min-hei
 
 function LLDGP1()   {
 
-echo'<iframe src="http://julien-et-nel.be/LLDGP1/" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+echo'<iframe src="http://julien-et-nel.be/LLDGP1/" style="min-width:100%;min-height:550px !important;background:black !important;background-image:none;"></iframe>
 
 <a href="http://julien-et-nel.be/LLDGP1/" target="cwindow"></a>';
 
@@ -56,14 +56,7 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<style type="text/css">
-.ui-dialog,.ui-dialog-content{
-min-height: 600px !important;
-margin:0px !important;
-};
-</style>
-
-<iframe src="'.base64_decode($tableau[5]).'/rss.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+echo'<iframe src="'.base64_decode($tableau[5]).'/rss.php" style="min-width:100%;min-height:550px !important;background:black !important;background-image:none;"></iframe>
 
 <a href="'.base64_decode($tableau[5]).'/rss.php" target="cwindow"></a>';
 
@@ -75,14 +68,7 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<style type="text/css">
-.ui-dialog,.ui-dialog-content{
-min-height: 600px !important;
-margin:0px !important;
-};
-</style>
-
-<iframe src="http://julien-et-nel.be/UAG/" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+echo'<iframe src="http://julien-et-nel.be/UAG/" style="min-width:100%;min-height:550px !important;background:black !important;background-image:none;"></iframe>
 
 <a href="http://julien-et-nel.be/UAG/" target="cwindow"></a>';
 
@@ -94,14 +80,9 @@ $fichier='admin/configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<style type="text/css">
-.ui-dialog,.ui-dialog-content{
-min-height: 600px !important;
-margin:0px !important;
-};
-</style>
+echo'
 
-<iframe src="'.base64_decode($tableau[5]).'/index2.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+<iframe src="'.base64_decode($tableau[5]).'/index2.php" style="min-width:100%;min-height:550px !important;background:black !important;background-image:none;"></iframe>
 
 <a href="'.base64_decode($tableau[5]).'/index2.php" target="cwindow"></a>
 
@@ -115,14 +96,9 @@ $fichier='configuration.txt';
 $tableau=array();
 $tableau=lire_array($fichier);
 
-echo'<style type="text/css">
-.ui-dialog,.ui-dialog-content{
-min-height: 600px !important;
-margin:0px !important;
-};
-</style>
+echo'
 
-<iframe src="'.base64_decode($tableau[5]).'/index2.php" style="min-width:100%;min-height:600px !important;background:black !important;background-image:none;"></iframe>
+<iframe src="'.base64_decode($tableau[5]).'/index2.php" style="min-width:100%;min-height:550px !important;background:black !important;background-image:none;"></iframe>
 
 <a href="'.base64_decode($tableau[5]).'/index2.php" target="cwindow"></a>';
 
@@ -1316,6 +1292,8 @@ $tableau=lire_array($fichier);
 echo'
 
 <style>
+html { float: left; width: 100%;     overflow: auto;
+ max-height: 320px !important;; }
 #gallery { float: left; width: 100%;     overflow: auto;
  max-height: 320px !important;; }
 .gallery.custom-state-active { background: #eee; }
@@ -1607,7 +1585,7 @@ margin:0px !important;
 	echo '<center><a href="index2.php?page=liste">'.Retour.'</a></center>';
 } else {
 
-	echo'
+echo'
 <!DOCTYPE html>
 <html>
 <head>

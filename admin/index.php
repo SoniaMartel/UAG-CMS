@@ -170,6 +170,7 @@ $( "#dialog1" ).dialog({
 width: 1020,
 modal: false,
 autoOpen: false,
+resizable: false,
 show: {
 effect: "blind",
 duration: 1000
@@ -190,6 +191,7 @@ $( "#dialog2" ).dialog({
 width: 1020,
 modal: false,
 autoOpen: false,
+resizable: false,
 show: {
 effect: "blind",
 duration: 1000
@@ -211,6 +213,7 @@ $( "#dialog3" ).dialog({
 width: 1060,
 modal: false,
 autoOpen: false,
+resizable: false,
 show: {
 effect: "blind",
 duration: 1000
@@ -232,6 +235,7 @@ $( "#dialog4" ).dialog({
 width: 1020,
 modal: false,
 autoOpen: false,
+resizable: false,
 show: {
 effect: "blind",
 duration: 1000
@@ -250,7 +254,8 @@ $( "#dialog4" ).dialog( "open" );
 <script>
 $(function() {
 $( "#dialog5" ).dialog({
-width: 1020,
+resizable: false,
+width: 1040,
 modal: false,
 autoOpen: false,
 show: {
@@ -274,6 +279,7 @@ $( "#dialog6" ).dialog({
 width: 1020,
 modal: false,
 autoOpen: false,
+resizable: false,
 show: {
 effect: "blind",
 duration: 1000

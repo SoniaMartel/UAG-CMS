@@ -494,8 +494,8 @@ button.ui-button::-moz-focus-inner {
 	border: 0;
 	padding: .5em 1em;
 	background: none;
-	overflow: auto;
 }
+
 .ui-dialog .ui-dialog-buttonpane {
 	text-align: left;
 	border-width: 1px 0 0 0;
