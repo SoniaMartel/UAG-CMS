@@ -1,7 +1,7 @@
 html{background:rgb(94, 94, 94);background-repeat: no-repeat; background-attachment:fixed; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;
-background-size: cover;}
+background-size: cover;height:100%;overflow:none;}}
 
-body{margin:0;auto:0;font: 13px;font-family: "Trebuchet MS",Helvetica,Jamrul,sans-serif;}
+body{margin:0;auto:0;font: 13px;font-family: "Trebuchet MS",Helvetica,Jamrul,sans-serif;height:100%;overflow:none;}
 
 .wz_rte {
     overflow: auto;

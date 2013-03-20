@@ -1,7 +1,7 @@
 <?php
 
-echo'</div><div id="menu">';
+echo'</div><ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">';
 include("includes/menu.php"); 
-echo'</div><div id="contenu2">';
+echo'</ul><div id="contenu2">';
 
 ?>

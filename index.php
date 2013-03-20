@@ -306,27 +306,6 @@ width: 1020,
 modal: false
 });
 });
- $(function() {
-$( "#draggable" ).draggable();
-});
- $(function() {
-$( "#draggable2" ).draggable();
-});
- $(function() {
-$( "#draggable3" ).draggable();
-});
- $(function() {
-$( "#draggable4" ).draggable();
-});
- $(function() {
-$( "#draggable5" ).draggable();
-});
- $(function() {
-$( "#draggable6" ).draggable();
-});
- $(function() {
-$( "#draggable7" ).draggable();
-});
 </script>
 
 </head>
@@ -358,19 +337,21 @@ echo'</div>
 <div id="header">UAG CMS
 ';
 
-echo'</div><div id="menu">';
+echo'</div><ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">';
 
-echo' <div id="dialog1" title="Blog(s)"><p>'; blog2(); echo'</p></div>'; 
+echo' <div><div><div><div><div><div id="dialog1" title="Blog(s)"><p>'; blog2(); echo'</p></div>'; 
 
-echo'<div id="draggable" style="margin-bottom:10px;"><div id="opener1"><img src="admin/images/home.png">Blog(s)</div></div>';
+echo'<li id="draggable" class="ui-widget-content ui-corner-tr" style="text-align:center;background:none;border:none;padding-left:20px !important; padding-right:10px !important;margin-left:35px;float:left;list-style-type:none;margin-top:25px;"><div id="opener1"><img src="admin/images/home.png"><h5 class="ui-widget-header" style="background:none;margin:0px;">Blog(s)</h5></li></div>';
 
 if (base64_decode($tableau[9])=='off') {}
 
-else { echo'<div id="draggable2" style="margin-bottom:10px;"><a href="/admin" title="'.Administration.'"><img src="admin/images/configure.png">'.Administration.'</a></div>';}
+else { echo'<li id="draggable2" class="ui-widget-content ui-corner-tr" style="text-align:center;background:none;border:none;padding-left:20px !important; padding-right:10px !important;margin-left:35px;float:left;list-style-type:none;margin-top:25px;"><a href="/admin" title="'.Administration.'"><img src="admin/images/configure.png"><h5 class="ui-widget-header" style="background:none;margin:0px;">'.Administration.'</h5></a></li>';
+
+}
 
 echo' <div id="dialog2" title="LLDGP1"><p>'; LLDGP1(); echo'</p></div>'; 
 
-echo'<div id="draggable3" style="margin-bottom:10px;"><div id="opener2"><img src="admin/images/info.png">LLDGP1</div></div>';
+echo'<li id="draggable3" class="ui-widget-content ui-corner-tr" style="text-align:center;background:none;border:none;padding-left:20px !important; padding-right:10px !important;margin-left:35px;float:left;list-style-type:none;margin-top:25px;"><div id="opener2"><img src="admin/images/info.png"><h5 class="ui-widget-header" style="background:none;margin:0px;">LLDGP1</h5></li></div>';
 
 if (base64_decode($tableau[22])=='') {}
 
@@ -379,26 +360,30 @@ else if (base64_decode($tableau[23])=='') {}
 else {
 echo' <div id="dialog3" title="'.base64_decode($tableau[22]).'"><p>'; lien1(); echo'</p></div>'; 
 
-echo'<div id="draggable4" style="margin-bottom:10px;"><div id="opener3"><img src="admin/images/liens.png">'.base64_decode($tableau[22]).'</div></div>';}
+echo'<li id="draggable4" class="ui-widget-content ui-corner-tr" style="text-align:center;background:none;border:none;padding-left:20px !important; padding-right:10px !important;margin-left:35px;float:left;list-style-type:none;margin-top:25px;"><div id="opener3"><img src="admin/images/liens.png"><h5 class="ui-widget-header" style="background:none;margin:0px;">'.base64_decode($tableau[22]).'</h5></li></div>';
 
-if (base64_decode($tableau[24])=='') {}
+}
 
-else if (base64_decode($tableau[25])=='') {}
+if (base64_decode($tableau[24])=='') {echo'';}
+
+else if (base64_decode($tableau[25])=='') {echo'';}
 
 else {
 echo' <div id="dialog4" title="'.base64_decode($tableau[24]).'"><p>'; lien2(); echo'</p></div>'; 
 
-echo'<div id="draggable5" style="margin-bottom:10px;"><div id="opener4"><img src="admin/images/liens.png">'.base64_decode($tableau[24]).'</div></div>';}
+echo'<li id="draggable5" class="ui-widget-content ui-corner-tr" style="text-align:center;background:none;border:none;padding-left:20px !important; padding-right:10px !important;margin-left:35px;float:left;list-style-type:none;margin-top:25px;"><div id="opener4"><img src="admin/images/liens.png"><h5 class="ui-widget-header" style="background:none;margin:0px;">'.base64_decode($tableau[24]).'</h5></li></div>';
 
-echo' <div id="dialog5" title="RSS"><p>'; RSS(); echo'</p></div>'; 
+}
 
-echo'<div id="draggable6" style="margin-bottom:10px;"><div id="opener5"><img src="admin/images/rss.png">RSS</div></div>';
+echo'<div id="dialog5" title="RSS"><p>'; RSS(); echo'</p></div>'; 
 
-echo' <div id="dialog6" title="UAG"><p>'; UAG(); echo'</p></div>'; 
+echo'<li id="draggable6" class="ui-widget-content ui-corner-tr" style="text-align:center;background:none;border:none;padding-left:20px !important; padding-right:10px !important;margin-left:35px;float:left;list-style-type:none;margin-top:25px;"><div id="opener5"><img src="admin/images/rss.png"><h5 class="ui-widget-header" style="background:none;margin:0px;">RSS</h5></li></div>';
 
-echo'<div id="draggable7" style="margin-bottom:10px;"><div id="opener6"><img src="admin/images/pays.png">UAG</div></div>';
+echo'<div id="dialog6" title="UAG"><p>'; UAG(); echo'</p></div>'; 
 
-echo'</div><div id="contenu2">';
+echo'<li id="draggable7" class="ui-widget-content ui-corner-tr" style="text-align:center;background:none;border:none;padding-left:20px !important; padding-right:10px !important;margin-left:35px;float:left;list-style-type:none;margin-top:25px;"><div id="opener6"><img src="admin/images/pays.png"><h5 class="ui-widget-header" style="background:none;margin:0px;">UAG</h5></li></div>';
+
+echo'</ul><div id="contenu2">';
 
 /* Les différentes Pages de l'administration */
 
